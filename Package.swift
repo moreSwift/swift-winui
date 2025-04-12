@@ -15,7 +15,7 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/stackotter/swift-windowsappsdk",
-            branch: "3d3f49623663d43e49206bc8b54136862d7d69d3"
+            branch: "5caed8b4f1b4abc6fc89b8f0a8fa20f3edfab14a"
         ),
         .package(
             url: "https://github.com/thebrowsercompany/swift-windowsfoundation",
