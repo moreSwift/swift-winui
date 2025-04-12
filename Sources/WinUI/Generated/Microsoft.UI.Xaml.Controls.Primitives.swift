@@ -17,8 +17,6 @@ public typealias FlyoutPlacementMode = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CP
 public typealias FlyoutShowMode = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CFlyoutShowMode
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.generatordirection)
 public typealias GeneratorDirection = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CGeneratorDirection
-/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.placementmode)
-public typealias PlacementMode = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CPlacementMode
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.popupplacementmode)
 public typealias PopupPlacementMode = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CPopupPlacementMode
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.scrollsnappointsalignment)
@@ -29,85 +27,6 @@ public typealias SliderSnapsTo = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimiti
 public typealias SnapPointsAlignment = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CSnapPointsAlignment
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.tickplacement)
 public typealias TickPlacement = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CTickPlacement
-/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.appbartemplatesettings)
-public final class AppBarTemplateSettings : WinUI.DependencyObject {
-    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls_Primitives.IAppBarTemplateSettings
-    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings
-    private lazy var _default: SwiftABI! = getInterfaceForCaching()
-    @_spi(WinRTInternal)
-    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
-        if T.self == CABI.self {
-            return RawPointer(_default)
-        }
-        return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings>?) -> AppBarTemplateSettings? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
-    override public init(fromAbi: WindowsFoundation.IInspectable) {
-        super.init(fromAbi: fromAbi)
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.appbartemplatesettings.cliprect)
-    public var clipRect : WindowsFoundation.Rect {
-        get { try! _default.get_ClipRectImpl() }
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.appbartemplatesettings.compactrootmargin)
-    public var compactRootMargin : WinUI.Thickness {
-        get { try! _default.get_CompactRootMarginImpl() }
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.appbartemplatesettings.compactverticaldelta)
-    public var compactVerticalDelta : Double {
-        get { try! _default.get_CompactVerticalDeltaImpl() }
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.appbartemplatesettings.hiddenrootmargin)
-    public var hiddenRootMargin : WinUI.Thickness {
-        get { try! _default.get_HiddenRootMarginImpl() }
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.appbartemplatesettings.hiddenverticaldelta)
-    public var hiddenVerticalDelta : Double {
-        get { try! _default.get_HiddenVerticalDeltaImpl() }
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.appbartemplatesettings.minimalrootmargin)
-    public var minimalRootMargin : WinUI.Thickness {
-        get { try! _default.get_MinimalRootMarginImpl() }
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.appbartemplatesettings.minimalverticaldelta)
-    public var minimalVerticalDelta : Double {
-        get { try! _default.get_MinimalVerticalDeltaImpl() }
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.appbartemplatesettings.negativecompactverticaldelta)
-    public var negativeCompactVerticalDelta : Double {
-        get { try! _default.get_NegativeCompactVerticalDeltaImpl() }
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.appbartemplatesettings.negativehiddenverticaldelta)
-    public var negativeHiddenVerticalDelta : Double {
-        get { try! _default.get_NegativeHiddenVerticalDeltaImpl() }
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.appbartemplatesettings.negativeminimalverticaldelta)
-    public var negativeMinimalVerticalDelta : Double {
-        get { try! _default.get_NegativeMinimalVerticalDeltaImpl() }
-    }
-
-    deinit {
-        _default = nil
-    }
-}
-
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase)
 open class ButtonBase : WinUI.ContentControl {
     private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls_Primitives.IButtonBase
@@ -775,40 +694,6 @@ public final class ItemsChangedEventArgs : WinRTClass {
     /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.itemschangedeventargs.position)
     public var position : GeneratorPosition {
         get { try! _default.get_PositionImpl() }
-    }
-
-    deinit {
-        _default = nil
-    }
-}
-
-/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.listviewitemtemplatesettings)
-public final class ListViewItemTemplateSettings : WinUI.DependencyObject {
-    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls_Primitives.IListViewItemTemplateSettings
-    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIListViewItemTemplateSettings
-    private lazy var _default: SwiftABI! = getInterfaceForCaching()
-    @_spi(WinRTInternal)
-    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
-        if T.self == CABI.self {
-            return RawPointer(_default)
-        }
-        return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIListViewItemTemplateSettings>?) -> ListViewItemTemplateSettings? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
-    override public init(fromAbi: WindowsFoundation.IInspectable) {
-        super.init(fromAbi: fromAbi)
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.listviewitemtemplatesettings.dragitemscount)
-    public var dragItemsCount : Int32 {
-        get { try! _default.get_DragItemsCountImpl() }
     }
 
     deinit {
@@ -2541,45 +2426,6 @@ public final class ToggleSwitchTemplateSettings : WinUI.DependencyObject {
     }
 }
 
-/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.tooltiptemplatesettings)
-public final class ToolTipTemplateSettings : WinUI.DependencyObject {
-    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls_Primitives.IToolTipTemplateSettings
-    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIToolTipTemplateSettings
-    private lazy var _default: SwiftABI! = getInterfaceForCaching()
-    @_spi(WinRTInternal)
-    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
-        if T.self == CABI.self {
-            return RawPointer(_default)
-        }
-        return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIToolTipTemplateSettings>?) -> ToolTipTemplateSettings? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
-    override public init(fromAbi: WindowsFoundation.IInspectable) {
-        super.init(fromAbi: fromAbi)
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.tooltiptemplatesettings.fromhorizontaloffset)
-    public var fromHorizontalOffset : Double {
-        get { try! _default.get_FromHorizontalOffsetImpl() }
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.tooltiptemplatesettings.fromverticaloffset)
-    public var fromVerticalOffset : Double {
-        get { try! _default.get_FromVerticalOffsetImpl() }
-    }
-
-    deinit {
-        _default = nil
-    }
-}
-
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.zoomsnappointbase)
 open class ZoomSnapPointBase : WinUI.SnapPointBase {
     private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls_Primitives.IZoomSnapPointBase
@@ -2718,34 +2564,6 @@ extension IScrollControllerPanningInfo {
 }
 public typealias AnyIScrollControllerPanningInfo = any IScrollControllerPanningInfo
 
-/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo)
-public protocol IScrollSnapPointsInfo : WinRTInterface {
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.getirregularsnappoints)
-    func getIrregularSnapPoints(_ orientation: WinUI.Orientation, _ alignment: WinUI.SnapPointsAlignment) throws -> WindowsFoundation.AnyIVectorView<Float>!
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.getregularsnappoints)
-    func getRegularSnapPoints(_ orientation: WinUI.Orientation, _ alignment: WinUI.SnapPointsAlignment, _ offset: inout Float) throws -> Float
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.arehorizontalsnappointsregular)
-    var areHorizontalSnapPointsRegular: Bool { get }
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.areverticalsnappointsregular)
-    var areVerticalSnapPointsRegular: Bool { get }
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.horizontalsnappointschanged)
-    var horizontalSnapPointsChanged: Event<EventHandler<Any?>> { get }
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.verticalsnappointschanged)
-    var verticalSnapPointsChanged: Event<EventHandler<Any?>> { get }
-}
-
-extension IScrollSnapPointsInfo {
-    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
-        switch iid {
-            case __ABI_Microsoft_UI_Xaml_Controls_Primitives.IScrollSnapPointsInfoWrapper.IID:
-                let wrapper = __ABI_Microsoft_UI_Xaml_Controls_Primitives.IScrollSnapPointsInfoWrapper(self)
-                return wrapper!.queryInterface(iid)
-            default: return nil
-        }
-    }
-}
-public typealias AnyIScrollSnapPointsInfo = any IScrollSnapPointsInfo
-
 extension WinUI.AnimationDirection {
     public static var left : WinUI.AnimationDirection {
         __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CAnimationDirection_Left
@@ -2859,25 +2677,6 @@ extension WinUI.GeneratorDirection {
     }
 }
 extension WinUI.GeneratorDirection: @retroactive Hashable, @retroactive Codable {}
-
-extension WinUI.PlacementMode {
-    public static var bottom : WinUI.PlacementMode {
-        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CPlacementMode_Bottom
-    }
-    public static var left : WinUI.PlacementMode {
-        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CPlacementMode_Left
-    }
-    public static var mouse : WinUI.PlacementMode {
-        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CPlacementMode_Mouse
-    }
-    public static var right : WinUI.PlacementMode {
-        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CPlacementMode_Right
-    }
-    public static var top : WinUI.PlacementMode {
-        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CPlacementMode_Top
-    }
-}
-extension WinUI.PlacementMode: @retroactive Hashable, @retroactive Codable {}
 
 extension WinUI.PopupPlacementMode {
     public static var auto : WinUI.PopupPlacementMode {

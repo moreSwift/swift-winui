@@ -89,30 +89,30 @@ function Invoke-SwiftWinRT() {
         Remove-Item -Path $OutputLocation -Recurse -Force
     }
 
-    $RspParams = "-output $OutputLocation`n"
+    $RspParams = "-output ""$OutputLocation""`n"
 
     # read projections.json and for each "include" write to -include param. for each "exclude" write to -exclude param
     $Projections.Include | ForEach-Object {
-        $RspParams += "-include $_`n"
+        $RspParams += "-include ""$_""`n"
     }
     $Projections.Exclude | ForEach-Object {
-        $RspParams += "-exclude $_`n"
+        $RspParams += "-exclude ""$_""`n"
     }
 
     if ($Projections.Package) {
         Get-WinMDInputs -Package $Package | ForEach-Object {
-            $RspParams += "-input $($_.FullName)`n"
+            $RspParams += "-input ""$($_.FullName)""`n"
         }
     }
 
     $Projections.Packages | ForEach-Object {
         Get-WinMDInputs -Package $Package | ForEach-Object {
-            $RspParams += "-input $($_.FullName)`n"
+            $RspParams += "-input ""$($_.FullName)""`n"
         }
     }
     $Projections.Dependencies | ForEach-Object {
         Get-WinMDInputs -Package $Package | ForEach-Object {
-            $RspParams += "-input $($_.FullName)`n"
+            $RspParams += "-input ""$($_.FullName)""`n"
         }
     }
 

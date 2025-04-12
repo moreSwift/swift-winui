@@ -9,9 +9,18 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/thebrowsercompany/swift-cwinrt", branch: "main"),
-        .package(url: "https://github.com/thebrowsercompany/swift-uwp", branch: "main"),
-        .package(url: "https://github.com/thebrowsercompany/swift-windowsappsdk", branch: "main"),
-        .package(url: "https://github.com/thebrowsercompany/swift-windowsfoundation", branch: "main"),
+        .package(
+            url: "https://github.com/stackotter/swift-uwp",
+            branch: "6e5c0089d599fc47c7f052521e1b546e54c7dc13"
+        ),
+        .package(
+            url: "https://github.com/stackotter/swift-windowsappsdk",
+            branch: "3d3f49623663d43e49206bc8b54136862d7d69d3"
+        ),
+        .package(
+            url: "https://github.com/thebrowsercompany/swift-windowsfoundation",
+            branch: "main"
+        ),
     ],
     targets: [
         .target(

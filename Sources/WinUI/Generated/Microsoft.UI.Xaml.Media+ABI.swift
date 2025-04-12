@@ -150,10 +150,6 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CILinearGradientBrushStatics
     .init(Data1: 0xDF029E84, Data2: 0xF6BE, Data3: 0x5B7E, Data4: ( 0xBA,0x22,0x3B,0x4E,0x7A,0x6B,0xCE,0xEE ))// DF029E84-F6BE-5B7E-BA22-3B4E7A6BCEEE
 }
 
-private var IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIMediaTransportControlsThumbnailRequestedEventArgs: WindowsFoundation.IID {
-    .init(Data1: 0xFE0FFB86, Data2: 0x74B0, Data3: 0x5031, Data4: ( 0xAC,0xCC,0xB3,0x4D,0x03,0x82,0xA6,0x37 ))// FE0FFB86-74B0-5031-ACCC-B34D0382A637
-}
-
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIMicaBackdrop: WindowsFoundation.IID {
     .init(Data1: 0xC156A404, Data2: 0x3DAC, Data3: 0x593A, Data4: ( 0xB1,0xF3,0x7A,0x33,0xC2,0x89,0xDC,0x83 ))// C156A404-3DAC-593A-B1F3-7A33C289DC83
 }
@@ -1383,28 +1379,6 @@ public enum __ABI_Microsoft_UI_Xaml_Media {
                 }
             }
             return .from(abi: value)
-        }
-
-    }
-
-    public class IMediaTransportControlsThumbnailRequestedEventArgs: WindowsFoundation.IInspectable {
-        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIMediaTransportControlsThumbnailRequestedEventArgs }
-
-        internal func SetThumbnailImageImpl(_ source: UWP.AnyIInputStream?) throws {
-            let sourceWrapper = __ABI_Windows_Storage_Streams.IInputStreamWrapper(source)
-            let _source = try! sourceWrapper?.toABI { $0 }
-            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIMediaTransportControlsThumbnailRequestedEventArgs.self) { pThis in
-                try CHECKED(pThis.pointee.lpVtbl.pointee.SetThumbnailImage(pThis, _source))
-            }
-        }
-
-        internal func GetDeferralImpl() throws -> WindowsFoundation.Deferral? {
-            let (result) = try ComPtrs.initialize { resultAbi in
-                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIMediaTransportControlsThumbnailRequestedEventArgs.self) { pThis in
-                    try CHECKED(pThis.pointee.lpVtbl.pointee.GetDeferral(pThis, &resultAbi))
-                }
-            }
-            return .from(abi: result)
         }
 
     }

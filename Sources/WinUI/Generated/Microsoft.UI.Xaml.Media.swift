@@ -12,8 +12,6 @@ public typealias BrushMappingMode = __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CBrushMa
 public typealias ColorInterpolationMode = __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CColorInterpolationMode
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.elementcompositemode)
 public typealias ElementCompositeMode = __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CElementCompositeMode
-/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.fastplayfallbackbehaviour)
-public typealias FastPlayFallbackBehaviour = __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CFastPlayFallbackBehaviour
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.fillrule)
 public typealias FillRule = __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CFillRule
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.gradientspreadmethod)
@@ -1336,45 +1334,6 @@ public final class LinearGradientBrush : WinUI.GradientBrush {
         }
     }
     internal typealias Composable = IBrushOverrides
-    deinit {
-        _default = nil
-    }
-}
-
-/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.mediatransportcontrolsthumbnailrequestedeventargs)
-public final class MediaTransportControlsThumbnailRequestedEventArgs : WinRTClass {
-    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Media.IMediaTransportControlsThumbnailRequestedEventArgs
-    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIMediaTransportControlsThumbnailRequestedEventArgs
-    private lazy var _default: SwiftABI! = getInterfaceForCaching()
-    @_spi(WinRTInternal)
-    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
-        if T.self == CABI.self {
-            return RawPointer(_default)
-        }
-        return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIMediaTransportControlsThumbnailRequestedEventArgs>?) -> MediaTransportControlsThumbnailRequestedEventArgs? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
-    public init(fromAbi: WindowsFoundation.IInspectable) {
-        super.init(fromAbi)
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.mediatransportcontrolsthumbnailrequestedeventargs.setthumbnailimage)
-    public func setThumbnailImage(_ source: UWP.AnyIInputStream!) throws {
-        try _default.SetThumbnailImageImpl(source)
-    }
-
-    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.mediatransportcontrolsthumbnailrequestedeventargs.getdeferral)
-    public func getDeferral() throws -> WindowsFoundation.Deferral! {
-        try _default.GetDeferralImpl()
-    }
-
     deinit {
         _default = nil
     }
@@ -2889,19 +2848,6 @@ extension WinUI.ElementCompositeMode {
     }
 }
 extension WinUI.ElementCompositeMode: @retroactive Hashable, @retroactive Codable {}
-
-extension WinUI.FastPlayFallbackBehaviour {
-    public static var skip : WinUI.FastPlayFallbackBehaviour {
-        __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CFastPlayFallbackBehaviour_Skip
-    }
-    public static var hide : WinUI.FastPlayFallbackBehaviour {
-        __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CFastPlayFallbackBehaviour_Hide
-    }
-    public static var disable : WinUI.FastPlayFallbackBehaviour {
-        __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CFastPlayFallbackBehaviour_Disable
-    }
-}
-extension WinUI.FastPlayFallbackBehaviour: @retroactive Hashable, @retroactive Codable {}
 
 extension WinUI.FillRule {
     public static var evenOdd : WinUI.FillRule {
