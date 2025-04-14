@@ -1111,6 +1111,14 @@ fileprivate func makeAcrylicBrushFrom(abi: WindowsFoundation.IInspectable) -> An
     return AcrylicBrush(fromAbi: abi)
 }
 
+fileprivate func makeArcSegmentFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return ArcSegment(fromAbi: abi)
+}
+
+fileprivate func makeBezierSegmentFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return BezierSegment(fromAbi: abi)
+}
+
 fileprivate func makeBrushFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return Brush(fromAbi: abi)
 }
@@ -1143,6 +1151,14 @@ fileprivate func makeGeometryFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return Geometry(fromAbi: abi)
 }
 
+fileprivate func makeGeometryCollectionFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return GeometryCollection(fromAbi: abi)
+}
+
+fileprivate func makeGeometryGroupFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return GeometryGroup(fromAbi: abi)
+}
+
 fileprivate func makeGradientBrushFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return GradientBrush(fromAbi: abi)
 }
@@ -1165,6 +1181,10 @@ fileprivate func makeLineSegmentFrom(abi: WindowsFoundation.IInspectable) -> Any
 
 fileprivate func makeLinearGradientBrushFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return LinearGradientBrush(fromAbi: abi)
+}
+
+fileprivate func makeMatrixTransformFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return MatrixTransform(fromAbi: abi)
 }
 
 fileprivate func makeMicaBackdropFrom(abi: WindowsFoundation.IInspectable) -> Any {
@@ -1203,6 +1223,10 @@ fileprivate func makeProjectionFrom(abi: WindowsFoundation.IInspectable) -> Any 
     return Projection(fromAbi: abi)
 }
 
+fileprivate func makeQuadraticBezierSegmentFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return QuadraticBezierSegment(fromAbi: abi)
+}
+
 fileprivate func makeRectangleGeometryFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return RectangleGeometry(fromAbi: abi)
 }
@@ -1229,6 +1253,14 @@ fileprivate func makeThemeShadowFrom(abi: WindowsFoundation.IInspectable) -> Any
 
 fileprivate func makeTransformFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return Transform(fromAbi: abi)
+}
+
+fileprivate func makeTransformCollectionFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return TransformCollection(fromAbi: abi)
+}
+
+fileprivate func makeTransformGroupFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return TransformGroup(fromAbi: abi)
 }
 
 fileprivate func makeTranslateTransformFrom(abi: WindowsFoundation.IInspectable) -> Any {
@@ -1943,6 +1975,8 @@ public class __MakeFromAbi: MakeFromAbi {
             case "TappedRoutedEventArgs": return makeTappedRoutedEventArgsFrom(abi: abi)
             case "NotifyCollectionChangedEventArgs": return makeNotifyCollectionChangedEventArgsFrom(abi: abi)
             case "AcrylicBrush": return makeAcrylicBrushFrom(abi: abi)
+            case "ArcSegment": return makeArcSegmentFrom(abi: abi)
+            case "BezierSegment": return makeBezierSegmentFrom(abi: abi)
             case "Brush": return makeBrushFrom(abi: abi)
             case "CacheMode": return makeCacheModeFrom(abi: abi)
             case "CompositeTransform": return makeCompositeTransformFrom(abi: abi)
@@ -1951,12 +1985,15 @@ public class __MakeFromAbi: MakeFromAbi {
             case "FontFamily": return makeFontFamilyFrom(abi: abi)
             case "GeneralTransform": return makeGeneralTransformFrom(abi: abi)
             case "Geometry": return makeGeometryFrom(abi: abi)
+            case "GeometryCollection": return makeGeometryCollectionFrom(abi: abi)
+            case "GeometryGroup": return makeGeometryGroupFrom(abi: abi)
             case "GradientBrush": return makeGradientBrushFrom(abi: abi)
             case "GradientStop": return makeGradientStopFrom(abi: abi)
             case "GradientStopCollection": return makeGradientStopCollectionFrom(abi: abi)
             case "ImageSource": return makeImageSourceFrom(abi: abi)
             case "LineSegment": return makeLineSegmentFrom(abi: abi)
             case "LinearGradientBrush": return makeLinearGradientBrushFrom(abi: abi)
+            case "MatrixTransform": return makeMatrixTransformFrom(abi: abi)
             case "MicaBackdrop": return makeMicaBackdropFrom(abi: abi)
             case "PathFigure": return makePathFigureFrom(abi: abi)
             case "PathFigureCollection": return makePathFigureCollectionFrom(abi: abi)
@@ -1966,6 +2003,7 @@ public class __MakeFromAbi: MakeFromAbi {
             case "PointCollection": return makePointCollectionFrom(abi: abi)
             case "PolyBezierSegment": return makePolyBezierSegmentFrom(abi: abi)
             case "Projection": return makeProjectionFrom(abi: abi)
+            case "QuadraticBezierSegment": return makeQuadraticBezierSegmentFrom(abi: abi)
             case "RectangleGeometry": return makeRectangleGeometryFrom(abi: abi)
             case "RenderedEventArgs": return makeRenderedEventArgsFrom(abi: abi)
             case "Shadow": return makeShadowFrom(abi: abi)
@@ -1973,6 +2011,8 @@ public class __MakeFromAbi: MakeFromAbi {
             case "SystemBackdrop": return makeSystemBackdropFrom(abi: abi)
             case "ThemeShadow": return makeThemeShadowFrom(abi: abi)
             case "Transform": return makeTransformFrom(abi: abi)
+            case "TransformCollection": return makeTransformCollectionFrom(abi: abi)
+            case "TransformGroup": return makeTransformGroupFrom(abi: abi)
             case "TranslateTransform": return makeTranslateTransformFrom(abi: abi)
             case "VisualTreeHelper": return makeVisualTreeHelperFrom(abi: abi)
             case "XamlCompositionBrushBase": return makeXamlCompositionBrushBaseFrom(abi: abi)

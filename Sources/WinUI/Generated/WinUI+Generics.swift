@@ -3039,6 +3039,93 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
 }
 
+private var IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry: WindowsFoundation.IID {
+    .init(Data1: 0x9b9b662c, Data2: 0xff40, Data3: 0x5fb3, Data4: ( 0xa5,0x58,0x84,0xc2,0xff,0xab,0x90,0x37 ))// 9b9b662c-ff40-5fb3-a558-84c2ffab9037
+}
+
+internal var __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryVTable: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WinUI.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterable`1<Microsoft.UI.Xaml.Media.Geometry>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    First: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.first()
+        let resultWrapper = WinUI.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryBridge>
+internal class IIterableGeometry: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry }
+
+    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WinUI.Geometry?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
+            }
+        }
+        return WinUI.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.unwrapFrom(abi: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry
+    internal typealias SwiftABI = IIterableGeometry
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterable<WinUI.Geometry?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryImpl : IIterable, AbiInterfaceImpl {
+    typealias T = WinUI.Geometry?
+    typealias Bridge = __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.Geometry?>? {
+        try! _default.FirstImpl()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
 private var IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop: WindowsFoundation.IID {
     .init(Data1: 0x6b443031, Data2: 0x7f9f, Data3: 0x5c5a, Data4: ( 0x97,0xa9,0x3f,0xf5,0x57,0xbe,0xc5,0x86 ))// 6b443031-7f9f-5c5a-97a9-3ff557bec586
 }
@@ -3294,6 +3381,93 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.PathSegment?>? {
+        try! _default.FirstImpl()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform: WindowsFoundation.IID {
+    .init(Data1: 0x1a701f75, Data2: 0x905e, Data3: 0x59ee, Data4: ( 0x82,0xc8,0x59,0x13,0xb6,0xc3,0x83,0x02 ))// 1a701f75-905e-59ee-82c8-5913b6c38302
+}
+
+internal var __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformVTable: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WinUI.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterable`1<Microsoft.UI.Xaml.Media.Transform>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    First: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.first()
+        let resultWrapper = WinUI.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformBridge>
+internal class IIterableTransform: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform }
+
+    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WinUI.Transform?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
+            }
+        }
+        return WinUI.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.unwrapFrom(abi: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform
+    internal typealias SwiftABI = IIterableTransform
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterable<WinUI.Transform?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformImpl : IIterable, AbiInterfaceImpl {
+    typealias T = WinUI.Transform?
+    typealias Bridge = __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.Transform?>? {
         try! _default.FirstImpl()
     }
 
@@ -7793,6 +7967,134 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
 }
 
+private var IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry: WindowsFoundation.IID {
+    .init(Data1: 0x59d847f1, Data2: 0x4b1b, Data3: 0x5b2d, Data4: ( 0xa2,0xcb,0x23,0x62,0x2e,0x95,0x7d,0xc0 ))// 59d847f1-4b1b-5b2d-a2cb-23622e957dc0
+}
+
+internal var __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryVTable: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WinUI.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterator`1<Microsoft.UI.Xaml.Media.Geometry>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    get_Current: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.current
+        result?.copyTo($1)
+        return S_OK
+    },
+
+    get_HasCurrent: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.hasCurrent
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    MoveNext: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.moveNext()
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+)
+typealias __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryBridge>
+internal class IIteratorGeometry: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry }
+
+    internal func get_CurrentImpl() throws -> WinUI.Geometry? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
+            }
+        }
+        return .from(abi: result)
+    }
+
+    internal func get_HasCurrentImpl() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+    internal func MoveNextImpl() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry
+    internal typealias SwiftABI = IIteratorGeometry
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterator<WinUI.Geometry?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryImpl : IIterator, AbiInterfaceImpl {
+    typealias T = WinUI.Geometry?
+    typealias Bridge = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
+    fileprivate func moveNext() -> Bool {
+        try! _default.MoveNextImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
+    fileprivate var current : WinUI.Geometry? {
+        get { try! _default.get_CurrentImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
+    fileprivate var hasCurrent : Bool {
+        get { try! _default.get_HasCurrentImpl() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
 private var IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop: WindowsFoundation.IID {
     .init(Data1: 0x42d46f68, Data2: 0xdf94, Data3: 0x58f9, Data4: ( 0x8c,0xdf,0x3d,0x40,0x3e,0x7d,0xd1,0xd3 ))// 42d46f68-df94-58f9-8cdf-3d403e7dd1d3
 }
@@ -8166,6 +8468,134 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WinUI.PathSegment? {
+        get { try! _default.get_CurrentImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
+    fileprivate var hasCurrent : Bool {
+        get { try! _default.get_HasCurrentImpl() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform: WindowsFoundation.IID {
+    .init(Data1: 0x5ab75535, Data2: 0x9fba, Data3: 0x54cc, Data4: ( 0x9d,0xb3,0x3f,0xb6,0xc0,0xe4,0xab,0xf5 ))// 5ab75535-9fba-54cc-9db3-3fb6c0e4abf5
+}
+
+internal var __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformVTable: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WinUI.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterator`1<Microsoft.UI.Xaml.Media.Transform>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    get_Current: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.current
+        result?.copyTo($1)
+        return S_OK
+    },
+
+    get_HasCurrent: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.hasCurrent
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    MoveNext: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.moveNext()
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+)
+typealias __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformBridge>
+internal class IIteratorTransform: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform }
+
+    internal func get_CurrentImpl() throws -> WinUI.Transform? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
+            }
+        }
+        return .from(abi: result)
+    }
+
+    internal func get_HasCurrentImpl() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+    internal func MoveNextImpl() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform
+    internal typealias SwiftABI = IIteratorTransform
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterator<WinUI.Transform?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformImpl : IIterator, AbiInterfaceImpl {
+    typealias T = WinUI.Transform?
+    typealias Bridge = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
+    fileprivate func moveNext() -> Bool {
+        try! _default.MoveNextImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
+    fileprivate var current : WinUI.Transform? {
         get { try! _default.get_CurrentImpl() }
     }
 
@@ -14871,6 +15301,166 @@ fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMed
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
 }
 
+private var IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry: WindowsFoundation.IID {
+    .init(Data1: 0x6149b1f9, Data2: 0x59ab, Data3: 0x52aa, Data4: ( 0x8a,0x45,0x26,0x75,0x5d,0xca,0x5b,0x90 ))// 6149b1f9-59ab-52aa-8a45-26755dca5b90
+}
+
+internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryVTable: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WinUI.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.IID
+        iids[3] = WinUI.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IVectorView`1<Microsoft.UI.Xaml.Media.Geometry>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    GetAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let result = __unwrapped__instance.getAt(index)
+        result?.copyTo($2)
+        return S_OK
+    },
+
+    get_Size: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.size
+        $1?.initialize(to: result)
+        return S_OK
+    },
+
+    IndexOf: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let value: WinUI.Geometry? = .from(abi: ComPtr($1))
+        var index: UInt32 = 0
+        let result = __unwrapped__instance.indexOf(value, &index)
+        $2?.initialize(to: index)
+        $3?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) }
+)
+typealias __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryBridge>
+internal class IVectorViewGeometry: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry }
+
+    internal func GetAtImpl(_ index: UInt32) throws -> WinUI.Geometry? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
+            }
+        }
+        return .from(abi: result)
+    }
+
+    internal func get_SizeImpl() throws -> UInt32 {
+        var result: UINT32 = 0
+        _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
+        }
+        return result
+    }
+
+    internal func IndexOfImpl(_ value: WinUI.Geometry?, _ index: inout UInt32) throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
+        }
+        return .init(from: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry
+    internal typealias SwiftABI = IVectorViewGeometry
+    internal typealias SwiftProjection = WindowsFoundation.AnyIVectorView<WinUI.Geometry?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryImpl : IVectorView, AbiInterfaceImpl {
+    typealias T = WinUI.Geometry?
+    typealias Bridge = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: Collection
+    typealias Element = T
+    var startIndex: Int { 0 }
+    var endIndex: Int { Int(size) }
+    func index(after i: Int) -> Int {
+        i+1
+    }
+
+    func index(of: Element) -> Int? {
+        var index: UInt32 = 0
+        let result = indexOf(of, &index)
+        guard result else { return nil }
+        return Int(index)
+    }
+    var count: Int { Int(size) }
+
+    subscript(position: Int) -> Element {
+        get {
+            getAt(UInt32(position))
+        }
+    }
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
+    fileprivate func getAt(_ index: UInt32) -> WinUI.Geometry? {
+        try! _default.GetAtImpl(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
+    fileprivate func indexOf(_ value: WinUI.Geometry?, _ index: inout UInt32) -> Bool {
+        try! _default.IndexOfImpl(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
+    fileprivate var size : UInt32 {
+        get { try! _default.get_SizeImpl() }
+    }
+
+    private lazy var _IIterable: IIterableGeometry! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.Geometry?>? {
+        try! _IIterable.FirstImpl()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
 private var IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop: WindowsFoundation.IID {
     .init(Data1: 0x48c5bc90, Data2: 0x5bf9, Data3: 0x50ee, Data4: ( 0xae,0x5d,0x07,0x90,0xf7,0xb8,0x1f,0x49 ))// 48c5bc90-5bf9-50ee-ae5d-0790f7b81f49
 }
@@ -15345,6 +15935,166 @@ fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMed
     private lazy var _IIterable: IIterablePathSegment! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.PathSegment?>? {
+        try! _IIterable.FirstImpl()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform: WindowsFoundation.IID {
+    .init(Data1: 0x00ec5143, Data2: 0x06da, Data3: 0x5002, Data4: ( 0x8c,0x66,0xda,0xc9,0x78,0x95,0x9f,0xce ))// 00ec5143-06da-5002-8c66-dac978959fce
+}
+
+internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformVTable: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WinUI.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.IID
+        iids[3] = WinUI.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IVectorView`1<Microsoft.UI.Xaml.Media.Transform>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    GetAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let result = __unwrapped__instance.getAt(index)
+        result?.copyTo($2)
+        return S_OK
+    },
+
+    get_Size: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.size
+        $1?.initialize(to: result)
+        return S_OK
+    },
+
+    IndexOf: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let value: WinUI.Transform? = .from(abi: ComPtr($1))
+        var index: UInt32 = 0
+        let result = __unwrapped__instance.indexOf(value, &index)
+        $2?.initialize(to: index)
+        $3?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) }
+)
+typealias __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformBridge>
+internal class IVectorViewTransform: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform }
+
+    internal func GetAtImpl(_ index: UInt32) throws -> WinUI.Transform? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
+            }
+        }
+        return .from(abi: result)
+    }
+
+    internal func get_SizeImpl() throws -> UInt32 {
+        var result: UINT32 = 0
+        _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
+        }
+        return result
+    }
+
+    internal func IndexOfImpl(_ value: WinUI.Transform?, _ index: inout UInt32) throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
+        }
+        return .init(from: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform
+    internal typealias SwiftABI = IVectorViewTransform
+    internal typealias SwiftProjection = WindowsFoundation.AnyIVectorView<WinUI.Transform?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformImpl : IVectorView, AbiInterfaceImpl {
+    typealias T = WinUI.Transform?
+    typealias Bridge = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: Collection
+    typealias Element = T
+    var startIndex: Int { 0 }
+    var endIndex: Int { Int(size) }
+    func index(after i: Int) -> Int {
+        i+1
+    }
+
+    func index(of: Element) -> Int? {
+        var index: UInt32 = 0
+        let result = indexOf(of, &index)
+        guard result else { return nil }
+        return Int(index)
+    }
+    var count: Int { Int(size) }
+
+    subscript(position: Int) -> Element {
+        get {
+            getAt(UInt32(position))
+        }
+    }
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
+    fileprivate func getAt(_ index: UInt32) -> WinUI.Transform? {
+        try! _default.GetAtImpl(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
+    fileprivate func indexOf(_ value: WinUI.Transform?, _ index: inout UInt32) -> Bool {
+        try! _default.IndexOfImpl(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
+    fileprivate var size : UInt32 {
+        get { try! _default.get_SizeImpl() }
+    }
+
+    private lazy var _IIterable: IIterableTransform! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.Transform?>? {
         try! _IIterable.FirstImpl()
     }
 
@@ -24302,6 +25052,307 @@ fileprivate class __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
 }
 
+private var IID___x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry: WindowsFoundation.IID {
+    .init(Data1: 0x62e3ccc0, Data2: 0x41e4, Data3: 0x5903, Data4: ( 0x93,0x3b,0xff,0x91,0x18,0xb1,0x0f,0xfd ))// 62e3ccc0-41e4-5903-933b-ff9118b10ffd
+}
+
+internal var __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryVTable: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WinUI.__x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.IID
+        iids[3] = WinUI.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IVector`1<Microsoft.UI.Xaml.Media.Geometry>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    GetAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let result = __unwrapped__instance.getAt(index)
+        result?.copyTo($2)
+        return S_OK
+    },
+
+    get_Size: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.size
+        $1?.initialize(to: result)
+        return S_OK
+    },
+
+    GetView: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.getView()
+        let resultWrapper = WinUI.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    },
+
+    IndexOf: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let value: WinUI.Geometry? = .from(abi: ComPtr($1))
+        var index: UInt32 = 0
+        let result = __unwrapped__instance.indexOf(value, &index)
+        $2?.initialize(to: index)
+        $3?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    SetAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let value: WinUI.Geometry? = .from(abi: ComPtr($2))
+        __unwrapped__instance.setAt(index, value)
+        return S_OK
+    },
+
+    InsertAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let value: WinUI.Geometry? = .from(abi: ComPtr($2))
+        __unwrapped__instance.insertAt(index, value)
+        return S_OK
+    },
+
+    RemoveAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        __unwrapped__instance.removeAt(index)
+        return S_OK
+    },
+
+    Append: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let value: WinUI.Geometry? = .from(abi: ComPtr($1))
+        __unwrapped__instance.append(value)
+        return S_OK
+    },
+
+    RemoveAtEnd: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        __unwrapped__instance.removeAtEnd()
+        return S_OK
+    },
+
+    Clear: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        __unwrapped__instance.clear()
+        return S_OK
+    },
+
+    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) },
+
+    ReplaceAll: { _, _, _ in return failWith(err: E_NOTIMPL) }
+)
+typealias __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryBridge>
+internal class IVectorGeometry: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry }
+
+    internal func GetAtImpl(_ index: UInt32) throws -> WinUI.Geometry? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
+            }
+        }
+        return .from(abi: result)
+    }
+
+    internal func get_SizeImpl() throws -> UInt32 {
+        var result: UINT32 = 0
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
+        }
+        return result
+    }
+
+    internal func GetViewImpl() throws -> WindowsFoundation.AnyIVectorView<WinUI.Geometry?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetView(pThis, &resultAbi))
+            }
+        }
+        return WinUI.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryWrapper.unwrapFrom(abi: result)
+    }
+
+    internal func IndexOfImpl(_ value: WinUI.Geometry?, _ index: inout UInt32) throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
+        }
+        return .init(from: result)
+    }
+
+    internal func SetAtImpl(_ index: UInt32, _ value: WinUI.Geometry?) throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.SetAt(pThis, index, RawPointer(value)))
+        }
+    }
+
+    internal func InsertAtImpl(_ index: UInt32, _ value: WinUI.Geometry?) throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.InsertAt(pThis, index, RawPointer(value)))
+        }
+    }
+
+    internal func RemoveAtImpl(_ index: UInt32) throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.RemoveAt(pThis, index))
+        }
+    }
+
+    internal func AppendImpl(_ value: WinUI.Geometry?) throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Append(pThis, RawPointer(value)))
+        }
+    }
+
+    internal func RemoveAtEndImpl() throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.RemoveAtEnd(pThis))
+        }
+    }
+
+    internal func ClearImpl() throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Clear(pThis))
+        }
+    }
+
+}
+
+internal enum __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometry
+    internal typealias SwiftABI = IVectorGeometry
+    internal typealias SwiftProjection = WindowsFoundation.AnyIVector<WinUI.Geometry?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryImpl : IVector, AbiInterfaceImpl {
+    typealias T = WinUI.Geometry?
+    typealias Bridge = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGeometryBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: Collection
+    typealias Element = T
+    var startIndex: Int { 0 }
+    var endIndex: Int { Int(size) }
+    func index(after i: Int) -> Int {
+        i+1
+    }
+
+    func index(of: Element) -> Int? {
+        var index: UInt32 = 0
+        let result = indexOf(of, &index)
+        guard result else { return nil }
+        return Int(index)
+    }
+    var count: Int { Int(size) }
+
+
+    subscript(position: Int) -> Element {
+        get {
+            getAt(UInt32(position))
+        }
+        set(newValue) {
+            setAt(UInt32(position), newValue)
+        }
+    }
+
+    func removeLast() {
+        removeAtEnd()
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getat)
+    fileprivate func getAt(_ index: UInt32) -> WinUI.Geometry? {
+        try! _default.GetAtImpl(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getview)
+    fileprivate func getView() -> WindowsFoundation.AnyIVectorView<WinUI.Geometry?>? {
+        try! _default.GetViewImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.indexof)
+    fileprivate func indexOf(_ value: WinUI.Geometry?, _ index: inout UInt32) -> Bool {
+        try! _default.IndexOfImpl(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.setat)
+    fileprivate func setAt(_ index: UInt32, _ value: WinUI.Geometry?) {
+        try! _default.SetAtImpl(index, value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.insertat)
+    fileprivate func insertAt(_ index: UInt32, _ value: WinUI.Geometry?) {
+        try! _default.InsertAtImpl(index, value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.removeat)
+    fileprivate func removeAt(_ index: UInt32) {
+        try! _default.RemoveAtImpl(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.append)
+    fileprivate func append(_ value: WinUI.Geometry?) {
+        try! _default.AppendImpl(value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.removeatend)
+    fileprivate func removeAtEnd() {
+        try! _default.RemoveAtEndImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.clear)
+    fileprivate func clear() {
+        try! _default.ClearImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.size)
+    fileprivate var size : UInt32 {
+        get { try! _default.get_SizeImpl() }
+    }
+
+    private lazy var _IIterable: IIterableGeometry! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.Geometry?>? {
+        try! _IIterable.FirstImpl()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
 private var IID___x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop: WindowsFoundation.IID {
     .init(Data1: 0xa367363d, Data2: 0xdeaf, Data3: 0x5d2c, Data4: ( 0x90,0x9c,0x41,0xb0,0xf2,0x59,0xba,0x7c ))// a367363d-deaf-5d2c-909c-41b0f259ba7c
 }
@@ -25199,6 +26250,307 @@ fileprivate class __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__
     private lazy var _IIterable: IIterablePathSegment! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.PathSegment?>? {
+        try! _IIterable.FirstImpl()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform: WindowsFoundation.IID {
+    .init(Data1: 0x1e1aebf2, Data2: 0xbc80, Data3: 0x501f, Data4: ( 0x94,0x04,0xe0,0x75,0x6a,0x42,0x33,0x55 ))// 1e1aebf2-bc80-501f-9404-e0756a423355
+}
+
+internal var __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformVTable: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WinUI.__x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.IID
+        iids[3] = WinUI.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IVector`1<Microsoft.UI.Xaml.Media.Transform>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    GetAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let result = __unwrapped__instance.getAt(index)
+        result?.copyTo($2)
+        return S_OK
+    },
+
+    get_Size: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.size
+        $1?.initialize(to: result)
+        return S_OK
+    },
+
+    GetView: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.getView()
+        let resultWrapper = WinUI.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    },
+
+    IndexOf: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let value: WinUI.Transform? = .from(abi: ComPtr($1))
+        var index: UInt32 = 0
+        let result = __unwrapped__instance.indexOf(value, &index)
+        $2?.initialize(to: index)
+        $3?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    SetAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let value: WinUI.Transform? = .from(abi: ComPtr($2))
+        __unwrapped__instance.setAt(index, value)
+        return S_OK
+    },
+
+    InsertAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let value: WinUI.Transform? = .from(abi: ComPtr($2))
+        __unwrapped__instance.insertAt(index, value)
+        return S_OK
+    },
+
+    RemoveAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        __unwrapped__instance.removeAt(index)
+        return S_OK
+    },
+
+    Append: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let value: WinUI.Transform? = .from(abi: ComPtr($1))
+        __unwrapped__instance.append(value)
+        return S_OK
+    },
+
+    RemoveAtEnd: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        __unwrapped__instance.removeAtEnd()
+        return S_OK
+    },
+
+    Clear: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        __unwrapped__instance.clear()
+        return S_OK
+    },
+
+    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) },
+
+    ReplaceAll: { _, _, _ in return failWith(err: E_NOTIMPL) }
+)
+typealias __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformBridge>
+internal class IVectorTransform: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform }
+
+    internal func GetAtImpl(_ index: UInt32) throws -> WinUI.Transform? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
+            }
+        }
+        return .from(abi: result)
+    }
+
+    internal func get_SizeImpl() throws -> UInt32 {
+        var result: UINT32 = 0
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
+        }
+        return result
+    }
+
+    internal func GetViewImpl() throws -> WindowsFoundation.AnyIVectorView<WinUI.Transform?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetView(pThis, &resultAbi))
+            }
+        }
+        return WinUI.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformWrapper.unwrapFrom(abi: result)
+    }
+
+    internal func IndexOfImpl(_ value: WinUI.Transform?, _ index: inout UInt32) throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
+        }
+        return .init(from: result)
+    }
+
+    internal func SetAtImpl(_ index: UInt32, _ value: WinUI.Transform?) throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.SetAt(pThis, index, RawPointer(value)))
+        }
+    }
+
+    internal func InsertAtImpl(_ index: UInt32, _ value: WinUI.Transform?) throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.InsertAt(pThis, index, RawPointer(value)))
+        }
+    }
+
+    internal func RemoveAtImpl(_ index: UInt32) throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.RemoveAt(pThis, index))
+        }
+    }
+
+    internal func AppendImpl(_ value: WinUI.Transform?) throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Append(pThis, RawPointer(value)))
+        }
+    }
+
+    internal func RemoveAtEndImpl() throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.RemoveAtEnd(pThis))
+        }
+    }
+
+    internal func ClearImpl() throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Clear(pThis))
+        }
+    }
+
+}
+
+internal enum __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransform
+    internal typealias SwiftABI = IVectorTransform
+    internal typealias SwiftProjection = WindowsFoundation.AnyIVector<WinUI.Transform?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformImpl : IVector, AbiInterfaceImpl {
+    typealias T = WinUI.Transform?
+    typealias Bridge = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CTransformBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: Collection
+    typealias Element = T
+    var startIndex: Int { 0 }
+    var endIndex: Int { Int(size) }
+    func index(after i: Int) -> Int {
+        i+1
+    }
+
+    func index(of: Element) -> Int? {
+        var index: UInt32 = 0
+        let result = indexOf(of, &index)
+        guard result else { return nil }
+        return Int(index)
+    }
+    var count: Int { Int(size) }
+
+
+    subscript(position: Int) -> Element {
+        get {
+            getAt(UInt32(position))
+        }
+        set(newValue) {
+            setAt(UInt32(position), newValue)
+        }
+    }
+
+    func removeLast() {
+        removeAtEnd()
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getat)
+    fileprivate func getAt(_ index: UInt32) -> WinUI.Transform? {
+        try! _default.GetAtImpl(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getview)
+    fileprivate func getView() -> WindowsFoundation.AnyIVectorView<WinUI.Transform?>? {
+        try! _default.GetViewImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.indexof)
+    fileprivate func indexOf(_ value: WinUI.Transform?, _ index: inout UInt32) -> Bool {
+        try! _default.IndexOfImpl(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.setat)
+    fileprivate func setAt(_ index: UInt32, _ value: WinUI.Transform?) {
+        try! _default.SetAtImpl(index, value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.insertat)
+    fileprivate func insertAt(_ index: UInt32, _ value: WinUI.Transform?) {
+        try! _default.InsertAtImpl(index, value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.removeat)
+    fileprivate func removeAt(_ index: UInt32) {
+        try! _default.RemoveAtImpl(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.append)
+    fileprivate func append(_ value: WinUI.Transform?) {
+        try! _default.AppendImpl(value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.removeatend)
+    fileprivate func removeAtEnd() {
+        try! _default.RemoveAtEndImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.clear)
+    fileprivate func clear() {
+        try! _default.ClearImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.size)
+    fileprivate var size : UInt32 {
+        get { try! _default.get_SizeImpl() }
+    }
+
+    private lazy var _IIterable: IIterableTransform! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.Transform?>? {
         try! _IIterable.FirstImpl()
     }
 
