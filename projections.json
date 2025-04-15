@@ -55,6 +55,7 @@
     "Microsoft.UI.Xaml.Media.AcrylicBrush",
     "Microsoft.UI.Xaml.Media.CompositeTransform",
     "Microsoft.UI.Xaml.Media.CompositionTarget",
+    "Microsoft.UI.Xaml.Media.EllipseGeometry",
     "Microsoft.UI.Xaml.Media.GeometryCollection",
     "Microsoft.UI.Xaml.Media.GeometryGroup",
     "Microsoft.UI.Xaml.Media.GradientStop",

@@ -1139,6 +1139,10 @@ fileprivate func makeDoubleCollectionFrom(abi: WindowsFoundation.IInspectable) -
     return DoubleCollection(fromAbi: abi)
 }
 
+fileprivate func makeEllipseGeometryFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return EllipseGeometry(fromAbi: abi)
+}
+
 fileprivate func makeFontFamilyFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return FontFamily(fromAbi: abi)
 }
@@ -1982,6 +1986,7 @@ public class __MakeFromAbi: MakeFromAbi {
             case "CompositeTransform": return makeCompositeTransformFrom(abi: abi)
             case "CompositionTarget": return makeCompositionTargetFrom(abi: abi)
             case "DoubleCollection": return makeDoubleCollectionFrom(abi: abi)
+            case "EllipseGeometry": return makeEllipseGeometryFrom(abi: abi)
             case "FontFamily": return makeFontFamilyFrom(abi: abi)
             case "GeneralTransform": return makeGeneralTransformFrom(abi: abi)
             case "Geometry": return makeGeometryFrom(abi: abi)

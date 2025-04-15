@@ -82,6 +82,14 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CICompositionTargetStatics: 
     .init(Data1: 0x12A4BE6F, Data2: 0x6DB1, Data3: 0x5165, Data4: ( 0xB6,0x22,0xD5,0x7A,0xB7,0x82,0x74,0x5B ))// 12A4BE6F-6DB1-5165-B622-D57AB782745B
 }
 
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometry: WindowsFoundation.IID {
+    .init(Data1: 0xABABD262, Data2: 0xD8E4, Data3: 0x5B49, Data4: ( 0xBC,0xE9,0x01,0x08,0xA5,0x20,0x9D,0x45 ))// ABABD262-D8E4-5B49-BCE9-0108A5209D45
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometryStatics: WindowsFoundation.IID {
+    .init(Data1: 0xE8A33C80, Data2: 0xD72F, Data3: 0x5248, Data4: ( 0xA7,0x1F,0x4B,0x70,0xA0,0x75,0x7F,0x89 ))// E8A33C80-D72F-5248-A71F-4B70A0757F89
+}
+
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIFontFamily: WindowsFoundation.IID {
     .init(Data1: 0x18FA5BC1, Data2: 0x7294, Data3: 0x527C, Data4: ( 0xBB,0x02,0xB2,0x13,0xE0,0xB3,0xA2,0xA3 ))// 18FA5BC1-7294-527C-BB02-B213E0B3A2A3
 }
@@ -1141,6 +1149,85 @@ public enum __ABI_Microsoft_UI_Xaml_Media {
                 }
             }
             return .from(abi: result)
+        }
+
+    }
+
+    public class IEllipseGeometry: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometry }
+
+        internal func get_CenterImpl() throws -> WindowsFoundation.Point {
+            var value: __x_ABI_CWindows_CFoundation_CPoint = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometry.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Center(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        internal func put_CenterImpl(_ value: WindowsFoundation.Point) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometry.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_Center(pThis, .from(swift: value)))
+            }
+        }
+
+        internal func get_RadiusXImpl() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometry.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_RadiusX(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_RadiusXImpl(_ value: Double) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometry.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_RadiusX(pThis, value))
+            }
+        }
+
+        internal func get_RadiusYImpl() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometry.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_RadiusY(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_RadiusYImpl(_ value: Double) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometry.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_RadiusY(pThis, value))
+            }
+        }
+
+    }
+
+    public class IEllipseGeometryStatics: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometryStatics }
+
+        internal func get_CenterPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometryStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_CenterProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_RadiusXPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometryStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_RadiusXProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_RadiusYPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometryStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_RadiusYProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
         }
 
     }

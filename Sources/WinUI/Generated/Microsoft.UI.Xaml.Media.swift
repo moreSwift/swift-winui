@@ -794,6 +794,73 @@ public final class DoubleCollection : WinRTClass, IVector, IIterable {
     }
 }
 
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.ellipsegeometry)
+public final class EllipseGeometry : WinUI.Geometry {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Media.IEllipseGeometry
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometry
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIEllipseGeometry>?) -> EllipseGeometry? {
+        guard let abi = abi else { return nil }
+        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    public init() {
+        super.init(fromAbi: try! RoActivateInstance(HString("Microsoft.UI.Xaml.Media.EllipseGeometry")))
+    }
+
+    private static let _IEllipseGeometryStatics: __ABI_Microsoft_UI_Xaml_Media.IEllipseGeometryStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Media.EllipseGeometry"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.ellipsegeometry.centerproperty)
+    public static var centerProperty : WinUI.DependencyProperty! {
+        get { try! _IEllipseGeometryStatics.get_CenterPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.ellipsegeometry.radiusxproperty)
+    public static var radiusXProperty : WinUI.DependencyProperty! {
+        get { try! _IEllipseGeometryStatics.get_RadiusXPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.ellipsegeometry.radiusyproperty)
+    public static var radiusYProperty : WinUI.DependencyProperty! {
+        get { try! _IEllipseGeometryStatics.get_RadiusYPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.ellipsegeometry.center)
+    public var center : WindowsFoundation.Point {
+        get { try! _default.get_CenterImpl() }
+        set { try! _default.put_CenterImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.ellipsegeometry.radiusx)
+    public var radiusX : Double {
+        get { try! _default.get_RadiusXImpl() }
+        set { try! _default.put_RadiusXImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.ellipsegeometry.radiusy)
+    public var radiusY : Double {
+        get { try! _default.get_RadiusYImpl() }
+        set { try! _default.put_RadiusYImpl(newValue) }
+    }
+
+    deinit {
+        _default = nil
+    }
+}
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.fontfamily)
 open class FontFamily : WinRTClass {
     private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Media.IFontFamily
