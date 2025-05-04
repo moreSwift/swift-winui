@@ -61,6 +61,10 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIItemsChange
     .init(Data1: 0xB2BA1610, Data2: 0x0E96, Data3: 0x538A, Data4: ( 0x97,0x8F,0xEC,0x0B,0x37,0x19,0x32,0x28 ))// B2BA1610-0E96-538A-978F-EC0B37193228
 }
 
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIListViewItemTemplateSettings: WindowsFoundation.IID {
+    .init(Data1: 0x6E302714, Data2: 0x2955, Data3: 0x5961, Data4: ( 0x94,0xED,0x5D,0x0C,0x0C,0x1D,0x0B,0x07 ))// 6E302714-2955-5961-94ED-5D0C0C1D0B07
+}
+
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutItemTemplateSettings: WindowsFoundation.IID {
     .init(Data1: 0xFA7B8B1F, Data2: 0x020D, Data3: 0x58EC, Data4: ( 0x86,0x58,0xF2,0xCE,0x97,0x31,0x00,0x51 ))// FA7B8B1F-020D-58EC-8658-F2CE97310051
 }
@@ -1066,6 +1070,19 @@ public enum __ABI_Microsoft_UI_Xaml_Controls_Primitives {
             var value: INT32 = 0
             _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIItemsChangedEventArgs.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_ItemUICount(pThis, &value))
+            }
+            return value
+        }
+
+    }
+
+    public class IListViewItemTemplateSettings: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIListViewItemTemplateSettings }
+
+        internal func get_DragItemsCountImpl() throws -> Int32 {
+            var value: INT32 = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIListViewItemTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_DragItemsCount(pThis, &value))
             }
             return value
         }

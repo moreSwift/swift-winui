@@ -410,6 +410,10 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIKeyIndexMapping: Window
     .init(Data1: 0xB1F3BBA0, Data2: 0x108E, Data3: 0x560D, Data4: ( 0x96,0x81,0x26,0x39,0x1B,0x4B,0xC3,0x0D ))// B1F3BBA0-108E-560D-9681-26391B4BC30D
 }
 
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListView: WindowsFoundation.IID {
+    .init(Data1: 0xF6015DB1, Data2: 0xDF63, Data3: 0x52FD, Data4: ( 0xA1,0x64,0x0D,0xF4,0x47,0x15,0xEE,0x0A ))// F6015DB1-DF63-52FD-A164-0DF44715EE0A
+}
+
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewBase: WindowsFoundation.IID {
     .init(Data1: 0x775C57AC, Data2: 0xABCE, Data3: 0x5BEB, Data4: ( 0x8E,0x34,0x3B,0x81,0x58,0xAE,0xDD,0x80 ))// 775C57AC-ABCE-5BEB-8E34-3B8158AEDD80
 }
@@ -428,6 +432,18 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewBaseHeaderItemF
 
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewBaseStatics: WindowsFoundation.IID {
     .init(Data1: 0xB8487E94, Data2: 0x010F, Data3: 0x56D4, Data4: ( 0x9F,0x76,0x94,0xBF,0x8C,0x46,0x27,0x45 ))// B8487E94-010F-56D4-9F76-94BF8C462745
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewFactory: WindowsFoundation.IID {
+    .init(Data1: 0x03EBEFB8, Data2: 0xF64A, Data3: 0x5BF9, Data4: ( 0x95,0x70,0xCB,0x09,0xEE,0xEA,0x23,0x35 ))// 03EBEFB8-F64A-5BF9-9570-CB09EEEA2335
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewItem: WindowsFoundation.IID {
+    .init(Data1: 0x05FE41C2, Data2: 0x0451, Data3: 0x5D38, Data4: ( 0x9C,0x55,0x5D,0x10,0xCF,0xD0,0x88,0x89 ))// 05FE41C2-0451-5D38-9C55-5D10CFD08889
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewItemFactory: WindowsFoundation.IID {
+    .init(Data1: 0xD9F4D0B8, Data2: 0xEE59, Data3: 0x5036, Data4: ( 0xBD,0x7A,0x7C,0x89,0xCF,0x0B,0xC2,0xAC ))// D9F4D0B8-EE59-5036-BD7A-7C89CF0BC2AC
 }
 
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIMenuBar: WindowsFoundation.IID {
@@ -6989,6 +7005,11 @@ public enum __ABI_Microsoft_UI_Xaml_Controls {
     )
 
     public typealias IKeyIndexMappingWrapper = InterfaceWrapperBase<__IMPL_Microsoft_UI_Xaml_Controls.IKeyIndexMappingBridge>
+    public class IListView: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListView }
+
+    }
+
     public class IListViewBase: WindowsFoundation.IInspectable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewBase }
 
@@ -7670,6 +7691,56 @@ public enum __ABI_Microsoft_UI_Xaml_Controls {
                 }
             }
             return .from(abi: value)
+        }
+
+    }
+
+    public class IListViewFactory: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewFactory }
+
+        internal func CreateInstanceImpl(_ baseInterface: UnsealedWinRTClassWrapper<WinUI.ListView.Composable>?, _ innerInterface: inout WindowsFoundation.IInspectable?) throws -> IListView {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                let _baseInterface = baseInterface?.toIInspectableABI { $0 }
+                let (_innerInterface) = try ComPtrs.initialize { _innerInterfaceAbi in
+                    _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewFactory.self) { pThis in
+                        try CHECKED(pThis.pointee.lpVtbl.pointee.CreateInstance(pThis, _baseInterface, &_innerInterfaceAbi, &valueAbi))
+                    }
+                }
+                innerInterface = WindowsFoundation.IInspectable(_innerInterface!)
+            }
+            return IListView(value!)
+        }
+
+    }
+
+    public class IListViewItem: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewItem }
+
+        internal func get_TemplateSettingsImpl() throws -> WinUI.ListViewItemTemplateSettings? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewItem.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_TemplateSettings(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+    }
+
+    public class IListViewItemFactory: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewItemFactory }
+
+        internal func CreateInstanceImpl(_ baseInterface: UnsealedWinRTClassWrapper<WinUI.ListViewItem.Composable>?, _ innerInterface: inout WindowsFoundation.IInspectable?) throws -> IListViewItem {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                let _baseInterface = baseInterface?.toIInspectableABI { $0 }
+                let (_innerInterface) = try ComPtrs.initialize { _innerInterfaceAbi in
+                    _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewItemFactory.self) { pThis in
+                        try CHECKED(pThis.pointee.lpVtbl.pointee.CreateInstance(pThis, _baseInterface, &_innerInterfaceAbi, &valueAbi))
+                    }
+                }
+                innerInterface = WindowsFoundation.IInspectable(_innerInterface!)
+            }
+            return IListViewItem(value!)
         }
 
     }

@@ -701,6 +701,40 @@ public final class ItemsChangedEventArgs : WinRTClass {
     }
 }
 
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.listviewitemtemplatesettings)
+public final class ListViewItemTemplateSettings : WinUI.DependencyObject {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls_Primitives.IListViewItemTemplateSettings
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIListViewItemTemplateSettings
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIListViewItemTemplateSettings>?) -> ListViewItemTemplateSettings? {
+        guard let abi = abi else { return nil }
+        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.listviewitemtemplatesettings.dragitemscount)
+    public var dragItemsCount : Int32 {
+        get { try! _default.get_DragItemsCountImpl() }
+    }
+
+    deinit {
+        _default = nil
+    }
+}
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.menuflyoutitemtemplatesettings)
 public final class MenuFlyoutItemTemplateSettings : WinUI.DependencyObject {
     private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls_Primitives.IMenuFlyoutItemTemplateSettings

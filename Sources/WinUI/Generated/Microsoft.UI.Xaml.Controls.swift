@@ -5213,6 +5213,64 @@ public final class ItemsPanelTemplate : WinUI.FrameworkTemplate {
     }
 }
 
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview)
+open class ListView : WinUI.ListViewBase {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IListView
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListView
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListView>?) -> ListView? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _IListViewFactory : __ABI_Microsoft_UI_Xaml_Controls.IListViewFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.ListView"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._IListViewFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    internal enum IItemsControlOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIItemsControlOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IItemsControlOverrides
+        internal typealias Class = ListView
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListView
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IListView
+        }
+    }
+    internal typealias Composable = IItemsControlOverrides
+    deinit {
+        _default = nil
+    }
+}
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase)
 open class ListViewBase : WinUI.Selector, ISemanticZoomInformation {
     private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IListViewBase
@@ -5722,6 +5780,69 @@ open class ListViewBaseHeaderItem : WinUI.ContentControl {
         internal enum Default : AbiInterface {
             internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewBaseHeaderItem
             internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IListViewBaseHeaderItem
+        }
+    }
+    internal typealias Composable = IContentControlOverrides
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewitem)
+open class ListViewItem : WinUI.SelectorItem {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IListViewItem
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewItem
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewItem>?) -> ListViewItem? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _IListViewItemFactory : __ABI_Microsoft_UI_Xaml_Controls.IListViewItemFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.ListViewItem"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._IListViewItemFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewitem.templatesettings)
+    public var templateSettings : WinUI.ListViewItemTemplateSettings! {
+        get { try! _default.get_TemplateSettingsImpl() }
+    }
+
+    internal enum IContentControlOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIContentControlOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IContentControlOverrides
+        internal typealias Class = ListViewItem
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIListViewItem
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IListViewItem
         }
     }
     internal typealias Composable = IContentControlOverrides

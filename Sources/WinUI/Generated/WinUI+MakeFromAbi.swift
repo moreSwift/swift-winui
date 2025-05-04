@@ -539,12 +539,20 @@ fileprivate func makeItemsPanelTemplateFrom(abi: WindowsFoundation.IInspectable)
     return ItemsPanelTemplate(fromAbi: abi)
 }
 
+fileprivate func makeListViewFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return ListView(fromAbi: abi)
+}
+
 fileprivate func makeListViewBaseFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return ListViewBase(fromAbi: abi)
 }
 
 fileprivate func makeListViewBaseHeaderItemFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return ListViewBaseHeaderItem(fromAbi: abi)
+}
+
+fileprivate func makeListViewItemFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return ListViewItem(fromAbi: abi)
 }
 
 fileprivate func makeMenuBarFrom(abi: WindowsFoundation.IInspectable) -> Any {
@@ -833,6 +841,10 @@ fileprivate func makeFlyoutShowOptionsFrom(abi: WindowsFoundation.IInspectable) 
 
 fileprivate func makeItemsChangedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return ItemsChangedEventArgs(fromAbi: abi)
+}
+
+fileprivate func makeListViewItemTemplateSettingsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return ListViewItemTemplateSettings(fromAbi: abi)
 }
 
 fileprivate func makeMenuFlyoutItemTemplateSettingsFrom(abi: WindowsFoundation.IInspectable) -> Any {
@@ -1836,8 +1848,10 @@ public class __MakeFromAbi: MakeFromAbi {
             case "ItemContainerGenerator": return makeItemContainerGeneratorFrom(abi: abi)
             case "ItemsControl": return makeItemsControlFrom(abi: abi)
             case "ItemsPanelTemplate": return makeItemsPanelTemplateFrom(abi: abi)
+            case "ListView": return makeListViewFrom(abi: abi)
             case "ListViewBase": return makeListViewBaseFrom(abi: abi)
             case "ListViewBaseHeaderItem": return makeListViewBaseHeaderItemFrom(abi: abi)
+            case "ListViewItem": return makeListViewItemFrom(abi: abi)
             case "MenuBar": return makeMenuBarFrom(abi: abi)
             case "MenuBarItem": return makeMenuBarItemFrom(abi: abi)
             case "MenuFlyout": return makeMenuFlyoutFrom(abi: abi)
@@ -1910,6 +1924,7 @@ public class __MakeFromAbi: MakeFromAbi {
             case "FlyoutBaseClosingEventArgs": return makeFlyoutBaseClosingEventArgsFrom(abi: abi)
             case "FlyoutShowOptions": return makeFlyoutShowOptionsFrom(abi: abi)
             case "ItemsChangedEventArgs": return makeItemsChangedEventArgsFrom(abi: abi)
+            case "ListViewItemTemplateSettings": return makeListViewItemTemplateSettingsFrom(abi: abi)
             case "MenuFlyoutItemTemplateSettings": return makeMenuFlyoutItemTemplateSettingsFrom(abi: abi)
             case "Popup": return makePopupFrom(abi: abi)
             case "RangeBase": return makeRangeBaseFrom(abi: abi)
