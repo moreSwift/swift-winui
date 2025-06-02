@@ -43,7 +43,7 @@ open class SwiftApplication: Application, IXamlMetadataProvider {
 
     public static func main() {
         do {
-            try withExtendedLifetime(WindowsAppRuntimeInitializer()) {
+            try withExtendedLifetime(WindowsAppRuntimeInitializer(threadingModel: .multi)) {
                 let appClass = String(describing: String(reflecting: Self.self))
                 guard let instance = NSClassFromString(appClass) else {
                     fatalError("unable to find application class \(appClass)")
