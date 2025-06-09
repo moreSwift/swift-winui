@@ -2,6 +2,7 @@
 // swiftlint:disable all
 import Foundation
 @_spi(WinRTInternal) @_spi(WinRTImplements) import UWP
+@_spi(WinRTInternal) @_spi(WinRTImplements) import WebView2Core
 @_spi(WinRTInternal) @_spi(WinRTImplements) import WinAppSDK
 @_spi(WinRTInternal) @_spi(WinRTImplements) import WindowsFoundation
 import CWinRT
@@ -212,6 +213,10 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIControlStatics: Windows
 
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIControlTemplate: WindowsFoundation.IID {
     .init(Data1: 0x3A192751, Data2: 0x2106, Data3: 0x547A, Data4: ( 0xAC,0xA0,0xF1,0x5A,0xE8,0x92,0x6E,0xA0 ))// 3A192751-2106-547A-ACA0-F15AE8926EA0
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CICoreWebView2InitializedEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0xEE59D277, Data2: 0x8B2E, Data3: 0x57AB, Data4: ( 0x86,0x31,0x91,0xD2,0x7B,0x12,0xEB,0xD9 ))// EE59D277-8B2E-57AB-8631-91D27B12EBD9
 }
 
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIDataTemplateSelector: WindowsFoundation.IID {
@@ -956,6 +961,22 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToggleSwitchStatics: Wi
 
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIUIElementCollection: WindowsFoundation.IID {
     .init(Data1: 0x23050CB1, Data2: 0xDB88, Data3: 0x54ED, Data4: ( 0x90,0x83,0x5E,0xCF,0xB1,0x25,0x12,0xFD ))// 23050CB1-DB88-54ED-9083-5ECFB12512FD
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2: WindowsFoundation.IID {
+    .init(Data1: 0x2B2C76C2, Data2: 0x997C, Data3: 0x5069, Data4: ( 0xA8,0xF0,0x9B,0x84,0xCD,0x7E,0x62,0x4B ))// 2B2C76C2-997C-5069-A8F0-9B84CD7E624B
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView22: WindowsFoundation.IID {
+    .init(Data1: 0x560C5EED, Data2: 0x3E7A, Data3: 0x51E4, Data4: ( 0xB1,0x4F,0x10,0x7B,0xA0,0x2B,0x89,0xBE ))// 560C5EED-3E7A-51E4-B14F-107BA02B89BE
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2Factory: WindowsFoundation.IID {
+    .init(Data1: 0xFB4EC2CE, Data2: 0x3074, Data3: 0x5C42, Data4: ( 0xB6,0x55,0x64,0xFB,0x81,0xFB,0xD0,0x40 ))// FB4EC2CE-3074-5C42-B655-64FB81FBD040
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2Statics: WindowsFoundation.IID {
+    .init(Data1: 0x7F3226D0, Data2: 0xF6D5, Data3: 0x5AA7, Data4: ( 0xB1,0x75,0x64,0x54,0x51,0xCA,0x3C,0x85 ))// 7F3226D0-F6D5-5AA7-B175-645451CA3C85
 }
 
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIXamlControlsResources: WindowsFoundation.IID {
@@ -5039,6 +5060,19 @@ public enum __ABI_Microsoft_UI_Xaml_Controls {
             _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIControlTemplate.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.put_TargetType(pThis, _value.val))
             }
+        }
+
+    }
+
+    public class ICoreWebView2InitializedEventArgs: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CICoreWebView2InitializedEventArgs }
+
+        internal func get_ExceptionImpl() throws -> HRESULT {
+            var value: HRESULT = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICoreWebView2InitializedEventArgs.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Exception(pThis, &value))
+            }
+            return value
         }
 
     }
@@ -17274,6 +17308,289 @@ public enum __ABI_Microsoft_UI_Xaml_Controls {
             _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIUIElementCollection.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.Move(pThis, oldIndex, newIndex))
             }
+        }
+
+    }
+
+    public class IWebView2: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2 }
+
+        internal func get_CoreWebView2Impl() throws -> WebView2Core.CoreWebView2? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_CoreWebView2(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func EnsureCoreWebView2AsyncImpl() throws -> WindowsFoundation.AnyIAsyncAction? {
+            let (operation) = try ComPtrs.initialize { operationAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.EnsureCoreWebView2Async(pThis, &operationAbi))
+                }
+            }
+            return __ABI_Windows_Foundation.IAsyncActionWrapper.unwrapFrom(abi: operation)
+        }
+
+        internal func ExecuteScriptAsyncImpl(_ javascriptCode: String) throws -> WindowsFoundation.AnyIAsyncOperation<String>? {
+            let (operation) = try ComPtrs.initialize { operationAbi in
+                let _javascriptCode = try! HString(javascriptCode)
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.ExecuteScriptAsync(pThis, _javascriptCode.get(), &operationAbi))
+                }
+            }
+            return WinUI.__x_ABI_C__FIAsyncOperation_1_HSTRINGWrapper.unwrapFrom(abi: operation)
+        }
+
+        internal func get_SourceImpl() throws -> WindowsFoundation.Uri? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_Source(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func put_SourceImpl(_ value: WindowsFoundation.Uri?) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_Source(pThis, RawPointer(value)))
+            }
+        }
+
+        internal func get_CanGoForwardImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_CanGoForward(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func put_CanGoForwardImpl(_ value: Bool) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_CanGoForward(pThis, .init(from: value)))
+            }
+        }
+
+        internal func get_CanGoBackImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_CanGoBack(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func put_CanGoBackImpl(_ value: Bool) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_CanGoBack(pThis, .init(from: value)))
+            }
+        }
+
+        internal func get_DefaultBackgroundColorImpl() throws -> UWP.Color {
+            var value: __x_ABI_CWindows_CUI_CColor = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_DefaultBackgroundColor(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        internal func put_DefaultBackgroundColorImpl(_ value: UWP.Color) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_DefaultBackgroundColor(pThis, .from(swift: value)))
+            }
+        }
+
+        internal func ReloadImpl() throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.Reload(pThis))
+            }
+        }
+
+        internal func GoForwardImpl() throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GoForward(pThis))
+            }
+        }
+
+        internal func GoBackImpl() throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GoBack(pThis))
+            }
+        }
+
+        internal func NavigateToStringImpl(_ htmlContent: String) throws {
+            let _htmlContent = try! HString(htmlContent)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.NavigateToString(pThis, _htmlContent.get()))
+            }
+        }
+
+        internal func CloseImpl() throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.Close(pThis))
+            }
+        }
+
+        internal func add_NavigationCompletedImpl(_ handler: TypedEventHandler<WinUI.WebView2?, WebView2Core.CoreWebView2NavigationCompletedEventArgs?>?) throws -> EventRegistrationToken {
+            var token: EventRegistrationToken = .init()
+            let handlerWrapper = WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgsWrapper(handler)
+            let _handler = try! handlerWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.add_NavigationCompleted(pThis, _handler, &token))
+            }
+            return token
+        }
+
+        internal func remove_NavigationCompletedImpl(_ token: EventRegistrationToken) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.remove_NavigationCompleted(pThis, token))
+            }
+        }
+
+        internal func add_WebMessageReceivedImpl(_ handler: TypedEventHandler<WinUI.WebView2?, WebView2Core.CoreWebView2WebMessageReceivedEventArgs?>?) throws -> EventRegistrationToken {
+            var token: EventRegistrationToken = .init()
+            let handlerWrapper = WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgsWrapper(handler)
+            let _handler = try! handlerWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.add_WebMessageReceived(pThis, _handler, &token))
+            }
+            return token
+        }
+
+        internal func remove_WebMessageReceivedImpl(_ token: EventRegistrationToken) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.remove_WebMessageReceived(pThis, token))
+            }
+        }
+
+        internal func add_NavigationStartingImpl(_ handler: TypedEventHandler<WinUI.WebView2?, WebView2Core.CoreWebView2NavigationStartingEventArgs?>?) throws -> EventRegistrationToken {
+            var token: EventRegistrationToken = .init()
+            let handlerWrapper = WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgsWrapper(handler)
+            let _handler = try! handlerWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.add_NavigationStarting(pThis, _handler, &token))
+            }
+            return token
+        }
+
+        internal func remove_NavigationStartingImpl(_ token: EventRegistrationToken) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.remove_NavigationStarting(pThis, token))
+            }
+        }
+
+        internal func add_CoreProcessFailedImpl(_ handler: TypedEventHandler<WinUI.WebView2?, WebView2Core.CoreWebView2ProcessFailedEventArgs?>?) throws -> EventRegistrationToken {
+            var token: EventRegistrationToken = .init()
+            let handlerWrapper = WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessFailedEventArgsWrapper(handler)
+            let _handler = try! handlerWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.add_CoreProcessFailed(pThis, _handler, &token))
+            }
+            return token
+        }
+
+        internal func remove_CoreProcessFailedImpl(_ token: EventRegistrationToken) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.remove_CoreProcessFailed(pThis, token))
+            }
+        }
+
+        internal func add_CoreWebView2InitializedImpl(_ handler: TypedEventHandler<WinUI.WebView2?, WinUI.CoreWebView2InitializedEventArgs?>?) throws -> EventRegistrationToken {
+            var token: EventRegistrationToken = .init()
+            let handlerWrapper = WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CWebView2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCoreWebView2InitializedEventArgsWrapper(handler)
+            let _handler = try! handlerWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.add_CoreWebView2Initialized(pThis, _handler, &token))
+            }
+            return token
+        }
+
+        internal func remove_CoreWebView2InitializedImpl(_ token: EventRegistrationToken) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.remove_CoreWebView2Initialized(pThis, token))
+            }
+        }
+
+    }
+
+    public class IWebView22: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView22 }
+
+        internal func EnsureCoreWebView2WithEnvironmentAsyncImpl(_ environment: WebView2Core.CoreWebView2Environment?) throws -> WindowsFoundation.AnyIAsyncAction? {
+            let (operation) = try ComPtrs.initialize { operationAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView22.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.EnsureCoreWebView2WithEnvironmentAsync(pThis, RawPointer(environment), &operationAbi))
+                }
+            }
+            return __ABI_Windows_Foundation.IAsyncActionWrapper.unwrapFrom(abi: operation)
+        }
+
+        internal func EnsureCoreWebView2WithEnvironmentAndOptionsAsyncImpl(_ environment: WebView2Core.CoreWebView2Environment?, _ controllerOptions: WebView2Core.CoreWebView2ControllerOptions?) throws -> WindowsFoundation.AnyIAsyncAction? {
+            let (operation) = try ComPtrs.initialize { operationAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView22.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.EnsureCoreWebView2WithEnvironmentAndOptionsAsync(pThis, RawPointer(environment), RawPointer(controllerOptions), &operationAbi))
+                }
+            }
+            return __ABI_Windows_Foundation.IAsyncActionWrapper.unwrapFrom(abi: operation)
+        }
+
+    }
+
+    public class IWebView2Factory: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2Factory }
+
+        internal func CreateInstanceImpl(_ baseInterface: UnsealedWinRTClassWrapper<WinUI.WebView2.Composable>?, _ innerInterface: inout WindowsFoundation.IInspectable?) throws -> IWebView2 {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                let _baseInterface = baseInterface?.toIInspectableABI { $0 }
+                let (_innerInterface) = try ComPtrs.initialize { _innerInterfaceAbi in
+                    _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2Factory.self) { pThis in
+                        try CHECKED(pThis.pointee.lpVtbl.pointee.CreateInstance(pThis, _baseInterface, &_innerInterfaceAbi, &valueAbi))
+                    }
+                }
+                innerInterface = WindowsFoundation.IInspectable(_innerInterface!)
+            }
+            return IWebView2(value!)
+        }
+
+    }
+
+    public class IWebView2Statics: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2Statics }
+
+        internal func get_SourcePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2Statics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_SourceProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_CanGoForwardPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2Statics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_CanGoForwardProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_CanGoBackPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2Statics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_CanGoBackProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_DefaultBackgroundColorPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIWebView2Statics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_DefaultBackgroundColorProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
         }
 
     }

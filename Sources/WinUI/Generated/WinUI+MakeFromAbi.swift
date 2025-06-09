@@ -451,6 +451,10 @@ fileprivate func makeControlTemplateFrom(abi: WindowsFoundation.IInspectable) ->
     return ControlTemplate(fromAbi: abi)
 }
 
+fileprivate func makeCoreWebView2InitializedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return CoreWebView2InitializedEventArgs(fromAbi: abi)
+}
+
 fileprivate func makeDataTemplateSelectorFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return DataTemplateSelector(fromAbi: abi)
 }
@@ -813,6 +817,10 @@ fileprivate func makeToggleSwitchFrom(abi: WindowsFoundation.IInspectable) -> An
 
 fileprivate func makeUIElementCollectionFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return UIElementCollection(fromAbi: abi)
+}
+
+fileprivate func makeWebView2From(abi: WindowsFoundation.IInspectable) -> Any {
+    return WebView2(fromAbi: abi)
 }
 
 fileprivate func makeXamlControlsResourcesFrom(abi: WindowsFoundation.IInspectable) -> Any {
@@ -1826,6 +1834,7 @@ public class __MakeFromAbi: MakeFromAbi {
             case "ContextMenuEventArgs": return makeContextMenuEventArgsFrom(abi: abi)
             case "Control": return makeControlFrom(abi: abi)
             case "ControlTemplate": return makeControlTemplateFrom(abi: abi)
+            case "CoreWebView2InitializedEventArgs": return makeCoreWebView2InitializedEventArgsFrom(abi: abi)
             case "DataTemplateSelector": return makeDataTemplateSelectorFrom(abi: abi)
             case "DragItemsCompletedEventArgs": return makeDragItemsCompletedEventArgsFrom(abi: abi)
             case "DragItemsStartingEventArgs": return makeDragItemsStartingEventArgsFrom(abi: abi)
@@ -1917,6 +1926,7 @@ public class __MakeFromAbi: MakeFromAbi {
             case "ToggleMenuFlyoutItem": return makeToggleMenuFlyoutItemFrom(abi: abi)
             case "ToggleSwitch": return makeToggleSwitchFrom(abi: abi)
             case "UIElementCollection": return makeUIElementCollectionFrom(abi: abi)
+            case "WebView2": return makeWebView2From(abi: abi)
             case "XamlControlsResources": return makeXamlControlsResourcesFrom(abi: abi)
             case "ButtonBase": return makeButtonBaseFrom(abi: abi)
             case "ComboBoxTemplateSettings": return makeComboBoxTemplateSettingsFrom(abi: abi)
