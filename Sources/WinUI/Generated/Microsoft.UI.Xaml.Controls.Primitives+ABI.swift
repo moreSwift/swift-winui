@@ -17,6 +17,10 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIButtonBaseS
     .init(Data1: 0xDBE812F6, Data2: 0xADF8, Data3: 0x51D3, Data4: ( 0x81,0x37,0xA8,0xFB,0xF6,0x44,0x5B,0x3C ))// DBE812F6-ADF8-51D3-8137-A8FBF6445B3C
 }
 
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings: WindowsFoundation.IID {
+    .init(Data1: 0x23B0FACB, Data2: 0x0083, Data3: 0x5109, Data4: ( 0x87,0xD3,0xDB,0xEB,0x13,0xE3,0x31,0xA0 ))// 23B0FACB-0083-5109-87D3-DBEB13E331A0
+}
+
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIComboBoxTemplateSettings: WindowsFoundation.IID {
     .init(Data1: 0xF2DC5E7F, Data2: 0x8D3F, Data3: 0x5C20, Data4: ( 0xB3,0x56,0xAF,0x6F,0x1F,0xF8,0x24,0x2A ))// F2DC5E7F-8D3F-5C20-B356-AF6F1FF8242A
 }
@@ -395,6 +399,131 @@ public enum __ABI_Microsoft_UI_Xaml_Controls_Primitives {
                 }
             }
             return .from(abi: value)
+        }
+
+    }
+
+    public class ICalendarViewTemplateSettings: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings }
+
+        internal func get_MinViewWidthImpl() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_MinViewWidth(pThis, &value))
+            }
+            return value
+        }
+
+        internal func get_HeaderTextImpl() throws -> String {
+            var value: HSTRING?
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_HeaderText(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func get_WeekDay1Impl() throws -> String {
+            var value: HSTRING?
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_WeekDay1(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func get_WeekDay2Impl() throws -> String {
+            var value: HSTRING?
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_WeekDay2(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func get_WeekDay3Impl() throws -> String {
+            var value: HSTRING?
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_WeekDay3(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func get_WeekDay4Impl() throws -> String {
+            var value: HSTRING?
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_WeekDay4(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func get_WeekDay5Impl() throws -> String {
+            var value: HSTRING?
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_WeekDay5(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func get_WeekDay6Impl() throws -> String {
+            var value: HSTRING?
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_WeekDay6(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func get_WeekDay7Impl() throws -> String {
+            var value: HSTRING?
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_WeekDay7(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func get_HasMoreContentAfterImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasMoreContentAfter(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func get_HasMoreContentBeforeImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasMoreContentBefore(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func get_HasMoreViewsImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasMoreViews(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func get_ClipRectImpl() throws -> WindowsFoundation.Rect {
+            var value: __x_ABI_CWindows_CFoundation_CRect = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_ClipRect(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_CenterXImpl() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_CenterX(pThis, &value))
+            }
+            return value
+        }
+
+        internal func get_CenterYImpl() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarViewTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_CenterY(pThis, &value))
+            }
+            return value
         }
 
     }

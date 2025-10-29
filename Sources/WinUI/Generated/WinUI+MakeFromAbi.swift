@@ -363,6 +363,30 @@ fileprivate func makeButtonFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return Button(fromAbi: abi)
 }
 
+fileprivate func makeCalendarDatePickerFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return CalendarDatePicker(fromAbi: abi)
+}
+
+fileprivate func makeCalendarDatePickerDateChangedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return CalendarDatePickerDateChangedEventArgs(fromAbi: abi)
+}
+
+fileprivate func makeCalendarViewFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return CalendarView(fromAbi: abi)
+}
+
+fileprivate func makeCalendarViewDayItemFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return CalendarViewDayItem(fromAbi: abi)
+}
+
+fileprivate func makeCalendarViewDayItemChangingEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return CalendarViewDayItemChangingEventArgs(fromAbi: abi)
+}
+
+fileprivate func makeCalendarViewSelectedDatesChangedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return CalendarViewSelectedDatesChangedEventArgs(fromAbi: abi)
+}
+
 fileprivate func makeCandidateWindowBoundsChangedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return CandidateWindowBoundsChangedEventArgs(fromAbi: abi)
 }
@@ -457,6 +481,18 @@ fileprivate func makeCoreWebView2InitializedEventArgsFrom(abi: WindowsFoundation
 
 fileprivate func makeDataTemplateSelectorFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return DataTemplateSelector(fromAbi: abi)
+}
+
+fileprivate func makeDatePickerFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return DatePicker(fromAbi: abi)
+}
+
+fileprivate func makeDatePickerSelectedValueChangedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return DatePickerSelectedValueChangedEventArgs(fromAbi: abi)
+}
+
+fileprivate func makeDatePickerValueChangedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return DatePickerValueChangedEventArgs(fromAbi: abi)
 }
 
 fileprivate func makeDragItemsCompletedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
@@ -807,6 +843,18 @@ fileprivate func makeTextControlPasteEventArgsFrom(abi: WindowsFoundation.IInspe
     return TextControlPasteEventArgs(fromAbi: abi)
 }
 
+fileprivate func makeTimePickerFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return TimePicker(fromAbi: abi)
+}
+
+fileprivate func makeTimePickerSelectedValueChangedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return TimePickerSelectedValueChangedEventArgs(fromAbi: abi)
+}
+
+fileprivate func makeTimePickerValueChangedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return TimePickerValueChangedEventArgs(fromAbi: abi)
+}
+
 fileprivate func makeToggleMenuFlyoutItemFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return ToggleMenuFlyoutItem(fromAbi: abi)
 }
@@ -829,6 +877,10 @@ fileprivate func makeXamlControlsResourcesFrom(abi: WindowsFoundation.IInspectab
 
 fileprivate func makeButtonBaseFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return ButtonBase(fromAbi: abi)
+}
+
+fileprivate func makeCalendarViewTemplateSettingsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return CalendarViewTemplateSettings(fromAbi: abi)
 }
 
 fileprivate func makeComboBoxTemplateSettingsFrom(abi: WindowsFoundation.IInspectable) -> Any {
@@ -1812,6 +1864,12 @@ public class __MakeFromAbi: MakeFromAbi {
             case "AutoSuggestBoxTextChangedEventArgs": return makeAutoSuggestBoxTextChangedEventArgsFrom(abi: abi)
             case "Border": return makeBorderFrom(abi: abi)
             case "Button": return makeButtonFrom(abi: abi)
+            case "CalendarDatePicker": return makeCalendarDatePickerFrom(abi: abi)
+            case "CalendarDatePickerDateChangedEventArgs": return makeCalendarDatePickerDateChangedEventArgsFrom(abi: abi)
+            case "CalendarView": return makeCalendarViewFrom(abi: abi)
+            case "CalendarViewDayItem": return makeCalendarViewDayItemFrom(abi: abi)
+            case "CalendarViewDayItemChangingEventArgs": return makeCalendarViewDayItemChangingEventArgsFrom(abi: abi)
+            case "CalendarViewSelectedDatesChangedEventArgs": return makeCalendarViewSelectedDatesChangedEventArgsFrom(abi: abi)
             case "CandidateWindowBoundsChangedEventArgs": return makeCandidateWindowBoundsChangedEventArgsFrom(abi: abi)
             case "Canvas": return makeCanvasFrom(abi: abi)
             case "CheckBox": return makeCheckBoxFrom(abi: abi)
@@ -1836,6 +1894,9 @@ public class __MakeFromAbi: MakeFromAbi {
             case "ControlTemplate": return makeControlTemplateFrom(abi: abi)
             case "CoreWebView2InitializedEventArgs": return makeCoreWebView2InitializedEventArgsFrom(abi: abi)
             case "DataTemplateSelector": return makeDataTemplateSelectorFrom(abi: abi)
+            case "DatePicker": return makeDatePickerFrom(abi: abi)
+            case "DatePickerSelectedValueChangedEventArgs": return makeDatePickerSelectedValueChangedEventArgsFrom(abi: abi)
+            case "DatePickerValueChangedEventArgs": return makeDatePickerValueChangedEventArgsFrom(abi: abi)
             case "DragItemsCompletedEventArgs": return makeDragItemsCompletedEventArgsFrom(abi: abi)
             case "DragItemsStartingEventArgs": return makeDragItemsStartingEventArgsFrom(abi: abi)
             case "Flyout": return makeFlyoutFrom(abi: abi)
@@ -1923,12 +1984,16 @@ public class __MakeFromAbi: MakeFromAbi {
             case "TextControlCopyingToClipboardEventArgs": return makeTextControlCopyingToClipboardEventArgsFrom(abi: abi)
             case "TextControlCuttingToClipboardEventArgs": return makeTextControlCuttingToClipboardEventArgsFrom(abi: abi)
             case "TextControlPasteEventArgs": return makeTextControlPasteEventArgsFrom(abi: abi)
+            case "TimePicker": return makeTimePickerFrom(abi: abi)
+            case "TimePickerSelectedValueChangedEventArgs": return makeTimePickerSelectedValueChangedEventArgsFrom(abi: abi)
+            case "TimePickerValueChangedEventArgs": return makeTimePickerValueChangedEventArgsFrom(abi: abi)
             case "ToggleMenuFlyoutItem": return makeToggleMenuFlyoutItemFrom(abi: abi)
             case "ToggleSwitch": return makeToggleSwitchFrom(abi: abi)
             case "UIElementCollection": return makeUIElementCollectionFrom(abi: abi)
             case "WebView2": return makeWebView2From(abi: abi)
             case "XamlControlsResources": return makeXamlControlsResourcesFrom(abi: abi)
             case "ButtonBase": return makeButtonBaseFrom(abi: abi)
+            case "CalendarViewTemplateSettings": return makeCalendarViewTemplateSettingsFrom(abi: abi)
             case "ComboBoxTemplateSettings": return makeComboBoxTemplateSettingsFrom(abi: abi)
             case "FlyoutBase": return makeFlyoutBaseFrom(abi: abi)
             case "FlyoutBaseClosingEventArgs": return makeFlyoutBaseClosingEventArgsFrom(abi: abi)

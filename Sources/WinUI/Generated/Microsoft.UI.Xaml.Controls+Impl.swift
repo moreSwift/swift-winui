@@ -203,6 +203,20 @@ public enum __IMPL_Microsoft_UI_Xaml_Controls {
 
     }
 
+    public class CalendarViewDayItemChangingEventHandlerBridge : WinRTDelegateBridge {
+        public typealias Handler = CalendarViewDayItemChangingEventHandler
+        public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarViewDayItemChangingEventHandler
+        public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.CalendarViewDayItemChangingEventHandler
+
+        public static func from(abi: ComPtr<CABI>?) -> Handler? {
+            guard let abi = abi else { return nil }
+            let _default = SwiftABI(abi)
+            let handler: Handler = { (sender, e) in
+                try! _default.InvokeImpl(sender, e)
+            }
+            return handler
+        }
+    }
     public class ContextMenuOpeningEventHandlerBridge : WinRTDelegateBridge {
         public typealias Handler = ContextMenuOpeningEventHandler
         public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIContextMenuOpeningEventHandler

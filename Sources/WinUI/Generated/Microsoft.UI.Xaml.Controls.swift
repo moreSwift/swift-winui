@@ -11,6 +11,10 @@ import CWinRT
 public typealias AutoSuggestionBoxTextChangeReason = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CAutoSuggestionBoxTextChangeReason
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.backgroundsizing)
 public typealias BackgroundSizing = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CBackgroundSizing
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdisplaymode)
+public typealias CalendarViewDisplayMode = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCalendarViewDisplayMode
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewselectionmode)
+public typealias CalendarViewSelectionMode = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCalendarViewSelectionMode
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.candidatewindowalignment)
 public typealias CandidateWindowAlignment = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCandidateWindowAlignment
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.charactercasing)
@@ -671,6 +675,1460 @@ open class Button : WinUI.ButtonBase {
         }
     }
     internal typealias Composable = IContentControlOverrides
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker)
+open class CalendarDatePicker : WinUI.Control {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ICalendarDatePicker
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarDatePicker
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarDatePicker>?) -> CalendarDatePicker? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _ICalendarDatePickerFactory : __ABI_Microsoft_UI_Xaml_Controls.ICalendarDatePickerFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.CalendarDatePicker"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._ICalendarDatePickerFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    private static let _ICalendarDatePickerStatics: __ABI_Microsoft_UI_Xaml_Controls.ICalendarDatePickerStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.CalendarDatePicker"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.calendaridentifierproperty)
+    public class var calendarIdentifierProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_CalendarIdentifierPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.calendarviewstyleproperty)
+    public class var calendarViewStyleProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_CalendarViewStylePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.dateformatproperty)
+    public class var dateFormatProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_DateFormatPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.dateproperty)
+    public class var dateProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_DatePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.dayofweekformatproperty)
+    public class var dayOfWeekFormatProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_DayOfWeekFormatPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.descriptionproperty)
+    public class var descriptionProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_DescriptionPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.displaymodeproperty)
+    public class var displayModeProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_DisplayModePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.firstdayofweekproperty)
+    public class var firstDayOfWeekProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_FirstDayOfWeekPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.headerproperty)
+    public class var headerProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_HeaderPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.headertemplateproperty)
+    public class var headerTemplateProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_HeaderTemplatePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.iscalendaropenproperty)
+    public class var isCalendarOpenProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_IsCalendarOpenPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.isgrouplabelvisibleproperty)
+    public class var isGroupLabelVisibleProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_IsGroupLabelVisiblePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.isoutofscopeenabledproperty)
+    public class var isOutOfScopeEnabledProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_IsOutOfScopeEnabledPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.istodayhighlightedproperty)
+    public class var isTodayHighlightedProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_IsTodayHighlightedPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.lightdismissoverlaymodeproperty)
+    public class var lightDismissOverlayModeProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_LightDismissOverlayModePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.maxdateproperty)
+    public class var maxDateProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_MaxDatePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.mindateproperty)
+    public class var minDateProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_MinDatePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.placeholdertextproperty)
+    public class var placeholderTextProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarDatePickerStatics.get_PlaceholderTextPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.setdisplaydate)
+    public func setDisplayDate(_ date: WindowsFoundation.DateTime) throws {
+        try _default.SetDisplayDateImpl(date)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.setyeardecadedisplaydimensions)
+    public func setYearDecadeDisplayDimensions(_ columns: Int32, _ rows: Int32) throws {
+        try _default.SetYearDecadeDisplayDimensionsImpl(columns, rows)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.calendaridentifier)
+    public var calendarIdentifier : String {
+        get { try! _default.get_CalendarIdentifierImpl() }
+        set { try! _default.put_CalendarIdentifierImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.calendarviewstyle)
+    public var calendarViewStyle : WinUI.Style! {
+        get { try! _default.get_CalendarViewStyleImpl() }
+        set { try! _default.put_CalendarViewStyleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.date)
+    public var date : WindowsFoundation.DateTime? {
+        get { try! _default.get_DateImpl() }
+        set { try! _default.put_DateImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.dateformat)
+    public var dateFormat : String {
+        get { try! _default.get_DateFormatImpl() }
+        set { try! _default.put_DateFormatImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.dayofweekformat)
+    public var dayOfWeekFormat : String {
+        get { try! _default.get_DayOfWeekFormatImpl() }
+        set { try! _default.put_DayOfWeekFormatImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.description)
+    public var description : Any! {
+        get { try! _default.get_DescriptionImpl() }
+        set { try! _default.put_DescriptionImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.displaymode)
+    public var displayMode : CalendarViewDisplayMode {
+        get { try! _default.get_DisplayModeImpl() }
+        set { try! _default.put_DisplayModeImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.firstdayofweek)
+    public var firstDayOfWeek : UWP.DayOfWeek {
+        get { try! _default.get_FirstDayOfWeekImpl() }
+        set { try! _default.put_FirstDayOfWeekImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.header)
+    public var header : Any! {
+        get { try! _default.get_HeaderImpl() }
+        set { try! _default.put_HeaderImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.headertemplate)
+    public var headerTemplate : WinUI.DataTemplate! {
+        get { try! _default.get_HeaderTemplateImpl() }
+        set { try! _default.put_HeaderTemplateImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.iscalendaropen)
+    public var isCalendarOpen : Bool {
+        get { try! _default.get_IsCalendarOpenImpl() }
+        set { try! _default.put_IsCalendarOpenImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.isgrouplabelvisible)
+    public var isGroupLabelVisible : Bool {
+        get { try! _default.get_IsGroupLabelVisibleImpl() }
+        set { try! _default.put_IsGroupLabelVisibleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.isoutofscopeenabled)
+    public var isOutOfScopeEnabled : Bool {
+        get { try! _default.get_IsOutOfScopeEnabledImpl() }
+        set { try! _default.put_IsOutOfScopeEnabledImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.istodayhighlighted)
+    public var isTodayHighlighted : Bool {
+        get { try! _default.get_IsTodayHighlightedImpl() }
+        set { try! _default.put_IsTodayHighlightedImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.lightdismissoverlaymode)
+    public var lightDismissOverlayMode : LightDismissOverlayMode {
+        get { try! _default.get_LightDismissOverlayModeImpl() }
+        set { try! _default.put_LightDismissOverlayModeImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.maxdate)
+    public var maxDate : WindowsFoundation.DateTime {
+        get { try! _default.get_MaxDateImpl() }
+        set { try! _default.put_MaxDateImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.mindate)
+    public var minDate : WindowsFoundation.DateTime {
+        get { try! _default.get_MinDateImpl() }
+        set { try! _default.put_MinDateImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.placeholdertext)
+    public var placeholderText : String {
+        get { try! _default.get_PlaceholderTextImpl() }
+        set { try! _default.put_PlaceholderTextImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.calendarviewdayitemchanging)
+    public lazy var calendarViewDayItemChanging : Event<CalendarViewDayItemChangingEventHandler> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_CalendarViewDayItemChangingImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_CalendarViewDayItemChangingImpl($0)
+       }
+      )
+    }()
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.closed)
+    public lazy var closed : Event<EventHandler<Any?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_ClosedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_ClosedImpl($0)
+       }
+      )
+    }()
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.datechanged)
+    public lazy var dateChanged : Event<TypedEventHandler<CalendarDatePicker?, CalendarDatePickerDateChangedEventArgs?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_DateChangedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_DateChangedImpl($0)
+       }
+      )
+    }()
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.opened)
+    public lazy var opened : Event<EventHandler<Any?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_OpenedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_OpenedImpl($0)
+       }
+      )
+    }()
+
+    internal enum IControlOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIControlOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IControlOverrides
+        internal typealias Class = CalendarDatePicker
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarDatePicker
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ICalendarDatePicker
+        }
+    }
+    internal typealias Composable = IControlOverrides
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepickerdatechangedeventargs)
+public final class CalendarDatePickerDateChangedEventArgs : WinRTClass {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ICalendarDatePickerDateChangedEventArgs
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarDatePickerDateChangedEventArgs
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarDatePickerDateChangedEventArgs>?) -> CalendarDatePickerDateChangedEventArgs? {
+        guard let abi = abi else { return nil }
+        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+    }
+
+    @_spi(WinRTInternal)
+    public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepickerdatechangedeventargs.newdate)
+    public var newDate : WindowsFoundation.DateTime? {
+        get { try! _default.get_NewDateImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepickerdatechangedeventargs.olddate)
+    public var oldDate : WindowsFoundation.DateTime? {
+        get { try! _default.get_OldDateImpl() }
+    }
+
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview)
+open class CalendarView : WinUI.Control {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ICalendarView
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarView
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarView>?) -> CalendarView? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _ICalendarViewFactory : __ABI_Microsoft_UI_Xaml_Controls.ICalendarViewFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.CalendarView"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._ICalendarViewFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    private static let _ICalendarViewStatics: __ABI_Microsoft_UI_Xaml_Controls.ICalendarViewStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.CalendarView"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.blackoutbackgroundproperty)
+    public class var blackoutBackgroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_BlackoutBackgroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.blackoutforegroundproperty)
+    public class var blackoutForegroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_BlackoutForegroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.blackoutstrikethroughbrushproperty)
+    public class var blackoutStrikethroughBrushProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_BlackoutStrikethroughBrushPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaridentifierproperty)
+    public class var calendarIdentifierProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_CalendarIdentifierPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritembackgroundproperty)
+    public class var calendarItemBackgroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_CalendarItemBackgroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemborderbrushproperty)
+    public class var calendarItemBorderBrushProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_CalendarItemBorderBrushPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemborderthicknessproperty)
+    public class var calendarItemBorderThicknessProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_CalendarItemBorderThicknessPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemcornerradiusproperty)
+    public class var calendarItemCornerRadiusProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_CalendarItemCornerRadiusPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemdisabledbackgroundproperty)
+    public class var calendarItemDisabledBackgroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_CalendarItemDisabledBackgroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemforegroundproperty)
+    public class var calendarItemForegroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_CalendarItemForegroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemhoverbackgroundproperty)
+    public class var calendarItemHoverBackgroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_CalendarItemHoverBackgroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritempressedbackgroundproperty)
+    public class var calendarItemPressedBackgroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_CalendarItemPressedBackgroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendarviewdayitemstyleproperty)
+    public class var calendarViewDayItemStyleProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_CalendarViewDayItemStylePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontfamilyproperty)
+    public class var dayItemFontFamilyProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_DayItemFontFamilyPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontsizeproperty)
+    public class var dayItemFontSizeProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_DayItemFontSizePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontstyleproperty)
+    public class var dayItemFontStyleProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_DayItemFontStylePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontweightproperty)
+    public class var dayItemFontWeightProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_DayItemFontWeightPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemmarginproperty)
+    public class var dayItemMarginProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_DayItemMarginPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayofweekformatproperty)
+    public class var dayOfWeekFormatProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_DayOfWeekFormatPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.disabledforegroundproperty)
+    public class var disabledForegroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_DisabledForegroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.displaymodeproperty)
+    public class var displayModeProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_DisplayModePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstdayofweekproperty)
+    public class var firstDayOfWeekProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_FirstDayOfWeekPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontfamilyproperty)
+    public class var firstOfMonthLabelFontFamilyProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_FirstOfMonthLabelFontFamilyPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontsizeproperty)
+    public class var firstOfMonthLabelFontSizeProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_FirstOfMonthLabelFontSizePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontstyleproperty)
+    public class var firstOfMonthLabelFontStyleProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_FirstOfMonthLabelFontStylePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontweightproperty)
+    public class var firstOfMonthLabelFontWeightProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_FirstOfMonthLabelFontWeightPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelmarginproperty)
+    public class var firstOfMonthLabelMarginProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_FirstOfMonthLabelMarginPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontfamilyproperty)
+    public class var firstOfYearDecadeLabelFontFamilyProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_FirstOfYearDecadeLabelFontFamilyPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontsizeproperty)
+    public class var firstOfYearDecadeLabelFontSizeProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_FirstOfYearDecadeLabelFontSizePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontstyleproperty)
+    public class var firstOfYearDecadeLabelFontStyleProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_FirstOfYearDecadeLabelFontStylePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontweightproperty)
+    public class var firstOfYearDecadeLabelFontWeightProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_FirstOfYearDecadeLabelFontWeightPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelmarginproperty)
+    public class var firstOfYearDecadeLabelMarginProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_FirstOfYearDecadeLabelMarginPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.focusborderbrushproperty)
+    public class var focusBorderBrushProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_FocusBorderBrushPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.horizontaldayitemalignmentproperty)
+    public class var horizontalDayItemAlignmentProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_HorizontalDayItemAlignmentPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.horizontalfirstofmonthlabelalignmentproperty)
+    public class var horizontalFirstOfMonthLabelAlignmentProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_HorizontalFirstOfMonthLabelAlignmentPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.hoverborderbrushproperty)
+    public class var hoverBorderBrushProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_HoverBorderBrushPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.isgrouplabelvisibleproperty)
+    public class var isGroupLabelVisibleProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_IsGroupLabelVisiblePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.isoutofscopeenabledproperty)
+    public class var isOutOfScopeEnabledProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_IsOutOfScopeEnabledPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.istodayhighlightedproperty)
+    public class var isTodayHighlightedProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_IsTodayHighlightedPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.maxdateproperty)
+    public class var maxDateProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_MaxDatePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.mindateproperty)
+    public class var minDateProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_MinDatePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontfamilyproperty)
+    public class var monthYearItemFontFamilyProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_MonthYearItemFontFamilyPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontsizeproperty)
+    public class var monthYearItemFontSizeProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_MonthYearItemFontSizePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontstyleproperty)
+    public class var monthYearItemFontStyleProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_MonthYearItemFontStylePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontweightproperty)
+    public class var monthYearItemFontWeightProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_MonthYearItemFontWeightPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemmarginproperty)
+    public class var monthYearItemMarginProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_MonthYearItemMarginPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.numberofweeksinviewproperty)
+    public class var numberOfWeeksInViewProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_NumberOfWeeksInViewPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.outofscopebackgroundproperty)
+    public class var outOfScopeBackgroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_OutOfScopeBackgroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.outofscopeforegroundproperty)
+    public class var outOfScopeForegroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_OutOfScopeForegroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.outofscopehoverforegroundproperty)
+    public class var outOfScopeHoverForegroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_OutOfScopeHoverForegroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.outofscopepressedforegroundproperty)
+    public class var outOfScopePressedForegroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_OutOfScopePressedForegroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.pressedborderbrushproperty)
+    public class var pressedBorderBrushProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_PressedBorderBrushPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.pressedforegroundproperty)
+    public class var pressedForegroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_PressedForegroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedborderbrushproperty)
+    public class var selectedBorderBrushProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_SelectedBorderBrushPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddatesproperty)
+    public class var selectedDatesProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_SelectedDatesPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddisabledborderbrushproperty)
+    public class var selectedDisabledBorderBrushProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_SelectedDisabledBorderBrushPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddisabledforegroundproperty)
+    public class var selectedDisabledForegroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_SelectedDisabledForegroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedforegroundproperty)
+    public class var selectedForegroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_SelectedForegroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedhoverborderbrushproperty)
+    public class var selectedHoverBorderBrushProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_SelectedHoverBorderBrushPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedhoverforegroundproperty)
+    public class var selectedHoverForegroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_SelectedHoverForegroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedpressedborderbrushproperty)
+    public class var selectedPressedBorderBrushProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_SelectedPressedBorderBrushPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedpressedforegroundproperty)
+    public class var selectedPressedForegroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_SelectedPressedForegroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectionmodeproperty)
+    public class var selectionModeProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_SelectionModePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.templatesettingsproperty)
+    public class var templateSettingsProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_TemplateSettingsPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todaybackgroundproperty)
+    public class var todayBackgroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_TodayBackgroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayblackoutbackgroundproperty)
+    public class var todayBlackoutBackgroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_TodayBlackoutBackgroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayblackoutforegroundproperty)
+    public class var todayBlackoutForegroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_TodayBlackoutForegroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todaydisabledbackgroundproperty)
+    public class var todayDisabledBackgroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_TodayDisabledBackgroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayfontweightproperty)
+    public class var todayFontWeightProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_TodayFontWeightPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayforegroundproperty)
+    public class var todayForegroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_TodayForegroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayhoverbackgroundproperty)
+    public class var todayHoverBackgroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_TodayHoverBackgroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todaypressedbackgroundproperty)
+    public class var todayPressedBackgroundProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_TodayPressedBackgroundPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayselectedinnerborderbrushproperty)
+    public class var todaySelectedInnerBorderBrushProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_TodaySelectedInnerBorderBrushPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.verticaldayitemalignmentproperty)
+    public class var verticalDayItemAlignmentProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_VerticalDayItemAlignmentPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.verticalfirstofmonthlabelalignmentproperty)
+    public class var verticalFirstOfMonthLabelAlignmentProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewStatics.get_VerticalFirstOfMonthLabelAlignmentPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.setdisplaydate)
+    public func setDisplayDate(_ date: WindowsFoundation.DateTime) throws {
+        try _default.SetDisplayDateImpl(date)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions)
+    public func setYearDecadeDisplayDimensions(_ columns: Int32, _ rows: Int32) throws {
+        try _default.SetYearDecadeDisplayDimensionsImpl(columns, rows)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.blackoutbackground)
+    public var blackoutBackground : WinUI.Brush! {
+        get { try! _default.get_BlackoutBackgroundImpl() }
+        set { try! _default.put_BlackoutBackgroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.blackoutforeground)
+    public var blackoutForeground : WinUI.Brush! {
+        get { try! _default.get_BlackoutForegroundImpl() }
+        set { try! _default.put_BlackoutForegroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.blackoutstrikethroughbrush)
+    public var blackoutStrikethroughBrush : WinUI.Brush! {
+        get { try! _default.get_BlackoutStrikethroughBrushImpl() }
+        set { try! _default.put_BlackoutStrikethroughBrushImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaridentifier)
+    public var calendarIdentifier : String {
+        get { try! _default.get_CalendarIdentifierImpl() }
+        set { try! _default.put_CalendarIdentifierImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritembackground)
+    public var calendarItemBackground : WinUI.Brush! {
+        get { try! _default.get_CalendarItemBackgroundImpl() }
+        set { try! _default.put_CalendarItemBackgroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemborderbrush)
+    public var calendarItemBorderBrush : WinUI.Brush! {
+        get { try! _default.get_CalendarItemBorderBrushImpl() }
+        set { try! _default.put_CalendarItemBorderBrushImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemborderthickness)
+    public var calendarItemBorderThickness : WinUI.Thickness {
+        get { try! _default.get_CalendarItemBorderThicknessImpl() }
+        set { try! _default.put_CalendarItemBorderThicknessImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemcornerradius)
+    public var calendarItemCornerRadius : WinUI.CornerRadius {
+        get { try! _default.get_CalendarItemCornerRadiusImpl() }
+        set { try! _default.put_CalendarItemCornerRadiusImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemdisabledbackground)
+    public var calendarItemDisabledBackground : WinUI.Brush! {
+        get { try! _default.get_CalendarItemDisabledBackgroundImpl() }
+        set { try! _default.put_CalendarItemDisabledBackgroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemforeground)
+    public var calendarItemForeground : WinUI.Brush! {
+        get { try! _default.get_CalendarItemForegroundImpl() }
+        set { try! _default.put_CalendarItemForegroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemhoverbackground)
+    public var calendarItemHoverBackground : WinUI.Brush! {
+        get { try! _default.get_CalendarItemHoverBackgroundImpl() }
+        set { try! _default.put_CalendarItemHoverBackgroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritempressedbackground)
+    public var calendarItemPressedBackground : WinUI.Brush! {
+        get { try! _default.get_CalendarItemPressedBackgroundImpl() }
+        set { try! _default.put_CalendarItemPressedBackgroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendarviewdayitemstyle)
+    public var calendarViewDayItemStyle : WinUI.Style! {
+        get { try! _default.get_CalendarViewDayItemStyleImpl() }
+        set { try! _default.put_CalendarViewDayItemStyleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontfamily)
+    public var dayItemFontFamily : WinUI.FontFamily! {
+        get { try! _default.get_DayItemFontFamilyImpl() }
+        set { try! _default.put_DayItemFontFamilyImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontsize)
+    public var dayItemFontSize : Double {
+        get { try! _default.get_DayItemFontSizeImpl() }
+        set { try! _default.put_DayItemFontSizeImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontstyle)
+    public var dayItemFontStyle : UWP.FontStyle {
+        get { try! _default.get_DayItemFontStyleImpl() }
+        set { try! _default.put_DayItemFontStyleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontweight)
+    public var dayItemFontWeight : UWP.FontWeight {
+        get { try! _default.get_DayItemFontWeightImpl() }
+        set { try! _default.put_DayItemFontWeightImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemmargin)
+    public var dayItemMargin : WinUI.Thickness {
+        get { try! _default.get_DayItemMarginImpl() }
+        set { try! _default.put_DayItemMarginImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayofweekformat)
+    public var dayOfWeekFormat : String {
+        get { try! _default.get_DayOfWeekFormatImpl() }
+        set { try! _default.put_DayOfWeekFormatImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.disabledforeground)
+    public var disabledForeground : WinUI.Brush! {
+        get { try! _default.get_DisabledForegroundImpl() }
+        set { try! _default.put_DisabledForegroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.displaymode)
+    public var displayMode : CalendarViewDisplayMode {
+        get { try! _default.get_DisplayModeImpl() }
+        set { try! _default.put_DisplayModeImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstdayofweek)
+    public var firstDayOfWeek : UWP.DayOfWeek {
+        get { try! _default.get_FirstDayOfWeekImpl() }
+        set { try! _default.put_FirstDayOfWeekImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontfamily)
+    public var firstOfMonthLabelFontFamily : WinUI.FontFamily! {
+        get { try! _default.get_FirstOfMonthLabelFontFamilyImpl() }
+        set { try! _default.put_FirstOfMonthLabelFontFamilyImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontsize)
+    public var firstOfMonthLabelFontSize : Double {
+        get { try! _default.get_FirstOfMonthLabelFontSizeImpl() }
+        set { try! _default.put_FirstOfMonthLabelFontSizeImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontstyle)
+    public var firstOfMonthLabelFontStyle : UWP.FontStyle {
+        get { try! _default.get_FirstOfMonthLabelFontStyleImpl() }
+        set { try! _default.put_FirstOfMonthLabelFontStyleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontweight)
+    public var firstOfMonthLabelFontWeight : UWP.FontWeight {
+        get { try! _default.get_FirstOfMonthLabelFontWeightImpl() }
+        set { try! _default.put_FirstOfMonthLabelFontWeightImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelmargin)
+    public var firstOfMonthLabelMargin : WinUI.Thickness {
+        get { try! _default.get_FirstOfMonthLabelMarginImpl() }
+        set { try! _default.put_FirstOfMonthLabelMarginImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontfamily)
+    public var firstOfYearDecadeLabelFontFamily : WinUI.FontFamily! {
+        get { try! _default.get_FirstOfYearDecadeLabelFontFamilyImpl() }
+        set { try! _default.put_FirstOfYearDecadeLabelFontFamilyImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontsize)
+    public var firstOfYearDecadeLabelFontSize : Double {
+        get { try! _default.get_FirstOfYearDecadeLabelFontSizeImpl() }
+        set { try! _default.put_FirstOfYearDecadeLabelFontSizeImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontstyle)
+    public var firstOfYearDecadeLabelFontStyle : UWP.FontStyle {
+        get { try! _default.get_FirstOfYearDecadeLabelFontStyleImpl() }
+        set { try! _default.put_FirstOfYearDecadeLabelFontStyleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontweight)
+    public var firstOfYearDecadeLabelFontWeight : UWP.FontWeight {
+        get { try! _default.get_FirstOfYearDecadeLabelFontWeightImpl() }
+        set { try! _default.put_FirstOfYearDecadeLabelFontWeightImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelmargin)
+    public var firstOfYearDecadeLabelMargin : WinUI.Thickness {
+        get { try! _default.get_FirstOfYearDecadeLabelMarginImpl() }
+        set { try! _default.put_FirstOfYearDecadeLabelMarginImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.focusborderbrush)
+    public var focusBorderBrush : WinUI.Brush! {
+        get { try! _default.get_FocusBorderBrushImpl() }
+        set { try! _default.put_FocusBorderBrushImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.horizontaldayitemalignment)
+    public var horizontalDayItemAlignment : WinUI.HorizontalAlignment {
+        get { try! _default.get_HorizontalDayItemAlignmentImpl() }
+        set { try! _default.put_HorizontalDayItemAlignmentImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.horizontalfirstofmonthlabelalignment)
+    public var horizontalFirstOfMonthLabelAlignment : WinUI.HorizontalAlignment {
+        get { try! _default.get_HorizontalFirstOfMonthLabelAlignmentImpl() }
+        set { try! _default.put_HorizontalFirstOfMonthLabelAlignmentImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.hoverborderbrush)
+    public var hoverBorderBrush : WinUI.Brush! {
+        get { try! _default.get_HoverBorderBrushImpl() }
+        set { try! _default.put_HoverBorderBrushImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.isgrouplabelvisible)
+    public var isGroupLabelVisible : Bool {
+        get { try! _default.get_IsGroupLabelVisibleImpl() }
+        set { try! _default.put_IsGroupLabelVisibleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.isoutofscopeenabled)
+    public var isOutOfScopeEnabled : Bool {
+        get { try! _default.get_IsOutOfScopeEnabledImpl() }
+        set { try! _default.put_IsOutOfScopeEnabledImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.istodayhighlighted)
+    public var isTodayHighlighted : Bool {
+        get { try! _default.get_IsTodayHighlightedImpl() }
+        set { try! _default.put_IsTodayHighlightedImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.maxdate)
+    public var maxDate : WindowsFoundation.DateTime {
+        get { try! _default.get_MaxDateImpl() }
+        set { try! _default.put_MaxDateImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.mindate)
+    public var minDate : WindowsFoundation.DateTime {
+        get { try! _default.get_MinDateImpl() }
+        set { try! _default.put_MinDateImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontfamily)
+    public var monthYearItemFontFamily : WinUI.FontFamily! {
+        get { try! _default.get_MonthYearItemFontFamilyImpl() }
+        set { try! _default.put_MonthYearItemFontFamilyImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontsize)
+    public var monthYearItemFontSize : Double {
+        get { try! _default.get_MonthYearItemFontSizeImpl() }
+        set { try! _default.put_MonthYearItemFontSizeImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontstyle)
+    public var monthYearItemFontStyle : UWP.FontStyle {
+        get { try! _default.get_MonthYearItemFontStyleImpl() }
+        set { try! _default.put_MonthYearItemFontStyleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontweight)
+    public var monthYearItemFontWeight : UWP.FontWeight {
+        get { try! _default.get_MonthYearItemFontWeightImpl() }
+        set { try! _default.put_MonthYearItemFontWeightImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemmargin)
+    public var monthYearItemMargin : WinUI.Thickness {
+        get { try! _default.get_MonthYearItemMarginImpl() }
+        set { try! _default.put_MonthYearItemMarginImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.numberofweeksinview)
+    public var numberOfWeeksInView : Int32 {
+        get { try! _default.get_NumberOfWeeksInViewImpl() }
+        set { try! _default.put_NumberOfWeeksInViewImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.outofscopebackground)
+    public var outOfScopeBackground : WinUI.Brush! {
+        get { try! _default.get_OutOfScopeBackgroundImpl() }
+        set { try! _default.put_OutOfScopeBackgroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.outofscopeforeground)
+    public var outOfScopeForeground : WinUI.Brush! {
+        get { try! _default.get_OutOfScopeForegroundImpl() }
+        set { try! _default.put_OutOfScopeForegroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.outofscopehoverforeground)
+    public var outOfScopeHoverForeground : WinUI.Brush! {
+        get { try! _default.get_OutOfScopeHoverForegroundImpl() }
+        set { try! _default.put_OutOfScopeHoverForegroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.outofscopepressedforeground)
+    public var outOfScopePressedForeground : WinUI.Brush! {
+        get { try! _default.get_OutOfScopePressedForegroundImpl() }
+        set { try! _default.put_OutOfScopePressedForegroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.pressedborderbrush)
+    public var pressedBorderBrush : WinUI.Brush! {
+        get { try! _default.get_PressedBorderBrushImpl() }
+        set { try! _default.put_PressedBorderBrushImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.pressedforeground)
+    public var pressedForeground : WinUI.Brush! {
+        get { try! _default.get_PressedForegroundImpl() }
+        set { try! _default.put_PressedForegroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedborderbrush)
+    public var selectedBorderBrush : WinUI.Brush! {
+        get { try! _default.get_SelectedBorderBrushImpl() }
+        set { try! _default.put_SelectedBorderBrushImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddates)
+    public var selectedDates : WindowsFoundation.AnyIVector<WindowsFoundation.DateTime>! {
+        get { try! _default.get_SelectedDatesImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddisabledborderbrush)
+    public var selectedDisabledBorderBrush : WinUI.Brush! {
+        get { try! _default.get_SelectedDisabledBorderBrushImpl() }
+        set { try! _default.put_SelectedDisabledBorderBrushImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddisabledforeground)
+    public var selectedDisabledForeground : WinUI.Brush! {
+        get { try! _default.get_SelectedDisabledForegroundImpl() }
+        set { try! _default.put_SelectedDisabledForegroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedforeground)
+    public var selectedForeground : WinUI.Brush! {
+        get { try! _default.get_SelectedForegroundImpl() }
+        set { try! _default.put_SelectedForegroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedhoverborderbrush)
+    public var selectedHoverBorderBrush : WinUI.Brush! {
+        get { try! _default.get_SelectedHoverBorderBrushImpl() }
+        set { try! _default.put_SelectedHoverBorderBrushImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedhoverforeground)
+    public var selectedHoverForeground : WinUI.Brush! {
+        get { try! _default.get_SelectedHoverForegroundImpl() }
+        set { try! _default.put_SelectedHoverForegroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedpressedborderbrush)
+    public var selectedPressedBorderBrush : WinUI.Brush! {
+        get { try! _default.get_SelectedPressedBorderBrushImpl() }
+        set { try! _default.put_SelectedPressedBorderBrushImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedpressedforeground)
+    public var selectedPressedForeground : WinUI.Brush! {
+        get { try! _default.get_SelectedPressedForegroundImpl() }
+        set { try! _default.put_SelectedPressedForegroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectionmode)
+    public var selectionMode : CalendarViewSelectionMode {
+        get { try! _default.get_SelectionModeImpl() }
+        set { try! _default.put_SelectionModeImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.templatesettings)
+    public var templateSettings : WinUI.CalendarViewTemplateSettings! {
+        get { try! _default.get_TemplateSettingsImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todaybackground)
+    public var todayBackground : WinUI.Brush! {
+        get { try! _default.get_TodayBackgroundImpl() }
+        set { try! _default.put_TodayBackgroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayblackoutbackground)
+    public var todayBlackoutBackground : WinUI.Brush! {
+        get { try! _default.get_TodayBlackoutBackgroundImpl() }
+        set { try! _default.put_TodayBlackoutBackgroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayblackoutforeground)
+    public var todayBlackoutForeground : WinUI.Brush! {
+        get { try! _default.get_TodayBlackoutForegroundImpl() }
+        set { try! _default.put_TodayBlackoutForegroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todaydisabledbackground)
+    public var todayDisabledBackground : WinUI.Brush! {
+        get { try! _default.get_TodayDisabledBackgroundImpl() }
+        set { try! _default.put_TodayDisabledBackgroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayfontweight)
+    public var todayFontWeight : UWP.FontWeight {
+        get { try! _default.get_TodayFontWeightImpl() }
+        set { try! _default.put_TodayFontWeightImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayforeground)
+    public var todayForeground : WinUI.Brush! {
+        get { try! _default.get_TodayForegroundImpl() }
+        set { try! _default.put_TodayForegroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayhoverbackground)
+    public var todayHoverBackground : WinUI.Brush! {
+        get { try! _default.get_TodayHoverBackgroundImpl() }
+        set { try! _default.put_TodayHoverBackgroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todaypressedbackground)
+    public var todayPressedBackground : WinUI.Brush! {
+        get { try! _default.get_TodayPressedBackgroundImpl() }
+        set { try! _default.put_TodayPressedBackgroundImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayselectedinnerborderbrush)
+    public var todaySelectedInnerBorderBrush : WinUI.Brush! {
+        get { try! _default.get_TodaySelectedInnerBorderBrushImpl() }
+        set { try! _default.put_TodaySelectedInnerBorderBrushImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.verticaldayitemalignment)
+    public var verticalDayItemAlignment : WinUI.VerticalAlignment {
+        get { try! _default.get_VerticalDayItemAlignmentImpl() }
+        set { try! _default.put_VerticalDayItemAlignmentImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.verticalfirstofmonthlabelalignment)
+    public var verticalFirstOfMonthLabelAlignment : WinUI.VerticalAlignment {
+        get { try! _default.get_VerticalFirstOfMonthLabelAlignmentImpl() }
+        set { try! _default.put_VerticalFirstOfMonthLabelAlignmentImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendarviewdayitemchanging)
+    public lazy var calendarViewDayItemChanging : Event<TypedEventHandler<CalendarView?, CalendarViewDayItemChangingEventArgs?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_CalendarViewDayItemChangingImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_CalendarViewDayItemChangingImpl($0)
+       }
+      )
+    }()
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddateschanged)
+    public lazy var selectedDatesChanged : Event<TypedEventHandler<CalendarView?, CalendarViewSelectedDatesChangedEventArgs?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_SelectedDatesChangedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_SelectedDatesChangedImpl($0)
+       }
+      )
+    }()
+
+    internal enum IControlOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIControlOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IControlOverrides
+        internal typealias Class = CalendarView
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarView
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ICalendarView
+        }
+    }
+    internal typealias Composable = IControlOverrides
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitem)
+open class CalendarViewDayItem : WinUI.Control {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ICalendarViewDayItem
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarViewDayItem
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarViewDayItem>?) -> CalendarViewDayItem? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _ICalendarViewDayItemFactory : __ABI_Microsoft_UI_Xaml_Controls.ICalendarViewDayItemFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.CalendarViewDayItem"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._ICalendarViewDayItemFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    private static let _ICalendarViewDayItemStatics: __ABI_Microsoft_UI_Xaml_Controls.ICalendarViewDayItemStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.CalendarViewDayItem"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitem.dateproperty)
+    public class var dateProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewDayItemStatics.get_DatePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitem.isblackoutproperty)
+    public class var isBlackoutProperty : WinUI.DependencyProperty! {
+        get { try! _ICalendarViewDayItemStatics.get_IsBlackoutPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitem.setdensitycolors)
+    public func setDensityColors(_ colors: WindowsFoundation.AnyIIterable<UWP.Color>!) throws {
+        try _default.SetDensityColorsImpl(colors)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitem.date)
+    public var date : WindowsFoundation.DateTime {
+        get { try! _default.get_DateImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitem.isblackout)
+    public var isBlackout : Bool {
+        get { try! _default.get_IsBlackoutImpl() }
+        set { try! _default.put_IsBlackoutImpl(newValue) }
+    }
+
+    internal enum IControlOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIControlOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IControlOverrides
+        internal typealias Class = CalendarViewDayItem
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarViewDayItem
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ICalendarViewDayItem
+        }
+    }
+    internal typealias Composable = IControlOverrides
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitemchangingeventargs)
+public final class CalendarViewDayItemChangingEventArgs : WinRTClass {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ICalendarViewDayItemChangingEventArgs
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarViewDayItemChangingEventArgs
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarViewDayItemChangingEventArgs>?) -> CalendarViewDayItemChangingEventArgs? {
+        guard let abi = abi else { return nil }
+        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+    }
+
+    @_spi(WinRTInternal)
+    public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitemchangingeventargs.registerupdatecallback)
+    public func registerUpdateCallback(_ callback: TypedEventHandler<CalendarView?, CalendarViewDayItemChangingEventArgs?>!) throws {
+        try _default.RegisterUpdateCallbackImpl(callback)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitemchangingeventargs.registerupdatecallback)
+    public func registerUpdateCallback(_ callbackPhase: UInt32, _ callback: TypedEventHandler<CalendarView?, CalendarViewDayItemChangingEventArgs?>!) throws {
+        try _default.RegisterUpdateCallbackWithPhaseImpl(callbackPhase, callback)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitemchangingeventargs.inrecyclequeue)
+    public var inRecycleQueue : Bool {
+        get { try! _default.get_InRecycleQueueImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitemchangingeventargs.item)
+    public var item : CalendarViewDayItem! {
+        get { try! _default.get_ItemImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitemchangingeventargs.phase)
+    public var phase : UInt32 {
+        get { try! _default.get_PhaseImpl() }
+    }
+
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewselecteddateschangedeventargs)
+public final class CalendarViewSelectedDatesChangedEventArgs : WinRTClass {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ICalendarViewSelectedDatesChangedEventArgs
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarViewSelectedDatesChangedEventArgs
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CICalendarViewSelectedDatesChangedEventArgs>?) -> CalendarViewSelectedDatesChangedEventArgs? {
+        guard let abi = abi else { return nil }
+        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+    }
+
+    @_spi(WinRTInternal)
+    public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewselecteddateschangedeventargs.addeddates)
+    public var addedDates : WindowsFoundation.AnyIVectorView<WindowsFoundation.DateTime>! {
+        get { try! _default.get_AddedDatesImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewselecteddateschangedeventargs.removeddates)
+    public var removedDates : WindowsFoundation.AnyIVectorView<WindowsFoundation.DateTime>! {
+        get { try! _default.get_RemovedDatesImpl() }
+    }
+
     deinit {
         _default = nil
     }
@@ -3406,6 +4864,334 @@ open class DataTemplateSelector : WinRTClass, WinUI.IElementFactory {
         _default = nil
         _IDataTemplateSelectorOverrides = nil
         _IElementFactory = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker)
+open class DatePicker : WinUI.Control {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IDatePicker
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIDatePicker
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIDatePicker>?) -> DatePicker? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _IDatePickerFactory : __ABI_Microsoft_UI_Xaml_Controls.IDatePickerFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.DatePicker"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._IDatePickerFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    private static let _IDatePickerStatics: __ABI_Microsoft_UI_Xaml_Controls.IDatePickerStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.DatePicker"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.calendaridentifierproperty)
+    public class var calendarIdentifierProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_CalendarIdentifierPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.dateproperty)
+    public class var dateProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_DatePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.dayformatproperty)
+    public class var dayFormatProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_DayFormatPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.dayvisibleproperty)
+    public class var dayVisibleProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_DayVisiblePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.headerproperty)
+    public class var headerProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_HeaderPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.headertemplateproperty)
+    public class var headerTemplateProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_HeaderTemplatePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.lightdismissoverlaymodeproperty)
+    public class var lightDismissOverlayModeProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_LightDismissOverlayModePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.maxyearproperty)
+    public class var maxYearProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_MaxYearPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.minyearproperty)
+    public class var minYearProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_MinYearPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.monthformatproperty)
+    public class var monthFormatProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_MonthFormatPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.monthvisibleproperty)
+    public class var monthVisibleProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_MonthVisiblePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.orientationproperty)
+    public class var orientationProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_OrientationPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddateproperty)
+    public class var selectedDateProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_SelectedDatePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.yearformatproperty)
+    public class var yearFormatProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_YearFormatPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.yearvisibleproperty)
+    public class var yearVisibleProperty : WinUI.DependencyProperty! {
+        get { try! _IDatePickerStatics.get_YearVisiblePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.calendaridentifier)
+    public var calendarIdentifier : String {
+        get { try! _default.get_CalendarIdentifierImpl() }
+        set { try! _default.put_CalendarIdentifierImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.date)
+    public var date : WindowsFoundation.DateTime {
+        get { try! _default.get_DateImpl() }
+        set { try! _default.put_DateImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.dayformat)
+    public var dayFormat : String {
+        get { try! _default.get_DayFormatImpl() }
+        set { try! _default.put_DayFormatImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.dayvisible)
+    public var dayVisible : Bool {
+        get { try! _default.get_DayVisibleImpl() }
+        set { try! _default.put_DayVisibleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.header)
+    public var header : Any! {
+        get { try! _default.get_HeaderImpl() }
+        set { try! _default.put_HeaderImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.headertemplate)
+    public var headerTemplate : WinUI.DataTemplate! {
+        get { try! _default.get_HeaderTemplateImpl() }
+        set { try! _default.put_HeaderTemplateImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.lightdismissoverlaymode)
+    public var lightDismissOverlayMode : LightDismissOverlayMode {
+        get { try! _default.get_LightDismissOverlayModeImpl() }
+        set { try! _default.put_LightDismissOverlayModeImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.maxyear)
+    public var maxYear : WindowsFoundation.DateTime {
+        get { try! _default.get_MaxYearImpl() }
+        set { try! _default.put_MaxYearImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.minyear)
+    public var minYear : WindowsFoundation.DateTime {
+        get { try! _default.get_MinYearImpl() }
+        set { try! _default.put_MinYearImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.monthformat)
+    public var monthFormat : String {
+        get { try! _default.get_MonthFormatImpl() }
+        set { try! _default.put_MonthFormatImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.monthvisible)
+    public var monthVisible : Bool {
+        get { try! _default.get_MonthVisibleImpl() }
+        set { try! _default.put_MonthVisibleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.orientation)
+    public var orientation : Orientation {
+        get { try! _default.get_OrientationImpl() }
+        set { try! _default.put_OrientationImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddate)
+    public var selectedDate : WindowsFoundation.DateTime? {
+        get { try! _default.get_SelectedDateImpl() }
+        set { try! _default.put_SelectedDateImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.yearformat)
+    public var yearFormat : String {
+        get { try! _default.get_YearFormatImpl() }
+        set { try! _default.put_YearFormatImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.yearvisible)
+    public var yearVisible : Bool {
+        get { try! _default.get_YearVisibleImpl() }
+        set { try! _default.put_YearVisibleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.datechanged)
+    public lazy var dateChanged : Event<EventHandler<DatePickerValueChangedEventArgs?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_DateChangedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_DateChangedImpl($0)
+       }
+      )
+    }()
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddatechanged)
+    public lazy var selectedDateChanged : Event<TypedEventHandler<DatePicker?, DatePickerSelectedValueChangedEventArgs?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_SelectedDateChangedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_SelectedDateChangedImpl($0)
+       }
+      )
+    }()
+
+    internal enum IControlOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIControlOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IControlOverrides
+        internal typealias Class = DatePicker
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIDatePicker
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IDatePicker
+        }
+    }
+    internal typealias Composable = IControlOverrides
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepickerselectedvaluechangedeventargs)
+public final class DatePickerSelectedValueChangedEventArgs : WinRTClass {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IDatePickerSelectedValueChangedEventArgs
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIDatePickerSelectedValueChangedEventArgs
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIDatePickerSelectedValueChangedEventArgs>?) -> DatePickerSelectedValueChangedEventArgs? {
+        guard let abi = abi else { return nil }
+        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+    }
+
+    @_spi(WinRTInternal)
+    public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepickerselectedvaluechangedeventargs.newdate)
+    public var newDate : WindowsFoundation.DateTime? {
+        get { try! _default.get_NewDateImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepickerselectedvaluechangedeventargs.olddate)
+    public var oldDate : WindowsFoundation.DateTime? {
+        get { try! _default.get_OldDateImpl() }
+    }
+
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepickervaluechangedeventargs)
+public final class DatePickerValueChangedEventArgs : WinRTClass {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IDatePickerValueChangedEventArgs
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIDatePickerValueChangedEventArgs
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIDatePickerValueChangedEventArgs>?) -> DatePickerValueChangedEventArgs? {
+        guard let abi = abi else { return nil }
+        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+    }
+
+    @_spi(WinRTInternal)
+    public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepickervaluechangedeventargs.newdate)
+    public var newDate : WindowsFoundation.DateTime {
+        get { try! _default.get_NewDateImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepickervaluechangedeventargs.olddate)
+    public var oldDate : WindowsFoundation.DateTime {
+        get { try! _default.get_OldDateImpl() }
+    }
+
+    deinit {
+        _default = nil
     }
 }
 
@@ -12922,6 +14708,246 @@ public final class TextControlPasteEventArgs : WinRTClass {
     }
 }
 
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker)
+open class TimePicker : WinUI.Control {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ITimePicker
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CITimePicker
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CITimePicker>?) -> TimePicker? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _ITimePickerFactory : __ABI_Microsoft_UI_Xaml_Controls.ITimePickerFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.TimePicker"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._ITimePickerFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    private static let _ITimePickerStatics: __ABI_Microsoft_UI_Xaml_Controls.ITimePickerStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.TimePicker"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.clockidentifierproperty)
+    public class var clockIdentifierProperty : WinUI.DependencyProperty! {
+        get { try! _ITimePickerStatics.get_ClockIdentifierPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.headerproperty)
+    public class var headerProperty : WinUI.DependencyProperty! {
+        get { try! _ITimePickerStatics.get_HeaderPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.headertemplateproperty)
+    public class var headerTemplateProperty : WinUI.DependencyProperty! {
+        get { try! _ITimePickerStatics.get_HeaderTemplatePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.lightdismissoverlaymodeproperty)
+    public class var lightDismissOverlayModeProperty : WinUI.DependencyProperty! {
+        get { try! _ITimePickerStatics.get_LightDismissOverlayModePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.minuteincrementproperty)
+    public class var minuteIncrementProperty : WinUI.DependencyProperty! {
+        get { try! _ITimePickerStatics.get_MinuteIncrementPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.selectedtimeproperty)
+    public class var selectedTimeProperty : WinUI.DependencyProperty! {
+        get { try! _ITimePickerStatics.get_SelectedTimePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.timeproperty)
+    public class var timeProperty : WinUI.DependencyProperty! {
+        get { try! _ITimePickerStatics.get_TimePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.clockidentifier)
+    public var clockIdentifier : String {
+        get { try! _default.get_ClockIdentifierImpl() }
+        set { try! _default.put_ClockIdentifierImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.header)
+    public var header : Any! {
+        get { try! _default.get_HeaderImpl() }
+        set { try! _default.put_HeaderImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.headertemplate)
+    public var headerTemplate : WinUI.DataTemplate! {
+        get { try! _default.get_HeaderTemplateImpl() }
+        set { try! _default.put_HeaderTemplateImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.lightdismissoverlaymode)
+    public var lightDismissOverlayMode : LightDismissOverlayMode {
+        get { try! _default.get_LightDismissOverlayModeImpl() }
+        set { try! _default.put_LightDismissOverlayModeImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.minuteincrement)
+    public var minuteIncrement : Int32 {
+        get { try! _default.get_MinuteIncrementImpl() }
+        set { try! _default.put_MinuteIncrementImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.selectedtime)
+    public var selectedTime : WindowsFoundation.TimeSpan? {
+        get { try! _default.get_SelectedTimeImpl() }
+        set { try! _default.put_SelectedTimeImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.time)
+    public var time : WindowsFoundation.TimeSpan {
+        get { try! _default.get_TimeImpl() }
+        set { try! _default.put_TimeImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.selectedtimechanged)
+    public lazy var selectedTimeChanged : Event<TypedEventHandler<TimePicker?, TimePickerSelectedValueChangedEventArgs?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_SelectedTimeChangedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_SelectedTimeChangedImpl($0)
+       }
+      )
+    }()
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.timechanged)
+    public lazy var timeChanged : Event<EventHandler<TimePickerValueChangedEventArgs?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_TimeChangedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_TimeChangedImpl($0)
+       }
+      )
+    }()
+
+    internal enum IControlOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIControlOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IControlOverrides
+        internal typealias Class = TimePicker
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CITimePicker
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ITimePicker
+        }
+    }
+    internal typealias Composable = IControlOverrides
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepickerselectedvaluechangedeventargs)
+public final class TimePickerSelectedValueChangedEventArgs : WinRTClass {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ITimePickerSelectedValueChangedEventArgs
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CITimePickerSelectedValueChangedEventArgs
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CITimePickerSelectedValueChangedEventArgs>?) -> TimePickerSelectedValueChangedEventArgs? {
+        guard let abi = abi else { return nil }
+        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+    }
+
+    @_spi(WinRTInternal)
+    public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepickerselectedvaluechangedeventargs.newtime)
+    public var newTime : WindowsFoundation.TimeSpan? {
+        get { try! _default.get_NewTimeImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepickerselectedvaluechangedeventargs.oldtime)
+    public var oldTime : WindowsFoundation.TimeSpan? {
+        get { try! _default.get_OldTimeImpl() }
+    }
+
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepickervaluechangedeventargs)
+public final class TimePickerValueChangedEventArgs : WinRTClass {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ITimePickerValueChangedEventArgs
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CITimePickerValueChangedEventArgs
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CITimePickerValueChangedEventArgs>?) -> TimePickerValueChangedEventArgs? {
+        guard let abi = abi else { return nil }
+        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+    }
+
+    @_spi(WinRTInternal)
+    public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepickervaluechangedeventargs.newtime)
+    public var newTime : WindowsFoundation.TimeSpan {
+        get { try! _default.get_NewTimeImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepickervaluechangedeventargs.oldtime)
+    public var oldTime : WindowsFoundation.TimeSpan {
+        get { try! _default.get_OldTimeImpl() }
+    }
+
+    deinit {
+        _default = nil
+    }
+}
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglemenuflyoutitem)
 open class ToggleMenuFlyoutItem : WinUI.MenuFlyoutItem {
     private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IToggleMenuFlyoutItem
@@ -13533,6 +15559,7 @@ public final class XamlControlsResources : WinUI.ResourceDictionary {
     }
 }
 
+public typealias CalendarViewDayItemChangingEventHandler = (CalendarView?, CalendarViewDayItemChangingEventArgs?) -> ()
 public typealias ContextMenuOpeningEventHandler = (Any?, ContextMenuEventArgs?) -> ()
 public typealias DragItemsStartingEventHandler = (Any?, DragItemsStartingEventArgs?) -> ()
 public typealias ItemClickEventHandler = (Any?, ItemClickEventArgs?) -> ()
@@ -13664,6 +15691,32 @@ extension WinUI.BackgroundSizing {
     }
 }
 extension WinUI.BackgroundSizing: @retroactive Hashable, @retroactive Codable {}
+
+extension WinUI.CalendarViewDisplayMode {
+    public static var month : WinUI.CalendarViewDisplayMode {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCalendarViewDisplayMode_Month
+    }
+    public static var year : WinUI.CalendarViewDisplayMode {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCalendarViewDisplayMode_Year
+    }
+    public static var decade : WinUI.CalendarViewDisplayMode {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCalendarViewDisplayMode_Decade
+    }
+}
+extension WinUI.CalendarViewDisplayMode: @retroactive Hashable, @retroactive Codable {}
+
+extension WinUI.CalendarViewSelectionMode {
+    public static var none : WinUI.CalendarViewSelectionMode {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCalendarViewSelectionMode_None
+    }
+    public static var single : WinUI.CalendarViewSelectionMode {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCalendarViewSelectionMode_Single
+    }
+    public static var multiple : WinUI.CalendarViewSelectionMode {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCalendarViewSelectionMode_Multiple
+    }
+}
+extension WinUI.CalendarViewSelectionMode: @retroactive Hashable, @retroactive Codable {}
 
 extension WinUI.CandidateWindowAlignment {
     public static var `default` : WinUI.CandidateWindowAlignment {
