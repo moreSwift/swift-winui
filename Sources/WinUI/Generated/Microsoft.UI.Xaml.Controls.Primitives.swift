@@ -2702,6 +2702,34 @@ extension IScrollControllerPanningInfo {
 }
 public typealias AnyIScrollControllerPanningInfo = any IScrollControllerPanningInfo
 
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo)
+public protocol IScrollSnapPointsInfo : WinRTInterface {
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.getirregularsnappoints)
+    func getIrregularSnapPoints(_ orientation: WinUI.Orientation, _ alignment: WinUI.SnapPointsAlignment) throws -> WindowsFoundation.AnyIVectorView<Float>!
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.getregularsnappoints)
+    func getRegularSnapPoints(_ orientation: WinUI.Orientation, _ alignment: WinUI.SnapPointsAlignment, _ offset: inout Float) throws -> Float
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.arehorizontalsnappointsregular)
+    var areHorizontalSnapPointsRegular: Bool { get }
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.areverticalsnappointsregular)
+    var areVerticalSnapPointsRegular: Bool { get }
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.horizontalsnappointschanged)
+    var horizontalSnapPointsChanged: Event<EventHandler<Any?>> { get }
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.verticalsnappointschanged)
+    var verticalSnapPointsChanged: Event<EventHandler<Any?>> { get }
+}
+
+extension IScrollSnapPointsInfo {
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        switch iid {
+            case __ABI_Microsoft_UI_Xaml_Controls_Primitives.IScrollSnapPointsInfoWrapper.IID:
+                let wrapper = __ABI_Microsoft_UI_Xaml_Controls_Primitives.IScrollSnapPointsInfoWrapper(self)
+                return wrapper!.queryInterface(iid)
+            default: return nil
+        }
+    }
+}
+public typealias AnyIScrollSnapPointsInfo = any IScrollSnapPointsInfo
+
 extension WinUI.AnimationDirection {
     public static var left : WinUI.AnimationDirection {
         __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CAnimationDirection_Left

@@ -14,6 +14,11 @@ fileprivate func makeIElementFactoryFrom(abi: WindowsFoundation.IInspectable) ->
     return __IMPL_Microsoft_UI_Xaml.IElementFactoryBridge.from(abi: RawPointer(swiftAbi))!
 }
 
+fileprivate func makeIInsertionPanelFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    let swiftAbi: __ABI_Microsoft_UI_Xaml_Controls.IInsertionPanel = try! abi.QueryInterface()
+    return __IMPL_Microsoft_UI_Xaml_Controls.IInsertionPanelBridge.from(abi: RawPointer(swiftAbi))!
+}
+
 fileprivate func makeIItemContainerMappingFrom(abi: WindowsFoundation.IInspectable) -> Any {
     let swiftAbi: __ABI_Microsoft_UI_Xaml_Controls.IItemContainerMapping = try! abi.QueryInterface()
     return __IMPL_Microsoft_UI_Xaml_Controls.IItemContainerMappingBridge.from(abi: RawPointer(swiftAbi))!
@@ -42,6 +47,11 @@ fileprivate func makeIScrollControllerFrom(abi: WindowsFoundation.IInspectable) 
 fileprivate func makeIScrollControllerPanningInfoFrom(abi: WindowsFoundation.IInspectable) -> Any {
     let swiftAbi: __ABI_Microsoft_UI_Xaml_Controls_Primitives.IScrollControllerPanningInfo = try! abi.QueryInterface()
     return __IMPL_Microsoft_UI_Xaml_Controls_Primitives.IScrollControllerPanningInfoBridge.from(abi: RawPointer(swiftAbi))!
+}
+
+fileprivate func makeIScrollSnapPointsInfoFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    let swiftAbi: __ABI_Microsoft_UI_Xaml_Controls_Primitives.IScrollSnapPointsInfo = try! abi.QueryInterface()
+    return __IMPL_Microsoft_UI_Xaml_Controls_Primitives.IScrollSnapPointsInfoBridge.from(abi: RawPointer(swiftAbi))!
 }
 
 fileprivate func makeINotifyPropertyChangedFrom(abi: WindowsFoundation.IInspectable) -> Any {
@@ -789,6 +799,10 @@ fileprivate func makeSplitViewFrom(abi: WindowsFoundation.IInspectable) -> Any {
 
 fileprivate func makeSplitViewPaneClosingEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return SplitViewPaneClosingEventArgs(fromAbi: abi)
+}
+
+fileprivate func makeStackPanelFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return StackPanel(fromAbi: abi)
 }
 
 fileprivate func makeStyleSelectorFrom(abi: WindowsFoundation.IInspectable) -> Any {
@@ -1781,12 +1795,14 @@ public class __MakeFromAbi: MakeFromAbi {
         switch typeName {
             case "IDataTemplateExtension": return makeIDataTemplateExtensionFrom(abi: abi)
             case "IElementFactory": return makeIElementFactoryFrom(abi: abi)
+            case "IInsertionPanel": return makeIInsertionPanelFrom(abi: abi)
             case "IItemContainerMapping": return makeIItemContainerMappingFrom(abi: abi)
             case "IKeyIndexMapping": return makeIKeyIndexMappingFrom(abi: abi)
             case "IScrollAnchorProvider": return makeIScrollAnchorProviderFrom(abi: abi)
             case "ISemanticZoomInformation": return makeISemanticZoomInformationFrom(abi: abi)
             case "IScrollController": return makeIScrollControllerFrom(abi: abi)
             case "IScrollControllerPanningInfo": return makeIScrollControllerPanningInfoFrom(abi: abi)
+            case "IScrollSnapPointsInfo": return makeIScrollSnapPointsInfoFrom(abi: abi)
             case "INotifyPropertyChanged": return makeINotifyPropertyChangedFrom(abi: abi)
             case "IValueConverter": return makeIValueConverterFrom(abi: abi)
             case "ICommand": return makeICommandFrom(abi: abi)
@@ -1971,6 +1987,7 @@ public class __MakeFromAbi: MakeFromAbi {
             case "Slider": return makeSliderFrom(abi: abi)
             case "SplitView": return makeSplitViewFrom(abi: abi)
             case "SplitViewPaneClosingEventArgs": return makeSplitViewPaneClosingEventArgsFrom(abi: abi)
+            case "StackPanel": return makeStackPanelFrom(abi: abi)
             case "StyleSelector": return makeStyleSelectorFrom(abi: abi)
             case "TextBlock": return makeTextBlockFrom(abi: abi)
             case "TextBox": return makeTextBoxFrom(abi: abi)

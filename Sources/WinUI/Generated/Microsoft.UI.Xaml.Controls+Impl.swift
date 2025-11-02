@@ -5,6 +5,36 @@ import Foundation
 import CWinRT
 
 public enum __IMPL_Microsoft_UI_Xaml_Controls {
+    public enum IInsertionPanelBridge : AbiInterfaceBridge {
+        public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIInsertionPanel
+        public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IInsertionPanel
+        public typealias SwiftProjection = AnyIInsertionPanel
+        public static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+            guard let abi = abi else { return nil }
+            return IInsertionPanelImpl(abi)
+        }
+
+        public static func makeAbi() -> CABI {
+            let vtblPtr = withUnsafeMutablePointer(to: &__ABI_Microsoft_UI_Xaml_Controls.IInsertionPanelVTable) { $0 }
+            return .init(lpVtbl: vtblPtr)
+        }
+    }
+
+    fileprivate class IInsertionPanelImpl: IInsertionPanel, WinRTAbiImpl {
+        fileprivate typealias Bridge = IInsertionPanelBridge
+        fileprivate let _default: Bridge.SwiftABI
+        fileprivate var thisPtr: WindowsFoundation.IInspectable { _default }
+        fileprivate init(_ fromAbi: ComPtr<Bridge.CABI>) {
+            _default = Bridge.SwiftABI(fromAbi)
+        }
+
+        /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iinsertionpanel.getinsertionindexes)
+        fileprivate func getInsertionIndexes(_ position: WindowsFoundation.Point, _ first: inout Int32, _ second: inout Int32) throws {
+            try _default.GetInsertionIndexesImpl(position, &first, &second)
+        }
+
+    }
+
     public enum IItemContainerMappingBridge : AbiInterfaceBridge {
         public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIItemContainerMapping
         public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IItemContainerMapping

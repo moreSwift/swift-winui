@@ -13238,6 +13238,208 @@ public final class SplitViewPaneClosingEventArgs : WinRTClass {
     }
 }
 
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel)
+open class StackPanel : WinUI.Panel, WinUI.IScrollSnapPointsInfo, IInsertionPanel {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IStackPanel
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel>?) -> StackPanel? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _IStackPanelFactory : __ABI_Microsoft_UI_Xaml_Controls.IStackPanelFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.StackPanel"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._IStackPanelFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    private static let _IStackPanelStatics: __ABI_Microsoft_UI_Xaml_Controls.IStackPanelStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.StackPanel"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.arescrollsnappointsregularproperty)
+    public class var areScrollSnapPointsRegularProperty : WinUI.DependencyProperty! {
+        get { try! _IStackPanelStatics.get_AreScrollSnapPointsRegularPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.backgroundsizingproperty)
+    public class var backgroundSizingProperty : WinUI.DependencyProperty! {
+        get { try! _IStackPanelStatics.get_BackgroundSizingPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.borderbrushproperty)
+    public class var borderBrushProperty : WinUI.DependencyProperty! {
+        get { try! _IStackPanelStatics.get_BorderBrushPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.borderthicknessproperty)
+    public class var borderThicknessProperty : WinUI.DependencyProperty! {
+        get { try! _IStackPanelStatics.get_BorderThicknessPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.cornerradiusproperty)
+    public class var cornerRadiusProperty : WinUI.DependencyProperty! {
+        get { try! _IStackPanelStatics.get_CornerRadiusPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.orientationproperty)
+    public class var orientationProperty : WinUI.DependencyProperty! {
+        get { try! _IStackPanelStatics.get_OrientationPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.paddingproperty)
+    public class var paddingProperty : WinUI.DependencyProperty! {
+        get { try! _IStackPanelStatics.get_PaddingPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.spacingproperty)
+    public class var spacingProperty : WinUI.DependencyProperty! {
+        get { try! _IStackPanelStatics.get_SpacingPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.arescrollsnappointsregular)
+    public var areScrollSnapPointsRegular : Bool {
+        get { try! _default.get_AreScrollSnapPointsRegularImpl() }
+        set { try! _default.put_AreScrollSnapPointsRegularImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.backgroundsizing)
+    public var backgroundSizing : BackgroundSizing {
+        get { try! _default.get_BackgroundSizingImpl() }
+        set { try! _default.put_BackgroundSizingImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.borderbrush)
+    public var borderBrush : WinUI.Brush! {
+        get { try! _default.get_BorderBrushImpl() }
+        set { try! _default.put_BorderBrushImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.borderthickness)
+    public var borderThickness : WinUI.Thickness {
+        get { try! _default.get_BorderThicknessImpl() }
+        set { try! _default.put_BorderThicknessImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.cornerradius)
+    public var cornerRadius : WinUI.CornerRadius {
+        get { try! _default.get_CornerRadiusImpl() }
+        set { try! _default.put_CornerRadiusImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.orientation)
+    public var orientation : Orientation {
+        get { try! _default.get_OrientationImpl() }
+        set { try! _default.put_OrientationImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.padding)
+    public var padding : WinUI.Thickness {
+        get { try! _default.get_PaddingImpl() }
+        set { try! _default.put_PaddingImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.spacing)
+    public var spacing : Double {
+        get { try! _default.get_SpacingImpl() }
+        set { try! _default.put_SpacingImpl(newValue) }
+    }
+
+    private lazy var _IScrollSnapPointsInfo: __ABI_Microsoft_UI_Xaml_Controls_Primitives.IScrollSnapPointsInfo! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.getirregularsnappoints)
+    public func getIrregularSnapPoints(_ orientation: Orientation, _ alignment: WinUI.SnapPointsAlignment) throws -> WindowsFoundation.AnyIVectorView<Float>! {
+        try _IScrollSnapPointsInfo.GetIrregularSnapPointsImpl(orientation, alignment)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.getregularsnappoints)
+    public func getRegularSnapPoints(_ orientation: Orientation, _ alignment: WinUI.SnapPointsAlignment, _ offset: inout Float) throws -> Float {
+        try _IScrollSnapPointsInfo.GetRegularSnapPointsImpl(orientation, alignment, &offset)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.arehorizontalsnappointsregular)
+    public var areHorizontalSnapPointsRegular : Bool {
+        get { try! _IScrollSnapPointsInfo.get_AreHorizontalSnapPointsRegularImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.areverticalsnappointsregular)
+    public var areVerticalSnapPointsRegular : Bool {
+        get { try! _IScrollSnapPointsInfo.get_AreVerticalSnapPointsRegularImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.horizontalsnappointschanged)
+    public lazy var horizontalSnapPointsChanged : Event<EventHandler<Any?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._IScrollSnapPointsInfo else { return .init() }
+          return try! this.add_HorizontalSnapPointsChangedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._IScrollSnapPointsInfo.remove_HorizontalSnapPointsChangedImpl($0)
+       }
+      )
+    }()
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.verticalsnappointschanged)
+    public lazy var verticalSnapPointsChanged : Event<EventHandler<Any?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._IScrollSnapPointsInfo else { return .init() }
+          return try! this.add_VerticalSnapPointsChangedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._IScrollSnapPointsInfo.remove_VerticalSnapPointsChangedImpl($0)
+       }
+      )
+    }()
+
+    private lazy var _IInsertionPanel: __ABI_Microsoft_UI_Xaml_Controls.IInsertionPanel! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel.getinsertionindexes)
+    public func getInsertionIndexes(_ position: WindowsFoundation.Point, _ first: inout Int32, _ second: inout Int32) throws {
+        try _IInsertionPanel.GetInsertionIndexesImpl(position, &first, &second)
+    }
+
+    internal enum IFrameworkElementOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CIFrameworkElementOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml.IFrameworkElementOverrides
+        internal typealias Class = StackPanel
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IStackPanel
+        }
+    }
+    internal typealias Composable = IFrameworkElementOverrides
+    deinit {
+        _default = nil
+        _IScrollSnapPointsInfo = nil
+        _IInsertionPanel = nil
+    }
+}
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.styleselector)
 open class StyleSelector : WinRTClass {
     private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IStyleSelector
@@ -15567,6 +15769,24 @@ public typealias SelectionChangedEventHandler = (Any?, SelectionChangedEventArgs
 public typealias SemanticZoomViewChangedEventHandler = (Any?, SemanticZoomViewChangedEventArgs?) -> ()
 public typealias TextChangedEventHandler = (Any?, TextChangedEventArgs?) -> ()
 public typealias TextControlPasteEventHandler = (Any?, TextControlPasteEventArgs?) -> ()
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iinsertionpanel)
+public protocol IInsertionPanel : WinRTInterface {
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iinsertionpanel.getinsertionindexes)
+    func getInsertionIndexes(_ position: WindowsFoundation.Point, _ first: inout Int32, _ second: inout Int32) throws
+}
+
+extension IInsertionPanel {
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        switch iid {
+            case __ABI_Microsoft_UI_Xaml_Controls.IInsertionPanelWrapper.IID:
+                let wrapper = __ABI_Microsoft_UI_Xaml_Controls.IInsertionPanelWrapper(self)
+                return wrapper!.queryInterface(iid)
+            default: return nil
+        }
+    }
+}
+public typealias AnyIInsertionPanel = any IInsertionPanel
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iitemcontainermapping)
 public protocol IItemContainerMapping : WinRTInterface {
     /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iitemcontainermapping.itemfromcontainer)

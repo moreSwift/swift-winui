@@ -202,6 +202,77 @@ public enum __IMPL_Microsoft_UI_Xaml_Controls_Primitives {
 
     }
 
+    public enum IScrollSnapPointsInfoBridge : AbiInterfaceBridge {
+        public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo
+        public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls_Primitives.IScrollSnapPointsInfo
+        public typealias SwiftProjection = AnyIScrollSnapPointsInfo
+        public static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+            guard let abi = abi else { return nil }
+            return IScrollSnapPointsInfoImpl(abi)
+        }
+
+        public static func makeAbi() -> CABI {
+            let vtblPtr = withUnsafeMutablePointer(to: &__ABI_Microsoft_UI_Xaml_Controls_Primitives.IScrollSnapPointsInfoVTable) { $0 }
+            return .init(lpVtbl: vtblPtr)
+        }
+    }
+
+    fileprivate class IScrollSnapPointsInfoImpl: IScrollSnapPointsInfo, WinRTAbiImpl {
+        fileprivate typealias Bridge = IScrollSnapPointsInfoBridge
+        fileprivate let _default: Bridge.SwiftABI
+        fileprivate var thisPtr: WindowsFoundation.IInspectable { _default }
+        fileprivate init(_ fromAbi: ComPtr<Bridge.CABI>) {
+            _default = Bridge.SwiftABI(fromAbi)
+        }
+
+        /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.getirregularsnappoints)
+        fileprivate func getIrregularSnapPoints(_ orientation: WinUI.Orientation, _ alignment: SnapPointsAlignment) throws -> WindowsFoundation.AnyIVectorView<Float>! {
+            try _default.GetIrregularSnapPointsImpl(orientation, alignment)
+        }
+
+        /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.getregularsnappoints)
+        fileprivate func getRegularSnapPoints(_ orientation: WinUI.Orientation, _ alignment: SnapPointsAlignment, _ offset: inout Float) throws -> Float {
+            try _default.GetRegularSnapPointsImpl(orientation, alignment, &offset)
+        }
+
+        /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.arehorizontalsnappointsregular)
+        fileprivate var areHorizontalSnapPointsRegular : Bool {
+            get { try! _default.get_AreHorizontalSnapPointsRegularImpl() }
+        }
+
+        /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.areverticalsnappointsregular)
+        fileprivate var areVerticalSnapPointsRegular : Bool {
+            get { try! _default.get_AreVerticalSnapPointsRegularImpl() }
+        }
+
+        /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.horizontalsnappointschanged)
+        fileprivate lazy var horizontalSnapPointsChanged : Event<EventHandler<Any?>> = {
+          .init(
+            add: { [weak self] in
+              guard let this = self?._default else { return .init() }
+              return try! this.add_HorizontalSnapPointsChangedImpl($0)
+            },
+            remove: { [weak self] in
+             try? self?._default.remove_HorizontalSnapPointsChangedImpl($0)
+           }
+          )
+        }()
+
+        /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollsnappointsinfo.verticalsnappointschanged)
+        fileprivate lazy var verticalSnapPointsChanged : Event<EventHandler<Any?>> = {
+          .init(
+            add: { [weak self] in
+              guard let this = self?._default else { return .init() }
+              return try! this.add_VerticalSnapPointsChangedImpl($0)
+            },
+            remove: { [weak self] in
+             try? self?._default.remove_VerticalSnapPointsChangedImpl($0)
+           }
+          )
+        }()
+
+    }
+
     public class ItemsChangedEventHandlerBridge : WinRTDelegateBridge {
         public typealias Handler = ItemsChangedEventHandler
         public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIItemsChangedEventHandler

@@ -177,6 +177,10 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIScrollSnapP
     .init(Data1: 0x3FA2E552, Data2: 0x1A45, Data3: 0x5691, Data4: ( 0x99,0xDC,0x64,0x00,0x08,0x7C,0xBB,0x38 ))// 3FA2E552-1A45-5691-99DC-6400087CBB38
 }
 
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo: WindowsFoundation.IID {
+    .init(Data1: 0xD3EA6E09, Data2: 0xECF7, Data3: 0x51A8, Data4: ( 0xBD,0x54,0xFC,0x84,0xB9,0x65,0x37,0x66 ))// D3EA6E09-ECF7-51A8-BD54-FC84B9653766
+}
+
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CISelector: WindowsFoundation.IID {
     .init(Data1: 0x8F7E2159, Data2: 0xE61D, Data3: 0x576F, Data4: ( 0x84,0x76,0xF8,0x3F,0xDE,0x3D,0x68,0x9E ))// 8F7E2159-E61D-576F-8476-F83FDE3D689E
 }
@@ -3290,6 +3294,175 @@ public enum __ABI_Microsoft_UI_Xaml_Controls_Primitives {
 
     }
 
+    public class IScrollSnapPointsInfo: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo }
+
+        open func get_AreHorizontalSnapPointsRegularImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_AreHorizontalSnapPointsRegular(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        open func get_AreVerticalSnapPointsRegularImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_AreVerticalSnapPointsRegular(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        open func add_HorizontalSnapPointsChangedImpl(_ handler: EventHandler<Any?>?) throws -> EventRegistrationToken {
+            var token: EventRegistrationToken = .init()
+            let handlerWrapper = WinUI.__x_ABI_C__FIEventHandler_1_IInspectableWrapper(handler)
+            let _handler = try! handlerWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.add_HorizontalSnapPointsChanged(pThis, _handler, &token))
+            }
+            return token
+        }
+
+        open func remove_HorizontalSnapPointsChangedImpl(_ token: EventRegistrationToken) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.remove_HorizontalSnapPointsChanged(pThis, token))
+            }
+        }
+
+        open func add_VerticalSnapPointsChangedImpl(_ handler: EventHandler<Any?>?) throws -> EventRegistrationToken {
+            var token: EventRegistrationToken = .init()
+            let handlerWrapper = WinUI.__x_ABI_C__FIEventHandler_1_IInspectableWrapper(handler)
+            let _handler = try! handlerWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.add_VerticalSnapPointsChanged(pThis, _handler, &token))
+            }
+            return token
+        }
+
+        open func remove_VerticalSnapPointsChangedImpl(_ token: EventRegistrationToken) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.remove_VerticalSnapPointsChanged(pThis, token))
+            }
+        }
+
+        open func GetIrregularSnapPointsImpl(_ orientation: WinUI.Orientation, _ alignment: WinUI.SnapPointsAlignment) throws -> WindowsFoundation.AnyIVectorView<Float>? {
+            let (result) = try ComPtrs.initialize { resultAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.GetIrregularSnapPoints(pThis, orientation, alignment, &resultAbi))
+                }
+            }
+            return WinUI.__x_ABI_C__FIVectorView_1_floatWrapper.unwrapFrom(abi: result)
+        }
+
+        open func GetRegularSnapPointsImpl(_ orientation: WinUI.Orientation, _ alignment: WinUI.SnapPointsAlignment, _ offset: inout Float) throws -> Float {
+            var returnValue: FLOAT = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetRegularSnapPoints(pThis, orientation, alignment, &offset, &returnValue))
+            }
+            return returnValue
+        }
+
+    }
+
+    internal static var IScrollSnapPointsInfoVTable: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfoVtbl = .init(
+        QueryInterface: { IScrollSnapPointsInfoWrapper.queryInterface($0, $1, $2) },
+        AddRef: { IScrollSnapPointsInfoWrapper.addRef($0) },
+        Release: { IScrollSnapPointsInfoWrapper.release($0) },
+        GetIids: {
+            let size = MemoryLayout<WindowsFoundation.IID>.size
+            let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+            iids[0] = IUnknown.IID
+            iids[1] = IInspectable.IID
+            iids[2] = __ABI_Microsoft_UI_Xaml_Controls_Primitives.IScrollSnapPointsInfoWrapper.IID
+            $1!.pointee = 3
+            $2!.pointee = iids
+            return S_OK
+        },
+
+        GetRuntimeClassName: {
+            _ = $0
+            let hstring = try! HString("Microsoft.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo").detach()
+            $1!.pointee = hstring
+            return S_OK
+        },
+
+        GetTrustLevel: {
+            _ = $0
+            $1!.pointee = TrustLevel(rawValue: 0)
+            return S_OK
+        },
+
+        get_AreHorizontalSnapPointsRegular: {
+            guard let __unwrapped__instance = IScrollSnapPointsInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let value = __unwrapped__instance.areHorizontalSnapPointsRegular
+            $1?.initialize(to: .init(from: value))
+            return S_OK
+        },
+
+        get_AreVerticalSnapPointsRegular: {
+            guard let __unwrapped__instance = IScrollSnapPointsInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let value = __unwrapped__instance.areVerticalSnapPointsRegular
+            $1?.initialize(to: .init(from: value))
+            return S_OK
+        },
+
+        add_HorizontalSnapPointsChanged: {
+            guard let __unwrapped__instance = IScrollSnapPointsInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            guard let handler = WinUI.__x_ABI_C__FIEventHandler_1_IInspectableWrapper.unwrapFrom(abi: ComPtr($1)) else { return E_INVALIDARG }
+            let token = __unwrapped__instance.horizontalSnapPointsChanged.addHandler(handler)
+            $2?.initialize(to: .from(swift: token))
+            return S_OK
+        },
+
+        remove_HorizontalSnapPointsChanged: {
+            guard let __unwrapped__instance = IScrollSnapPointsInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let token: EventRegistrationToken = $1
+            __unwrapped__instance.horizontalSnapPointsChanged.removeHandler(token)
+            return S_OK
+        },
+
+        add_VerticalSnapPointsChanged: {
+            guard let __unwrapped__instance = IScrollSnapPointsInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            guard let handler = WinUI.__x_ABI_C__FIEventHandler_1_IInspectableWrapper.unwrapFrom(abi: ComPtr($1)) else { return E_INVALIDARG }
+            let token = __unwrapped__instance.verticalSnapPointsChanged.addHandler(handler)
+            $2?.initialize(to: .from(swift: token))
+            return S_OK
+        },
+
+        remove_VerticalSnapPointsChanged: {
+            guard let __unwrapped__instance = IScrollSnapPointsInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let token: EventRegistrationToken = $1
+            __unwrapped__instance.verticalSnapPointsChanged.removeHandler(token)
+            return S_OK
+        },
+
+        GetIrregularSnapPoints: {
+            do {
+                guard let __unwrapped__instance = IScrollSnapPointsInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+                let orientation: WinUI.Orientation = $1
+                let alignment: WinUI.SnapPointsAlignment = $2
+                let result = try __unwrapped__instance.getIrregularSnapPoints(orientation, alignment)
+                let resultWrapper = WinUI.__x_ABI_C__FIVectorView_1_floatWrapper(result)
+                resultWrapper?.copyTo($3)
+                return S_OK
+            } catch { return failWith(err: E_FAIL) } 
+        },
+
+        GetRegularSnapPoints: {
+            do {
+                guard let __unwrapped__instance = IScrollSnapPointsInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+                let orientation: WinUI.Orientation = $1
+                let alignment: WinUI.SnapPointsAlignment = $2
+                var offset: Float = 0.0
+                let returnValue = try __unwrapped__instance.getRegularSnapPoints(orientation, alignment, &offset)
+                $3?.initialize(to: offset)
+                $4?.initialize(to: returnValue)
+                return S_OK
+            } catch { return failWith(err: E_FAIL) } 
+        }
+    )
+
+    public typealias IScrollSnapPointsInfoWrapper = InterfaceWrapperBase<__IMPL_Microsoft_UI_Xaml_Controls_Primitives.IScrollSnapPointsInfoBridge>
     public class ISelector: WindowsFoundation.IInspectable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CISelector }
 

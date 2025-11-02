@@ -443,6 +443,10 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIInfoBadgeTemplateSettin
     .init(Data1: 0x10959133, Data2: 0x64CE, Data3: 0x586F, Data4: ( 0xA2,0x52,0x9E,0x26,0xFC,0x1A,0xD9,0xBA ))// 10959133-64CE-586F-A252-9E26FC1AD9BA
 }
 
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIInsertionPanel: WindowsFoundation.IID {
+    .init(Data1: 0x84E13E27, Data2: 0x2D24, Data3: 0x59C4, Data4: ( 0xA0,0x0E,0x16,0xC7,0x25,0x59,0x01,0xE2 ))// 84E13E27-2D24-59C4-A00E-16C7255901E2
+}
+
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIIsTextTrimmedChangedEventArgs: WindowsFoundation.IID {
     .init(Data1: 0x3C709B2F, Data2: 0x16BA, Data3: 0x55D2, Data4: ( 0xB6,0xF6,0xDF,0xC5,0x4A,0x1E,0xD0,0x21 ))// 3C709B2F-16BA-55D2-B6F6-DFC54A1ED021
 }
@@ -929,6 +933,18 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CISplitViewPaneClosingEve
 
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CISplitViewStatics: WindowsFoundation.IID {
     .init(Data1: 0x1C69A263, Data2: 0x552C, Data3: 0x5505, Data4: ( 0xAC,0x81,0x49,0xE2,0x47,0xFE,0xE9,0xDB ))// 1C69A263-552C-5505-AC81-49E247FEE9DB
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel: WindowsFoundation.IID {
+    .init(Data1: 0x493AB00B, Data2: 0x3A6A, Data3: 0x5E4A, Data4: ( 0x94,0x52,0x40,0x7C,0xD5,0x19,0x74,0x06 ))// 493AB00B-3A6A-5E4A-9452-407CD5197406
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanelFactory: WindowsFoundation.IID {
+    .init(Data1: 0x64C1D388, Data2: 0x47A2, Data3: 0x5A74, Data4: ( 0xA7,0x5B,0x55,0x9D,0x15,0x1E,0xE5,0xAC ))// 64C1D388-47A2-5A74-A75B-559D151EE5AC
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanelStatics: WindowsFoundation.IID {
+    .init(Data1: 0x10BB04E3, Data2: 0xEB01, Data3: 0x5EA8, Data4: ( 0x9F,0x96,0x69,0x50,0x84,0x79,0xDE,0xF9 ))// 10BB04E3-EB01-5EA8-9F96-69508479DEF9
 }
 
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStyleSelector: WindowsFoundation.IID {
@@ -9377,6 +9393,60 @@ public enum __ABI_Microsoft_UI_Xaml_Controls {
 
     }
 
+    public class IInsertionPanel: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIInsertionPanel }
+
+        open func GetInsertionIndexesImpl(_ position: WindowsFoundation.Point, _ first: inout Int32, _ second: inout Int32) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIInsertionPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetInsertionIndexes(pThis, .from(swift: position), &first, &second))
+            }
+        }
+
+    }
+
+    internal static var IInsertionPanelVTable: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIInsertionPanelVtbl = .init(
+        QueryInterface: { IInsertionPanelWrapper.queryInterface($0, $1, $2) },
+        AddRef: { IInsertionPanelWrapper.addRef($0) },
+        Release: { IInsertionPanelWrapper.release($0) },
+        GetIids: {
+            let size = MemoryLayout<WindowsFoundation.IID>.size
+            let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+            iids[0] = IUnknown.IID
+            iids[1] = IInspectable.IID
+            iids[2] = __ABI_Microsoft_UI_Xaml_Controls.IInsertionPanelWrapper.IID
+            $1!.pointee = 3
+            $2!.pointee = iids
+            return S_OK
+        },
+
+        GetRuntimeClassName: {
+            _ = $0
+            let hstring = try! HString("Microsoft.UI.Xaml.Controls.IInsertionPanel").detach()
+            $1!.pointee = hstring
+            return S_OK
+        },
+
+        GetTrustLevel: {
+            _ = $0
+            $1!.pointee = TrustLevel(rawValue: 0)
+            return S_OK
+        },
+
+        GetInsertionIndexes: {
+            do {
+                guard let __unwrapped__instance = IInsertionPanelWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+                let position: WindowsFoundation.Point = .from(abi: $1)
+                var first: Int32 = 0
+                var second: Int32 = 0
+                try __unwrapped__instance.getInsertionIndexes(position, &first, &second)
+                $2?.initialize(to: first)
+                $3?.initialize(to: second)
+                return S_OK
+            } catch { return failWith(err: E_FAIL) } 
+        }
+    )
+
+    public typealias IInsertionPanelWrapper = InterfaceWrapperBase<__IMPL_Microsoft_UI_Xaml_Controls.IInsertionPanelBridge>
     public class IIsTextTrimmedChangedEventArgs: WindowsFoundation.IInspectable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIIsTextTrimmedChangedEventArgs }
 
@@ -18108,6 +18178,219 @@ public enum __ABI_Microsoft_UI_Xaml_Controls {
             let (value) = try ComPtrs.initialize { valueAbi in
                 _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CISplitViewStatics.self) { pThis in
                     try CHECKED(pThis.pointee.lpVtbl.pointee.get_LightDismissOverlayModeProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+    }
+
+    public class IStackPanel: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel }
+
+        internal func get_AreScrollSnapPointsRegularImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_AreScrollSnapPointsRegular(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func put_AreScrollSnapPointsRegularImpl(_ value: Bool) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_AreScrollSnapPointsRegular(pThis, .init(from: value)))
+            }
+        }
+
+        internal func get_OrientationImpl() throws -> WinUI.Orientation {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CControls_COrientation = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Orientation(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_OrientationImpl(_ value: WinUI.Orientation) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_Orientation(pThis, value))
+            }
+        }
+
+        internal func get_BackgroundSizingImpl() throws -> WinUI.BackgroundSizing {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CBackgroundSizing = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_BackgroundSizing(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_BackgroundSizingImpl(_ value: WinUI.BackgroundSizing) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_BackgroundSizing(pThis, value))
+            }
+        }
+
+        internal func get_BorderBrushImpl() throws -> WinUI.Brush? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_BorderBrush(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func put_BorderBrushImpl(_ value: WinUI.Brush?) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_BorderBrush(pThis, RawPointer(value)))
+            }
+        }
+
+        internal func get_BorderThicknessImpl() throws -> WinUI.Thickness {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CThickness = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_BorderThickness(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        internal func put_BorderThicknessImpl(_ value: WinUI.Thickness) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_BorderThickness(pThis, .from(swift: value)))
+            }
+        }
+
+        internal func get_CornerRadiusImpl() throws -> WinUI.CornerRadius {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CCornerRadius = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_CornerRadius(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        internal func put_CornerRadiusImpl(_ value: WinUI.CornerRadius) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_CornerRadius(pThis, .from(swift: value)))
+            }
+        }
+
+        internal func get_PaddingImpl() throws -> WinUI.Thickness {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CThickness = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Padding(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        internal func put_PaddingImpl(_ value: WinUI.Thickness) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_Padding(pThis, .from(swift: value)))
+            }
+        }
+
+        internal func get_SpacingImpl() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Spacing(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_SpacingImpl(_ value: Double) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanel.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_Spacing(pThis, value))
+            }
+        }
+
+    }
+
+    public class IStackPanelFactory: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanelFactory }
+
+        internal func CreateInstanceImpl(_ baseInterface: UnsealedWinRTClassWrapper<WinUI.StackPanel.Composable>?, _ innerInterface: inout WindowsFoundation.IInspectable?) throws -> IStackPanel {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                let _baseInterface = baseInterface?.toIInspectableABI { $0 }
+                let (_innerInterface) = try ComPtrs.initialize { _innerInterfaceAbi in
+                    _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanelFactory.self) { pThis in
+                        try CHECKED(pThis.pointee.lpVtbl.pointee.CreateInstance(pThis, _baseInterface, &_innerInterfaceAbi, &valueAbi))
+                    }
+                }
+                innerInterface = WindowsFoundation.IInspectable(_innerInterface!)
+            }
+            return IStackPanel(value!)
+        }
+
+    }
+
+    public class IStackPanelStatics: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanelStatics }
+
+        internal func get_AreScrollSnapPointsRegularPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanelStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_AreScrollSnapPointsRegularProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_OrientationPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanelStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_OrientationProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_BackgroundSizingPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanelStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_BackgroundSizingProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_BorderBrushPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanelStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_BorderBrushProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_BorderThicknessPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanelStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_BorderThicknessProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_CornerRadiusPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanelStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_CornerRadiusProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_PaddingPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanelStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_PaddingProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_SpacingPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIStackPanelStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_SpacingProperty(pThis, &valueAbi))
                 }
             }
             return .from(abi: value)
