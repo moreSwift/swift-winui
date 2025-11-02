@@ -14,11 +14,11 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/stackotter/swift-uwp",
-            revision: "e3ff9c195775e16b404b82cf6886c5e81d73b6c1"
+            revision: "8128f6615b7c5b46ada289ab6d49d871ca1e13a5"
         ),
         .package(
             url: "https://github.com/stackotter/swift-windowsappsdk",
-            revision: "ba6f0ec377b70d8be835d253102ff665a0e47d99"
+            revision: "f1c50892f10c0f7f635d3c7a3d728fd634ad001a"
         ),
         .package(
             url: "https://github.com/stackotter/swift-windowsfoundation",
@@ -26,7 +26,7 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/stackotter/swift-webview2core",
-            revision: "c9911ca23455b9fcdb2429e98baa6f4d003b381c"
+            revision: "4396f5d94d6dfd1f95ab25e79de98141b7f4f183"
         ),
     ],
     targets: [
