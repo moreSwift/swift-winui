@@ -250,6 +250,18 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIQuadraticBezierSegmentStat
     .init(Data1: 0x4D56EA65, Data2: 0x0A1A, Data3: 0x528A, Data4: ( 0xA5,0xB6,0x41,0xDA,0x03,0xAC,0x71,0xF4 ))// 4D56EA65-0A1A-528A-A5B6-41DA03AC71F4
 }
 
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush: WindowsFoundation.IID {
+    .init(Data1: 0x5D493CE1, Data2: 0xB844, Data3: 0x546A, Data4: ( 0xB7,0x72,0xB3,0xBC,0xBA,0x7E,0x98,0xEE ))// 5D493CE1-B844-546A-B772-B3BCBA7E98EE
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrushFactory: WindowsFoundation.IID {
+    .init(Data1: 0xD90BA26E, Data2: 0x9E67, Data3: 0x54BD, Data4: ( 0xA2,0xD9,0x61,0xC8,0xF9,0xF1,0xD4,0x33 ))// D90BA26E-9E67-54BD-A2D9-61C8F9F1D433
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrushStatics: WindowsFoundation.IID {
+    .init(Data1: 0xF275A0B8, Data2: 0x66F9, Data3: 0x5B7D, Data4: ( 0xA4,0x15,0x7E,0xDA,0x65,0xFE,0x6D,0xD3 ))// F275A0B8-66F9-5B7D-A415-7EDA65FE6DD3
+}
+
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRectangleGeometry: WindowsFoundation.IID {
     .init(Data1: 0xB6143890, Data2: 0xA5F5, Data3: 0x54E0, Data4: ( 0xAB,0x42,0xD8,0x8B,0xAB,0x45,0x1F,0x04 ))// B6143890-A5F5-54E0-AB42-D88BAB451F04
 }
@@ -2139,6 +2151,204 @@ public enum __ABI_Microsoft_UI_Xaml_Media {
             let (value) = try ComPtrs.initialize { valueAbi in
                 _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIQuadraticBezierSegmentStatics.self) { pThis in
                     try CHECKED(pThis.pointee.lpVtbl.pointee.get_Point2Property(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+    }
+
+    public class IRadialGradientBrush: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush }
+
+        internal func get_CenterImpl() throws -> WindowsFoundation.Point {
+            var value: __x_ABI_CWindows_CFoundation_CPoint = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Center(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        internal func put_CenterImpl(_ value: WindowsFoundation.Point) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_Center(pThis, .from(swift: value)))
+            }
+        }
+
+        internal func get_RadiusXImpl() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_RadiusX(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_RadiusXImpl(_ value: Double) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_RadiusX(pThis, value))
+            }
+        }
+
+        internal func get_RadiusYImpl() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_RadiusY(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_RadiusYImpl(_ value: Double) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_RadiusY(pThis, value))
+            }
+        }
+
+        internal func get_GradientOriginImpl() throws -> WindowsFoundation.Point {
+            var value: __x_ABI_CWindows_CFoundation_CPoint = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_GradientOrigin(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        internal func put_GradientOriginImpl(_ value: WindowsFoundation.Point) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_GradientOrigin(pThis, .from(swift: value)))
+            }
+        }
+
+        internal func get_MappingModeImpl() throws -> WinUI.BrushMappingMode {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CBrushMappingMode = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_MappingMode(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_MappingModeImpl(_ value: WinUI.BrushMappingMode) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_MappingMode(pThis, value))
+            }
+        }
+
+        internal func get_InterpolationSpaceImpl() throws -> WinAppSDK.CompositionColorSpace {
+            var value: __x_ABI_CMicrosoft_CUI_CComposition_CCompositionColorSpace = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_InterpolationSpace(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_InterpolationSpaceImpl(_ value: WinAppSDK.CompositionColorSpace) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_InterpolationSpace(pThis, value))
+            }
+        }
+
+        internal func get_SpreadMethodImpl() throws -> WinUI.GradientSpreadMethod {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CGradientSpreadMethod = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_SpreadMethod(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_SpreadMethodImpl(_ value: WinUI.GradientSpreadMethod) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_SpreadMethod(pThis, value))
+            }
+        }
+
+        internal func get_GradientStopsImpl() throws -> WindowsFoundation.AnyIObservableVector<WinUI.GradientStop?>? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_GradientStops(pThis, &valueAbi))
+                }
+            }
+            return WinUI.__x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.unwrapFrom(abi: value)
+        }
+
+    }
+
+    public class IRadialGradientBrushFactory: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrushFactory }
+
+        internal func CreateInstanceImpl(_ baseInterface: UnsealedWinRTClassWrapper<WinUI.RadialGradientBrush.Composable>?, _ innerInterface: inout WindowsFoundation.IInspectable?) throws -> IRadialGradientBrush {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                let _baseInterface = baseInterface?.toIInspectableABI { $0 }
+                let (_innerInterface) = try ComPtrs.initialize { _innerInterfaceAbi in
+                    _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrushFactory.self) { pThis in
+                        try CHECKED(pThis.pointee.lpVtbl.pointee.CreateInstance(pThis, _baseInterface, &_innerInterfaceAbi, &valueAbi))
+                    }
+                }
+                innerInterface = WindowsFoundation.IInspectable(_innerInterface!)
+            }
+            return IRadialGradientBrush(value!)
+        }
+
+    }
+
+    public class IRadialGradientBrushStatics: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrushStatics }
+
+        internal func get_CenterPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrushStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_CenterProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_RadiusXPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrushStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_RadiusXProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_RadiusYPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrushStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_RadiusYProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_GradientOriginPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrushStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_GradientOriginProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_InterpolationSpacePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrushStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_InterpolationSpaceProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_MappingModePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrushStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_MappingModeProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_SpreadMethodPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrushStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_SpreadMethodProperty(pThis, &valueAbi))
                 }
             }
             return .from(abi: value)

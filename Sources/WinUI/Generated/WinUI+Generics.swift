@@ -11090,6 +11090,204 @@ fileprivate class __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
 }
 
+private var IID___x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop: WindowsFoundation.IID {
+    .init(Data1: 0x95f51f05, Data2: 0xf191, Data3: 0x5bc6, Data4: ( 0x86,0xb0,0x2a,0x2a,0x4d,0x4f,0xfa,0xb1 ))// 95f51f05-f191-5bc6-86b0-2a2a4d4ffab1
+}
+
+internal var __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopVTable: __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 5).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WinUI.__x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.IID
+        iids[3] = WinUI.__x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.IID
+        iids[4] = WinUI.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.IID
+        $1!.pointee = 5
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IObservableVector`1<Microsoft.UI.Xaml.Media.GradientStop>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    add_VectorChanged: {
+        guard let __unwrapped__instance = __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        guard let vhnd = WinUI.__x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.unwrapFrom(abi: ComPtr($1)) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.vectorChanged.addHandler(vhnd)
+        $2?.initialize(to: .from(swift: result))
+        return S_OK
+    },
+
+    remove_VectorChanged: {
+        guard let __unwrapped__instance = __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let token: EventRegistrationToken = $1
+        __unwrapped__instance.vectorChanged.removeHandler(token)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopBridge>
+internal class IObservableVectorGradientStop: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop }
+
+    internal func add_VectorChangedImpl(_ vhnd: VectorChangedEventHandler<WinUI.GradientStop?>?) throws -> EventRegistrationToken {
+        var result: EventRegistrationToken = .init()
+        let vhndWrapper = WinUI.__x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper(vhnd)
+        let _vhnd = try! vhndWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.add_VectorChanged(pThis, _vhnd, &result))
+        }
+        return result
+    }
+
+    internal func remove_VectorChangedImpl(_ token: EventRegistrationToken) throws {
+        _ = try perform(as: __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.remove_VectorChanged(pThis, token))
+        }
+    }
+
+}
+
+internal enum __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop
+    internal typealias SwiftABI = IObservableVectorGradientStop
+    internal typealias SwiftProjection = WindowsFoundation.AnyIObservableVector<WinUI.GradientStop?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopImpl : IObservableVector, AbiInterfaceImpl {
+    typealias T = WinUI.GradientStop?
+    typealias Bridge = __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: Collection
+    typealias Element = T
+    var startIndex: Int { 0 }
+    var endIndex: Int { Int(size) }
+    func index(after i: Int) -> Int {
+        i+1
+    }
+
+    func index(of: Element) -> Int? {
+        var index: UInt32 = 0
+        let result = indexOf(of, &index)
+        guard result else { return nil }
+        return Int(index)
+    }
+    var count: Int { Int(size) }
+
+
+    subscript(position: Int) -> Element {
+        get {
+            getAt(UInt32(position))
+        }
+        set(newValue) {
+            setAt(UInt32(position), newValue)
+        }
+    }
+
+    func removeLast() {
+        removeAtEnd()
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
+    fileprivate lazy var vectorChanged : Event<VectorChangedEventHandler<GradientStop?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_VectorChangedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_VectorChangedImpl($0)
+       }
+      )
+    }()
+
+    private lazy var _IVector: IVectorGradientStop! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.getat)
+    fileprivate func getAt(_ index: UInt32) -> WinUI.GradientStop? {
+        try! _IVector.GetAtImpl(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.getview)
+    fileprivate func getView() -> WindowsFoundation.AnyIVectorView<WinUI.GradientStop?>? {
+        try! _IVector.GetViewImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.indexof)
+    fileprivate func indexOf(_ value: WinUI.GradientStop?, _ index: inout UInt32) -> Bool {
+        try! _IVector.IndexOfImpl(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.setat)
+    fileprivate func setAt(_ index: UInt32, _ value: WinUI.GradientStop?) {
+        try! _IVector.SetAtImpl(index, value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.insertat)
+    fileprivate func insertAt(_ index: UInt32, _ value: WinUI.GradientStop?) {
+        try! _IVector.InsertAtImpl(index, value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.removeat)
+    fileprivate func removeAt(_ index: UInt32) {
+        try! _IVector.RemoveAtImpl(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.append)
+    fileprivate func append(_ value: WinUI.GradientStop?) {
+        try! _IVector.AppendImpl(value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.removeatend)
+    fileprivate func removeAtEnd() {
+        try! _IVector.RemoveAtEndImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.clear)
+    fileprivate func clear() {
+        try! _IVector.ClearImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.size)
+    fileprivate var size : UInt32 {
+        get { try! _IVector.get_SizeImpl() }
+    }
+
+    private lazy var _IIterable: IIterableGradientStop! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.GradientStop?>? {
+        try! _IIterable.FirstImpl()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
 private var IID___x_ABI_C__FIVectorView_1_IInspectable: WindowsFoundation.IID {
     .init(Data1: 0xa6487363, Data2: 0xb074, Data3: 0x5c60, Data4: ( 0xab,0x16,0x86,0x6d,0xce,0x4e,0xe5,0x4d ))// a6487363-b074-5c60-ab16-866dce4ee54d
 }
@@ -29346,6 +29544,59 @@ internal class __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__
     internal typealias Handler = WindowsFoundation.VectorChangedEventHandler<WinUI.GroupStyle?>
     internal typealias CABI = __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CGroupStyle
     internal typealias SwiftABI = WinUI.VectorChangedEventHandlerGroupStyle
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, event) in
+            try! _default.InvokeImpl(sender, event)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop: WindowsFoundation.IID {
+    .init(Data1: 0x6dbf1655, Data2: 0x6d00, Data3: 0x5c55, Data4: ( 0x99,0x3c,0xb1,0xa3,0x84,0xfa,0x75,0xce ))// 6dbf1655-6d00-5c55-993c-b1a384fa75ce
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WinUI.__x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopVTable: __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopVtbl = .init(
+    QueryInterface: { __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.addRef($0) },
+    Release: { __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.release($0) },
+    Invoke: {
+        guard let __unwrapped__instance = __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let sender: WindowsFoundation.AnyIObservableVector<WinUI.GradientStop?>? = WinUI.__x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper.unwrapFrom(abi: ComPtr($1))
+        let event: WindowsFoundation.AnyIVectorChangedEventArgs? = __ABI_Windows_Foundation_Collections.IVectorChangedEventArgsWrapper.unwrapFrom(abi: ComPtr($2))
+        __unwrapped__instance(sender, event)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopBridge>
+internal class VectorChangedEventHandlerGradientStop: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop }
+
+    internal func InvokeImpl(_ sender: WindowsFoundation.AnyIObservableVector<WinUI.GradientStop?>?, _ event: WindowsFoundation.AnyIVectorChangedEventArgs?) throws {
+        let senderWrapper = WinUI.__x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopWrapper(sender)
+        let _sender = try! senderWrapper?.toABI { $0 }
+        let eventWrapper = __ABI_Windows_Foundation_Collections.IVectorChangedEventArgsWrapper(event)
+        let _event = try! eventWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, _sender, _event))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStopBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.VectorChangedEventHandler<WinUI.GradientStop?>
+    internal typealias CABI = __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop
+    internal typealias SwiftABI = WinUI.VectorChangedEventHandlerGradientStop
 
     internal static func from(abi: ComPtr<CABI>?) -> Handler? {
         guard let abi = abi else { return nil }

@@ -2591,6 +2591,147 @@ public final class QuadraticBezierSegment : WinUI.PathSegment {
     }
 }
 
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush)
+open class RadialGradientBrush : WinUI.XamlCompositionBrushBase {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Media.IRadialGradientBrush
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush>?) -> RadialGradientBrush? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _IRadialGradientBrushFactory : __ABI_Microsoft_UI_Xaml_Media.IRadialGradientBrushFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Media.RadialGradientBrush"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._IRadialGradientBrushFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    private static let _IRadialGradientBrushStatics: __ABI_Microsoft_UI_Xaml_Media.IRadialGradientBrushStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Media.RadialGradientBrush"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.centerproperty)
+    public class var centerProperty : WinUI.DependencyProperty! {
+        get { try! _IRadialGradientBrushStatics.get_CenterPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.gradientoriginproperty)
+    public class var gradientOriginProperty : WinUI.DependencyProperty! {
+        get { try! _IRadialGradientBrushStatics.get_GradientOriginPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.interpolationspaceproperty)
+    public class var interpolationSpaceProperty : WinUI.DependencyProperty! {
+        get { try! _IRadialGradientBrushStatics.get_InterpolationSpacePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.mappingmodeproperty)
+    public class var mappingModeProperty : WinUI.DependencyProperty! {
+        get { try! _IRadialGradientBrushStatics.get_MappingModePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.radiusxproperty)
+    public class var radiusXProperty : WinUI.DependencyProperty! {
+        get { try! _IRadialGradientBrushStatics.get_RadiusXPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.radiusyproperty)
+    public class var radiusYProperty : WinUI.DependencyProperty! {
+        get { try! _IRadialGradientBrushStatics.get_RadiusYPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.spreadmethodproperty)
+    public class var spreadMethodProperty : WinUI.DependencyProperty! {
+        get { try! _IRadialGradientBrushStatics.get_SpreadMethodPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.center)
+    public var center : WindowsFoundation.Point {
+        get { try! _default.get_CenterImpl() }
+        set { try! _default.put_CenterImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.gradientorigin)
+    public var gradientOrigin : WindowsFoundation.Point {
+        get { try! _default.get_GradientOriginImpl() }
+        set { try! _default.put_GradientOriginImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.gradientstops)
+    public var gradientStops : WindowsFoundation.AnyIObservableVector<GradientStop?>! {
+        get { try! _default.get_GradientStopsImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.interpolationspace)
+    public var interpolationSpace : WinAppSDK.CompositionColorSpace {
+        get { try! _default.get_InterpolationSpaceImpl() }
+        set { try! _default.put_InterpolationSpaceImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.mappingmode)
+    public var mappingMode : BrushMappingMode {
+        get { try! _default.get_MappingModeImpl() }
+        set { try! _default.put_MappingModeImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.radiusx)
+    public var radiusX : Double {
+        get { try! _default.get_RadiusXImpl() }
+        set { try! _default.put_RadiusXImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.radiusy)
+    public var radiusY : Double {
+        get { try! _default.get_RadiusYImpl() }
+        set { try! _default.put_RadiusYImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush.spreadmethod)
+    public var spreadMethod : GradientSpreadMethod {
+        get { try! _default.get_SpreadMethodImpl() }
+        set { try! _default.put_SpreadMethodImpl(newValue) }
+    }
+
+    internal enum IXamlCompositionBrushBaseOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIXamlCompositionBrushBaseOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Media.IXamlCompositionBrushBaseOverrides
+        internal typealias Class = RadialGradientBrush
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CMedia_CIRadialGradientBrush
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Media.IRadialGradientBrush
+        }
+    }
+    internal typealias Composable = IXamlCompositionBrushBaseOverrides
+    deinit {
+        _default = nil
+    }
+}
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.rectanglegeometry)
 public final class RectangleGeometry : WinUI.Geometry {
     private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Media.IRectangleGeometry

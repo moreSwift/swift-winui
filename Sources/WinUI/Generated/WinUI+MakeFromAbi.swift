@@ -1317,6 +1317,10 @@ fileprivate func makeQuadraticBezierSegmentFrom(abi: WindowsFoundation.IInspecta
     return QuadraticBezierSegment(fromAbi: abi)
 }
 
+fileprivate func makeRadialGradientBrushFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return RadialGradientBrush(fromAbi: abi)
+}
+
 fileprivate func makeRectangleGeometryFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return RectangleGeometry(fromAbi: abi)
 }
@@ -2116,6 +2120,7 @@ public class __MakeFromAbi: MakeFromAbi {
             case "PolyBezierSegment": return makePolyBezierSegmentFrom(abi: abi)
             case "Projection": return makeProjectionFrom(abi: abi)
             case "QuadraticBezierSegment": return makeQuadraticBezierSegmentFrom(abi: abi)
+            case "RadialGradientBrush": return makeRadialGradientBrushFrom(abi: abi)
             case "RectangleGeometry": return makeRectangleGeometryFrom(abi: abi)
             case "RenderedEventArgs": return makeRenderedEventArgsFrom(abi: abi)
             case "Shadow": return makeShadowFrom(abi: abi)

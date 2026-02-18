@@ -73,6 +73,7 @@
     "Microsoft.UI.Xaml.Media.GradientStopCollection",
     "Microsoft.UI.Xaml.Media.Imaging",
     "Microsoft.UI.Xaml.Media.LinearGradientBrush",
+    "Microsoft.UI.Xaml.Media.RadialGradientBrush",
     "Microsoft.UI.Xaml.Media.LineSegment",
     "Microsoft.UI.Xaml.Media.MicaBackdrop",
     "Microsoft.UI.Xaml.Media.PathGeometry",
