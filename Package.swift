@@ -9,24 +9,24 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/thebrowsercompany/swift-cwinrt",
-            revision: "eb46cdb66f770a1e006f9fcfebbf9e99a0fba811"
+            url: "https://github.com/moreSwift/swift-cwinrt",
+            .upToNextMinor(from: "0.1.0")
         ),
         .package(
-            url: "https://github.com/stackotter/swift-uwp",
-            revision: "8128f6615b7c5b46ada289ab6d49d871ca1e13a5"
+            url: "https://github.com/moreSwift/swift-uwp",
+            .upToNextMinor(from: "0.1.0")
         ),
         .package(
-            url: "https://github.com/stackotter/swift-windowsappsdk",
-            revision: "f1c50892f10c0f7f635d3c7a3d728fd634ad001a"
+            url: "https://github.com/moreSwift/swift-windowsappsdk",
+            .upToNextMinor(from: "0.1.0")
         ),
         .package(
-            url: "https://github.com/stackotter/swift-windowsfoundation",
-            revision: "4ad57d20553514bcb23724bdae9121569b19f172"
+            url: "https://github.com/moreSwift/swift-windowsfoundation",
+            .upToNextMinor(from: "0.1.0")
         ),
         .package(
-            url: "https://github.com/stackotter/swift-webview2core",
-            revision: "4396f5d94d6dfd1f95ab25e79de98141b7f4f183"
+            url: "https://github.com/moreSwift/swift-webview2core",
+            .upToNextMinor(from: "0.1.0")
         ),
     ],
     targets: [
