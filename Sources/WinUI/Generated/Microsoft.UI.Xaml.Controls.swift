@@ -15360,6 +15360,237 @@ public final class ToggleSwitch : WinUI.Control {
     }
 }
 
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip)
+open class ToolTip : WinUI.ContentControl {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IToolTip
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip>?) -> ToolTip? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _IToolTipFactory : __ABI_Microsoft_UI_Xaml_Controls.IToolTipFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.ToolTip"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._IToolTipFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    private static let _IToolTipStatics: __ABI_Microsoft_UI_Xaml_Controls.IToolTipStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.ToolTip"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.horizontaloffsetproperty)
+    public class var horizontalOffsetProperty : WinUI.DependencyProperty! {
+        get { try! _IToolTipStatics.get_HorizontalOffsetPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.isopenproperty)
+    public class var isOpenProperty : WinUI.DependencyProperty! {
+        get { try! _IToolTipStatics.get_IsOpenPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.placementproperty)
+    public class var placementProperty : WinUI.DependencyProperty! {
+        get { try! _IToolTipStatics.get_PlacementPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.placementrectproperty)
+    public class var placementRectProperty : WinUI.DependencyProperty! {
+        get { try! _IToolTipStatics.get_PlacementRectPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.placementtargetproperty)
+    public class var placementTargetProperty : WinUI.DependencyProperty! {
+        get { try! _IToolTipStatics.get_PlacementTargetPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.verticaloffsetproperty)
+    public class var verticalOffsetProperty : WinUI.DependencyProperty! {
+        get { try! _IToolTipStatics.get_VerticalOffsetPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.horizontaloffset)
+    public var horizontalOffset : Double {
+        get { try! _default.get_HorizontalOffsetImpl() }
+        set { try! _default.put_HorizontalOffsetImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.isopen)
+    public var isOpen : Bool {
+        get { try! _default.get_IsOpenImpl() }
+        set { try! _default.put_IsOpenImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.placement)
+    public var placement : WinUI.PlacementMode {
+        get { try! _default.get_PlacementImpl() }
+        set { try! _default.put_PlacementImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.placementrect)
+    public var placementRect : WindowsFoundation.Rect? {
+        get { try! _default.get_PlacementRectImpl() }
+        set { try! _default.put_PlacementRectImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.placementtarget)
+    public var placementTarget : WinUI.UIElement! {
+        get { try! _default.get_PlacementTargetImpl() }
+        set { try! _default.put_PlacementTargetImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.templatesettings)
+    public var templateSettings : WinUI.ToolTipTemplateSettings! {
+        get { try! _default.get_TemplateSettingsImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.verticaloffset)
+    public var verticalOffset : Double {
+        get { try! _default.get_VerticalOffsetImpl() }
+        set { try! _default.put_VerticalOffsetImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.closed)
+    public lazy var closed : Event<WinUI.RoutedEventHandler> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_ClosedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_ClosedImpl($0)
+       }
+      )
+    }()
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.opened)
+    public lazy var opened : Event<WinUI.RoutedEventHandler> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_OpenedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_OpenedImpl($0)
+       }
+      )
+    }()
+
+    internal enum IContentControlOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIContentControlOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IContentControlOverrides
+        internal typealias Class = ToolTip
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IToolTip
+        }
+    }
+    internal typealias Composable = IContentControlOverrides
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice)
+public final class ToolTipService : WinRTClass {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IToolTipService
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipService
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipService>?) -> ToolTipService? {
+        guard let abi = abi else { return nil }
+        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+    }
+
+    @_spi(WinRTInternal)
+    public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi)
+    }
+
+    private static let _IToolTipServiceStatics: __ABI_Microsoft_UI_Xaml_Controls.IToolTipServiceStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.ToolTipService"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice.getplacement)
+    public static func getPlacement(_ element: WinUI.DependencyObject!) -> WinUI.PlacementMode {
+        return try! _IToolTipServiceStatics.GetPlacementImpl(element)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice.setplacement)
+    public static func setPlacement(_ element: WinUI.DependencyObject!, _ value: WinUI.PlacementMode) {
+        try! _IToolTipServiceStatics.SetPlacementImpl(element, value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice.getplacementtarget)
+    public static func getPlacementTarget(_ element: WinUI.DependencyObject!) -> WinUI.UIElement! {
+        return try! _IToolTipServiceStatics.GetPlacementTargetImpl(element)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice.setplacementtarget)
+    public static func setPlacementTarget(_ element: WinUI.DependencyObject!, _ value: WinUI.UIElement!) {
+        try! _IToolTipServiceStatics.SetPlacementTargetImpl(element, value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice.gettooltip)
+    public static func getToolTip(_ element: WinUI.DependencyObject!) -> Any! {
+        return try! _IToolTipServiceStatics.GetToolTipImpl(element)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice.settooltip)
+    public static func setToolTip(_ element: WinUI.DependencyObject!, _ value: Any!) {
+        try! _IToolTipServiceStatics.SetToolTipImpl(element, value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice.placementproperty)
+    public static var placementProperty : WinUI.DependencyProperty! {
+        get { try! _IToolTipServiceStatics.get_PlacementPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice.placementtargetproperty)
+    public static var placementTargetProperty : WinUI.DependencyProperty! {
+        get { try! _IToolTipServiceStatics.get_PlacementTargetPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice.tooltipproperty)
+    public static var toolTipProperty : WinUI.DependencyProperty! {
+        get { try! _IToolTipServiceStatics.get_ToolTipPropertyImpl() }
+    }
+
+    deinit {
+        _default = nil
+    }
+}
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uielementcollection)
 public final class UIElementCollection : WinRTClass, IVector, IIterable {
     public typealias T = WinUI.UIElement?

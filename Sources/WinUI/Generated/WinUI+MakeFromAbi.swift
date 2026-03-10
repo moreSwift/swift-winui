@@ -877,6 +877,14 @@ fileprivate func makeToggleSwitchFrom(abi: WindowsFoundation.IInspectable) -> An
     return ToggleSwitch(fromAbi: abi)
 }
 
+fileprivate func makeToolTipFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return ToolTip(fromAbi: abi)
+}
+
+fileprivate func makeToolTipServiceFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return ToolTipService(fromAbi: abi)
+}
+
 fileprivate func makeUIElementCollectionFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return UIElementCollection(fromAbi: abi)
 }
@@ -983,6 +991,10 @@ fileprivate func makeToggleButtonFrom(abi: WindowsFoundation.IInspectable) -> An
 
 fileprivate func makeToggleSwitchTemplateSettingsFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return ToggleSwitchTemplateSettings(fromAbi: abi)
+}
+
+fileprivate func makeToolTipTemplateSettingsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return ToolTipTemplateSettings(fromAbi: abi)
 }
 
 fileprivate func makeZoomSnapPointBaseFrom(abi: WindowsFoundation.IInspectable) -> Any {
@@ -2010,6 +2022,8 @@ public class __MakeFromAbi: MakeFromAbi {
             case "TimePickerValueChangedEventArgs": return makeTimePickerValueChangedEventArgsFrom(abi: abi)
             case "ToggleMenuFlyoutItem": return makeToggleMenuFlyoutItemFrom(abi: abi)
             case "ToggleSwitch": return makeToggleSwitchFrom(abi: abi)
+            case "ToolTip": return makeToolTipFrom(abi: abi)
+            case "ToolTipService": return makeToolTipServiceFrom(abi: abi)
             case "UIElementCollection": return makeUIElementCollectionFrom(abi: abi)
             case "WebView2": return makeWebView2From(abi: abi)
             case "XamlControlsResources": return makeXamlControlsResourcesFrom(abi: abi)
@@ -2037,6 +2051,7 @@ public class __MakeFromAbi: MakeFromAbi {
             case "SplitViewTemplateSettings": return makeSplitViewTemplateSettingsFrom(abi: abi)
             case "ToggleButton": return makeToggleButtonFrom(abi: abi)
             case "ToggleSwitchTemplateSettings": return makeToggleSwitchTemplateSettingsFrom(abi: abi)
+            case "ToolTipTemplateSettings": return makeToolTipTemplateSettingsFrom(abi: abi)
             case "ZoomSnapPointBase": return makeZoomSnapPointBaseFrom(abi: abi)
             case "Binding": return makeBindingFrom(abi: abi)
             case "BindingBase": return makeBindingBaseFrom(abi: abi)

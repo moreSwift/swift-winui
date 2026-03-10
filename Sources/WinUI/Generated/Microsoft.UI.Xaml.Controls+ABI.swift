@@ -1063,6 +1063,26 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToggleSwitchStatics: Wi
     .init(Data1: 0xC9C203D6, Data2: 0x0619, Data3: 0x504D, Data4: ( 0x9E,0xD8,0x50,0x54,0xFE,0x3C,0xA5,0x1E ))// C9C203D6-0619-504D-9ED8-5054FE3CA51E
 }
 
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip: WindowsFoundation.IID {
+    .init(Data1: 0x67E93D74, Data2: 0x5E93, Data3: 0x59A1, Data4: ( 0x91,0xBF,0x41,0x3E,0xFB,0xEB,0x90,0x4C ))// 67E93D74-5E93-59A1-91BF-413EFBEB904C
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipFactory: WindowsFoundation.IID {
+    .init(Data1: 0xBCBB3720, Data2: 0x2DB8, Data3: 0x54E1, Data4: ( 0x88,0x06,0xFC,0xBE,0xD3,0x89,0x49,0xA9 ))// BCBB3720-2DB8-54E1-8806-FCBED38949A9
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipService: WindowsFoundation.IID {
+    .init(Data1: 0x01140768, Data2: 0x2727, Data3: 0x5F89, Data4: ( 0x80,0xE0,0x52,0x10,0x32,0x6A,0x34,0x31 ))// 01140768-2727-5F89-80E0-5210326A3431
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipServiceStatics: WindowsFoundation.IID {
+    .init(Data1: 0x5AA38ADC, Data2: 0x9874, Data3: 0x5E0A, Data4: ( 0x8D,0x8E,0x15,0x74,0xEF,0xC0,0xB8,0x8F ))// 5AA38ADC-9874-5E0A-8D8E-1574EFC0B88F
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipStatics: WindowsFoundation.IID {
+    .init(Data1: 0x88EB60D4, Data2: 0xCD54, Data3: 0x5E23, Data4: ( 0xBD,0x1A,0x22,0x37,0x02,0x44,0x2B,0xA4 ))// 88EB60D4-CD54-5E23-BD1A-223702442BA4
+}
+
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIUIElementCollection: WindowsFoundation.IID {
     .init(Data1: 0x23050CB1, Data2: 0xDB88, Data3: 0x54ED, Data4: ( 0x90,0x83,0x5E,0xCF,0xB1,0x25,0x12,0xFD ))// 23050CB1-DB88-54ED-9083-5ECFB12512FD
 }
@@ -20931,6 +20951,300 @@ public enum __ABI_Microsoft_UI_Xaml_Controls {
             let (value) = try ComPtrs.initialize { valueAbi in
                 _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToggleSwitchStatics.self) { pThis in
                     try CHECKED(pThis.pointee.lpVtbl.pointee.get_OffContentTemplateProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+    }
+
+    public class IToolTip: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip }
+
+        internal func get_HorizontalOffsetImpl() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_HorizontalOffset(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_HorizontalOffsetImpl(_ value: Double) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_HorizontalOffset(pThis, value))
+            }
+        }
+
+        internal func get_IsOpenImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsOpen(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func put_IsOpenImpl(_ value: Bool) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_IsOpen(pThis, .init(from: value)))
+            }
+        }
+
+        internal func get_PlacementImpl() throws -> WinUI.PlacementMode {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CPlacementMode = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Placement(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_PlacementImpl(_ value: WinUI.PlacementMode) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_Placement(pThis, value))
+            }
+        }
+
+        internal func get_PlacementTargetImpl() throws -> WinUI.UIElement? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_PlacementTarget(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func put_PlacementTargetImpl(_ value: WinUI.UIElement?) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_PlacementTarget(pThis, RawPointer(value)))
+            }
+        }
+
+        internal func get_PlacementRectImpl() throws -> WindowsFoundation.Rect? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_PlacementRect(pThis, &valueAbi))
+                }
+            }
+            return WinUI.__x_ABI_C__FIReference_1___x_ABI_CWindows__CFoundation__CRectWrapper.unwrapFrom(abi: value)
+        }
+
+        internal func put_PlacementRectImpl(_ value: WindowsFoundation.Rect?) throws {
+            let valueWrapper = WinUI.__x_ABI_C__FIReference_1___x_ABI_CWindows__CFoundation__CRectWrapper(value)
+            let _value = try! valueWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_PlacementRect(pThis, _value))
+            }
+        }
+
+        internal func get_VerticalOffsetImpl() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_VerticalOffset(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_VerticalOffsetImpl(_ value: Double) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_VerticalOffset(pThis, value))
+            }
+        }
+
+        internal func get_TemplateSettingsImpl() throws -> WinUI.ToolTipTemplateSettings? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_TemplateSettings(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func add_ClosedImpl(_ handler: WinUI.RoutedEventHandler?) throws -> EventRegistrationToken {
+            var token: EventRegistrationToken = .init()
+            let handlerWrapper = __ABI_Microsoft_UI_Xaml.RoutedEventHandlerWrapper(handler)
+            let _handler = try! handlerWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.add_Closed(pThis, _handler, &token))
+            }
+            return token
+        }
+
+        internal func remove_ClosedImpl(_ token: EventRegistrationToken) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.remove_Closed(pThis, token))
+            }
+        }
+
+        internal func add_OpenedImpl(_ handler: WinUI.RoutedEventHandler?) throws -> EventRegistrationToken {
+            var token: EventRegistrationToken = .init()
+            let handlerWrapper = __ABI_Microsoft_UI_Xaml.RoutedEventHandlerWrapper(handler)
+            let _handler = try! handlerWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.add_Opened(pThis, _handler, &token))
+            }
+            return token
+        }
+
+        internal func remove_OpenedImpl(_ token: EventRegistrationToken) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTip.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.remove_Opened(pThis, token))
+            }
+        }
+
+    }
+
+    public class IToolTipFactory: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipFactory }
+
+        internal func CreateInstanceImpl(_ baseInterface: UnsealedWinRTClassWrapper<WinUI.ToolTip.Composable>?, _ innerInterface: inout WindowsFoundation.IInspectable?) throws -> IToolTip {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                let _baseInterface = baseInterface?.toIInspectableABI { $0 }
+                let (_innerInterface) = try ComPtrs.initialize { _innerInterfaceAbi in
+                    _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipFactory.self) { pThis in
+                        try CHECKED(pThis.pointee.lpVtbl.pointee.CreateInstance(pThis, _baseInterface, &_innerInterfaceAbi, &valueAbi))
+                    }
+                }
+                innerInterface = WindowsFoundation.IInspectable(_innerInterface!)
+            }
+            return IToolTip(value!)
+        }
+
+    }
+
+    public class IToolTipService: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipService }
+
+    }
+
+    public class IToolTipServiceStatics: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipServiceStatics }
+
+        internal func get_PlacementPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipServiceStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_PlacementProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func GetPlacementImpl(_ element: WinUI.DependencyObject?) throws -> WinUI.PlacementMode {
+            var result: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CPlacementMode = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipServiceStatics.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetPlacement(pThis, RawPointer(element), &result))
+            }
+            return result
+        }
+
+        internal func SetPlacementImpl(_ element: WinUI.DependencyObject?, _ value: WinUI.PlacementMode) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipServiceStatics.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.SetPlacement(pThis, RawPointer(element), value))
+            }
+        }
+
+        internal func get_PlacementTargetPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipServiceStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_PlacementTargetProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func GetPlacementTargetImpl(_ element: WinUI.DependencyObject?) throws -> WinUI.UIElement? {
+            let (result) = try ComPtrs.initialize { resultAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipServiceStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.GetPlacementTarget(pThis, RawPointer(element), &resultAbi))
+                }
+            }
+            return .from(abi: result)
+        }
+
+        internal func SetPlacementTargetImpl(_ element: WinUI.DependencyObject?, _ value: WinUI.UIElement?) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipServiceStatics.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.SetPlacementTarget(pThis, RawPointer(element), RawPointer(value)))
+            }
+        }
+
+        internal func get_ToolTipPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipServiceStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_ToolTipProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func GetToolTipImpl(_ element: WinUI.DependencyObject?) throws -> Any? {
+            let (result) = try ComPtrs.initialize { resultAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipServiceStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.GetToolTip(pThis, RawPointer(element), &resultAbi))
+                }
+            }
+            return __ABI_.AnyWrapper.unwrapFrom(abi: result)
+        }
+
+        internal func SetToolTipImpl(_ element: WinUI.DependencyObject?, _ value: Any?) throws {
+            let valueWrapper = __ABI_.AnyWrapper(value)
+            let _value = try! valueWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipServiceStatics.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.SetToolTip(pThis, RawPointer(element), _value))
+            }
+        }
+
+    }
+
+    public class IToolTipStatics: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipStatics }
+
+        internal func get_HorizontalOffsetPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_HorizontalOffsetProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_IsOpenPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsOpenProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_PlacementPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_PlacementProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_PlacementTargetPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_PlacementTargetProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_PlacementRectPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_PlacementRectProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_VerticalOffsetPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIToolTipStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_VerticalOffsetProperty(pThis, &valueAbi))
                 }
             }
             return .from(abi: value)
