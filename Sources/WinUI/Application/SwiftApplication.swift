@@ -44,10 +44,12 @@ open class SwiftApplication: Application, IXamlMetadataProvider {
     public static func main() {
         do {
             try withExtendedLifetime(WindowsAppRuntimeInitializer(threadingModel: .multi)) {
+                // What is going on here??!? Is this necessary??
                 let appClass = String(describing: String(reflecting: Self.self))
                 guard let instance = NSClassFromString(appClass) else {
                     fatalError("unable to find application class \(appClass)")
                 }
+
                 var application: SwiftApplication!
                 Application.start { _ in
                     MainRunLoopTickler.setup()
@@ -56,9 +58,10 @@ open class SwiftApplication: Application, IXamlMetadataProvider {
                 application.onShutdown()
                 MainRunLoopTickler.shutdown()
             }
-        }
-        catch {
-            fatalError("Failed to initialize WindowsAppRuntimeInitializer: \(error)")
+        } catch {
+            // Sometimes fatalError doesn't seem to print the error message
+            print("Failed to initialize WindowsAppRuntimeInitializer: \(error)")
+            fatalError("fatal")
         }
     }
 
