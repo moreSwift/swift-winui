@@ -66,13 +66,21 @@ public class WindowsAppRuntimeInitializer {
     }
 
     public init(threadingModel: ThreadingModel = .single) throws  {
+        guard let executableURL = Bundle.main.executableURL else {
+            throw InitializationError.missingExecutableURL
+        }
+        let appDirectory = executableURL
+            .deletingLastPathComponent()
+
         let libraryPaths = [
             "swift-winui_CWinAppSDK.resources\\Microsoft.WindowsAppRuntime.Bootstrap.dll",
             "swift-winui_CWinAppSDK.bundle\\Microsoft.WindowsAppRuntime.Bootstrap.dll",
         ]
         guard
             let libraryPath = libraryPaths.first(where: { libraryPath in
-                FileManager.default.fileExists(atPath: libraryPath)
+                FileManager.default.fileExists(
+                    atPath: appDirectory.appendingPathComponent(libraryPath).path
+                )
             })
         else {
             print("Expected to find bootstrapper dll at one of \(libraryPaths)")
@@ -96,11 +104,7 @@ public class WindowsAppRuntimeInitializer {
             return
         }
 
-        guard let executableURL = Bundle.main.executableURL else {
-            throw InitializationError.missingExecutableURL
-        }
-        let runtimeInstaller = executableURL
-            .deletingLastPathComponent()
+        let runtimeInstaller = appDirectory
             .appendingPathComponent("WindowsAppRuntimeInstaller.exe")
         let installerExists = FileManager.default.fileExists(atPath: runtimeInstaller.path)
 
