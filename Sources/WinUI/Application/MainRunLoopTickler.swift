@@ -43,7 +43,7 @@ final class MainRunLoopTickler {
             cappedDelay = nextIdleDelay
             nextIdleDelay = min(nextIdleDelay + Self.minIdleDelay, Self.maxIdleDelay)
         } else {
-            cappedDelay = max(delay, 0)
+            cappedDelay = max(delay, Self.minIdleDelay)
         }
         let delayMilliseconds = UInt32(cappedDelay * 1000)
         timerID = SetTimer(nil, timerID, delayMilliseconds, runLoopTicklerTimerProc)
@@ -76,7 +76,9 @@ final class MainRunLoopTickler {
 
         let nextDate = RunLoop.main.limitDate(forMode: .default)
         // A nil result is unexpected, but if it happens, we'll just try again promptly.
-        let nextDelay = nextDate?.timeIntervalSinceNow ?? 0
+        // The RunLoop sometimes returns distantFuture as the deadline, in which case we
+        // also just try again promptly.
+        let nextDelay = nextDate == .distantFuture ? 0 : nextDate?.timeIntervalSinceNow ?? 0
         // Messages created via PostMessageW have scheduling priority over UI messages. To invert the priority,
         // scheduling immediate work is delayed if the thread has other pending messages. PostMessageW will
         // ultimately be called after all queued messages have been flushed thanks to the WH_CALLWNDPROCRET hook.
