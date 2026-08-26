@@ -417,6 +417,14 @@ fileprivate func makeChoosingItemContainerEventArgsFrom(abi: WindowsFoundation.I
     return ChoosingItemContainerEventArgs(fromAbi: abi)
 }
 
+fileprivate func makeColorChangedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return ColorChangedEventArgs(fromAbi: abi)
+}
+
+fileprivate func makeColorPickerFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return ColorPicker(fromAbi: abi)
+}
+
 fileprivate func makeColumnDefinitionFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return ColumnDefinition(fromAbi: abi)
 }
@@ -1907,6 +1915,8 @@ public class __MakeFromAbi: MakeFromAbi {
             case "CheckBox": return makeCheckBoxFrom(abi: abi)
             case "ChoosingGroupHeaderContainerEventArgs": return makeChoosingGroupHeaderContainerEventArgsFrom(abi: abi)
             case "ChoosingItemContainerEventArgs": return makeChoosingItemContainerEventArgsFrom(abi: abi)
+            case "ColorChangedEventArgs": return makeColorChangedEventArgsFrom(abi: abi)
+            case "ColorPicker": return makeColorPickerFrom(abi: abi)
             case "ColumnDefinition": return makeColumnDefinitionFrom(abi: abi)
             case "ColumnDefinitionCollection": return makeColumnDefinitionCollectionFrom(abi: abi)
             case "ComboBox": return makeComboBoxFrom(abi: abi)

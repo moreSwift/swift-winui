@@ -135,6 +135,30 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIChoosingItemContainerEv
     .init(Data1: 0xB479B9D2, Data2: 0xA63F, Data3: 0x5638, Data4: ( 0x94,0x86,0x8C,0xCC,0x1F,0x40,0x25,0x1E ))// B479B9D2-A63F-5638-9486-8CCC1F40251E
 }
 
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorChangedEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0x148D57A2, Data2: 0xB1CB, Data3: 0x5F5D, Data4: ( 0xB6,0xB5,0x51,0x28,0x05,0xD7,0x17,0x61 ))// 148D57A2-B1CB-5F5D-B6B5-512805D71761
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker: WindowsFoundation.IID {
+    .init(Data1: 0xAE72B24B, Data2: 0xF93F, Data3: 0x5A19, Data4: ( 0x8C,0xE4,0xA1,0x8B,0x73,0xC3,0x35,0x6D ))// AE72B24B-F93F-5A19-8CE4-A18B73C3356D
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker2: WindowsFoundation.IID {
+    .init(Data1: 0x802E64C9, Data2: 0x4608, Data3: 0x5C4C, Data4: ( 0x93,0xCF,0x6C,0x46,0x2E,0x3C,0x10,0x68 ))// 802E64C9-4608-5C4C-93CF-6C462E3C1068
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerFactory: WindowsFoundation.IID {
+    .init(Data1: 0x72C350E2, Data2: 0x0A20, Data3: 0x5B9B, Data4: ( 0xAC,0x54,0x63,0x3B,0x97,0xD7,0xFF,0xDE ))// 72C350E2-0A20-5B9B-AC54-633B97D7FFDE
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics: WindowsFoundation.IID {
+    .init(Data1: 0x920D2D62, Data2: 0x172E, Data3: 0x5771, Data4: ( 0xB6,0x77,0x40,0x69,0xB5,0x13,0x45,0x74 ))// 920D2D62-172E-5771-B677-4069B5134574
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics2: WindowsFoundation.IID {
+    .init(Data1: 0x2F4AF95B, Data2: 0x81CF, Data3: 0x5304, Data4: ( 0x99,0x50,0x49,0xEC,0x93,0x4C,0x1B,0x35 ))// 2F4AF95B-81CF-5304-9950-49EC934C1B35
+}
+
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColumnDefinition: WindowsFoundation.IID {
     .init(Data1: 0x454CEA14, Data2: 0x87EC, Data3: 0x5890, Data4: ( 0xBB,0x62,0xF1,0xD8,0x2A,0x94,0x75,0x8E ))// 454CEA14-87EC-5890-BB62-F1D82A94758E
 }
@@ -4597,6 +4621,544 @@ public enum __ABI_Microsoft_UI_Xaml_Controls {
             _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIChoosingItemContainerEventArgs.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.put_IsContainerPrepared(pThis, .init(from: value)))
             }
+        }
+
+    }
+
+    public class IColorChangedEventArgs: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorChangedEventArgs }
+
+        internal func get_OldColorImpl() throws -> UWP.Color {
+            var value: __x_ABI_CWindows_CUI_CColor = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorChangedEventArgs.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_OldColor(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_NewColorImpl() throws -> UWP.Color {
+            var value: __x_ABI_CWindows_CUI_CColor = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorChangedEventArgs.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_NewColor(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+    }
+
+    public class IColorPicker: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker }
+
+        internal func get_ColorImpl() throws -> UWP.Color {
+            var value: __x_ABI_CWindows_CUI_CColor = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Color(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        internal func put_ColorImpl(_ value: UWP.Color) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_Color(pThis, .from(swift: value)))
+            }
+        }
+
+        internal func get_PreviousColorImpl() throws -> UWP.Color? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_PreviousColor(pThis, &valueAbi))
+                }
+            }
+            return WinUI.__x_ABI_C__FIReference_1___x_ABI_CWindows__CUI__CColorWrapper.unwrapFrom(abi: value)
+        }
+
+        internal func put_PreviousColorImpl(_ value: UWP.Color?) throws {
+            let valueWrapper = WinUI.__x_ABI_C__FIReference_1___x_ABI_CWindows__CUI__CColorWrapper(value)
+            let _value = try! valueWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_PreviousColor(pThis, _value))
+            }
+        }
+
+        internal func get_IsAlphaEnabledImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsAlphaEnabled(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func put_IsAlphaEnabledImpl(_ value: Bool) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_IsAlphaEnabled(pThis, .init(from: value)))
+            }
+        }
+
+        internal func get_IsColorSpectrumVisibleImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsColorSpectrumVisible(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func put_IsColorSpectrumVisibleImpl(_ value: Bool) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_IsColorSpectrumVisible(pThis, .init(from: value)))
+            }
+        }
+
+        internal func get_IsColorPreviewVisibleImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsColorPreviewVisible(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func put_IsColorPreviewVisibleImpl(_ value: Bool) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_IsColorPreviewVisible(pThis, .init(from: value)))
+            }
+        }
+
+        internal func get_IsColorSliderVisibleImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsColorSliderVisible(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func put_IsColorSliderVisibleImpl(_ value: Bool) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_IsColorSliderVisible(pThis, .init(from: value)))
+            }
+        }
+
+        internal func get_IsAlphaSliderVisibleImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsAlphaSliderVisible(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func put_IsAlphaSliderVisibleImpl(_ value: Bool) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_IsAlphaSliderVisible(pThis, .init(from: value)))
+            }
+        }
+
+        internal func get_IsMoreButtonVisibleImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsMoreButtonVisible(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func put_IsMoreButtonVisibleImpl(_ value: Bool) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_IsMoreButtonVisible(pThis, .init(from: value)))
+            }
+        }
+
+        internal func get_IsColorChannelTextInputVisibleImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsColorChannelTextInputVisible(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func put_IsColorChannelTextInputVisibleImpl(_ value: Bool) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_IsColorChannelTextInputVisible(pThis, .init(from: value)))
+            }
+        }
+
+        internal func get_IsAlphaTextInputVisibleImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsAlphaTextInputVisible(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func put_IsAlphaTextInputVisibleImpl(_ value: Bool) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_IsAlphaTextInputVisible(pThis, .init(from: value)))
+            }
+        }
+
+        internal func get_IsHexInputVisibleImpl() throws -> Bool {
+            var value: boolean = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsHexInputVisible(pThis, &value))
+            }
+            return .init(from: value)
+        }
+
+        internal func put_IsHexInputVisibleImpl(_ value: Bool) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_IsHexInputVisible(pThis, .init(from: value)))
+            }
+        }
+
+        internal func get_MinHueImpl() throws -> Int32 {
+            var value: INT32 = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_MinHue(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_MinHueImpl(_ value: Int32) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_MinHue(pThis, value))
+            }
+        }
+
+        internal func get_MaxHueImpl() throws -> Int32 {
+            var value: INT32 = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_MaxHue(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_MaxHueImpl(_ value: Int32) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_MaxHue(pThis, value))
+            }
+        }
+
+        internal func get_MinSaturationImpl() throws -> Int32 {
+            var value: INT32 = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_MinSaturation(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_MinSaturationImpl(_ value: Int32) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_MinSaturation(pThis, value))
+            }
+        }
+
+        internal func get_MaxSaturationImpl() throws -> Int32 {
+            var value: INT32 = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_MaxSaturation(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_MaxSaturationImpl(_ value: Int32) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_MaxSaturation(pThis, value))
+            }
+        }
+
+        internal func get_MinValueImpl() throws -> Int32 {
+            var value: INT32 = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_MinValue(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_MinValueImpl(_ value: Int32) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_MinValue(pThis, value))
+            }
+        }
+
+        internal func get_MaxValueImpl() throws -> Int32 {
+            var value: INT32 = 0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_MaxValue(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_MaxValueImpl(_ value: Int32) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_MaxValue(pThis, value))
+            }
+        }
+
+        internal func get_ColorSpectrumShapeImpl() throws -> WinUI.ColorSpectrumShape {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CColorSpectrumShape = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_ColorSpectrumShape(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_ColorSpectrumShapeImpl(_ value: WinUI.ColorSpectrumShape) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_ColorSpectrumShape(pThis, value))
+            }
+        }
+
+        internal func get_ColorSpectrumComponentsImpl() throws -> WinUI.ColorSpectrumComponents {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CColorSpectrumComponents = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_ColorSpectrumComponents(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_ColorSpectrumComponentsImpl(_ value: WinUI.ColorSpectrumComponents) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_ColorSpectrumComponents(pThis, value))
+            }
+        }
+
+        internal func add_ColorChangedImpl(_ handler: TypedEventHandler<WinUI.ColorPicker?, WinUI.ColorChangedEventArgs?>?) throws -> EventRegistrationToken {
+            var token: EventRegistrationToken = .init()
+            let handlerWrapper = WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CColorPicker___x_ABI_CMicrosoft__CUI__CXaml__CControls__CColorChangedEventArgsWrapper(handler)
+            let _handler = try! handlerWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.add_ColorChanged(pThis, _handler, &token))
+            }
+            return token
+        }
+
+        internal func remove_ColorChangedImpl(_ token: EventRegistrationToken) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.remove_ColorChanged(pThis, token))
+            }
+        }
+
+    }
+
+    public class IColorPicker2: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker2 }
+
+        internal func get_OrientationImpl() throws -> WinUI.Orientation {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CControls_COrientation = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Orientation(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_OrientationImpl(_ value: WinUI.Orientation) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker2.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_Orientation(pThis, value))
+            }
+        }
+
+    }
+
+    public class IColorPickerFactory: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerFactory }
+
+        internal func CreateInstanceImpl(_ baseInterface: UnsealedWinRTClassWrapper<WinUI.ColorPicker.Composable>?, _ innerInterface: inout WindowsFoundation.IInspectable?) throws -> IColorPicker {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                let _baseInterface = baseInterface?.toIInspectableABI { $0 }
+                let (_innerInterface) = try ComPtrs.initialize { _innerInterfaceAbi in
+                    _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerFactory.self) { pThis in
+                        try CHECKED(pThis.pointee.lpVtbl.pointee.CreateInstance(pThis, _baseInterface, &_innerInterfaceAbi, &valueAbi))
+                    }
+                }
+                innerInterface = WindowsFoundation.IInspectable(_innerInterface!)
+            }
+            return IColorPicker(value!)
+        }
+
+    }
+
+    public class IColorPickerStatics: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics }
+
+        internal func get_ColorPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_ColorProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_PreviousColorPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_PreviousColorProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_IsAlphaEnabledPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsAlphaEnabledProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_IsColorSpectrumVisiblePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsColorSpectrumVisibleProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_IsColorPreviewVisiblePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsColorPreviewVisibleProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_IsColorSliderVisiblePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsColorSliderVisibleProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_IsAlphaSliderVisiblePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsAlphaSliderVisibleProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_IsMoreButtonVisiblePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsMoreButtonVisibleProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_IsColorChannelTextInputVisiblePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsColorChannelTextInputVisibleProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_IsAlphaTextInputVisiblePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsAlphaTextInputVisibleProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_IsHexInputVisiblePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_IsHexInputVisibleProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_MinHuePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_MinHueProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_MaxHuePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_MaxHueProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_MinSaturationPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_MinSaturationProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_MaxSaturationPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_MaxSaturationProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_MinValuePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_MinValueProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_MaxValuePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_MaxValueProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_ColorSpectrumShapePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_ColorSpectrumShapeProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_ColorSpectrumComponentsPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_ColorSpectrumComponentsProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+    }
+
+    public class IColorPickerStatics2: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics2 }
+
+        internal func get_OrientationPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPickerStatics2.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_OrientationProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
         }
 
     }

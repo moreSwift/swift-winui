@@ -21,6 +21,10 @@ public typealias CandidateWindowAlignment = __x_ABI_CMicrosoft_CUI_CXaml_CContro
 public typealias CharacterCasing = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCharacterCasing
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.clickmode)
 public typealias ClickMode = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CClickMode
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorspectrumcomponents)
+public typealias ColorSpectrumComponents = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CColorSpectrumComponents
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorspectrumshape)
+public typealias ColorSpectrumShape = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CColorSpectrumShape
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.comboboxselectionchangedtrigger)
 public typealias ComboBoxSelectionChangedTrigger = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CComboBoxSelectionChangedTrigger
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialogbutton)
@@ -2431,6 +2435,340 @@ public final class ChoosingItemContainerEventArgs : WinRTClass {
 
     deinit {
         _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorchangedeventargs)
+public final class ColorChangedEventArgs : WinRTClass {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IColorChangedEventArgs
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorChangedEventArgs
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorChangedEventArgs>?) -> ColorChangedEventArgs? {
+        guard let abi = abi else { return nil }
+        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+    }
+
+    @_spi(WinRTInternal)
+    public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorchangedeventargs.newcolor)
+    public var newColor : UWP.Color {
+        get { try! _default.get_NewColorImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorchangedeventargs.oldcolor)
+    public var oldColor : UWP.Color {
+        get { try! _default.get_OldColorImpl() }
+    }
+
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker)
+open class ColorPicker : WinUI.Control {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IColorPicker
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker>?) -> ColorPicker? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _IColorPickerFactory : __ABI_Microsoft_UI_Xaml_Controls.IColorPickerFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.ColorPicker"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._IColorPickerFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    private static let _IColorPickerStatics: __ABI_Microsoft_UI_Xaml_Controls.IColorPickerStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.ColorPicker"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.colorproperty)
+    public class var colorProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_ColorPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.colorspectrumcomponentsproperty)
+    public class var colorSpectrumComponentsProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_ColorSpectrumComponentsPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.colorspectrumshapeproperty)
+    public class var colorSpectrumShapeProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_ColorSpectrumShapePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.isalphaenabledproperty)
+    public class var isAlphaEnabledProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_IsAlphaEnabledPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.isalphaslidervisibleproperty)
+    public class var isAlphaSliderVisibleProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_IsAlphaSliderVisiblePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.isalphatextinputvisibleproperty)
+    public class var isAlphaTextInputVisibleProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_IsAlphaTextInputVisiblePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.iscolorchanneltextinputvisibleproperty)
+    public class var isColorChannelTextInputVisibleProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_IsColorChannelTextInputVisiblePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.iscolorpreviewvisibleproperty)
+    public class var isColorPreviewVisibleProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_IsColorPreviewVisiblePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.iscolorslidervisibleproperty)
+    public class var isColorSliderVisibleProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_IsColorSliderVisiblePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.iscolorspectrumvisibleproperty)
+    public class var isColorSpectrumVisibleProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_IsColorSpectrumVisiblePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.ishexinputvisibleproperty)
+    public class var isHexInputVisibleProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_IsHexInputVisiblePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.ismorebuttonvisibleproperty)
+    public class var isMoreButtonVisibleProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_IsMoreButtonVisiblePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.maxhueproperty)
+    public class var maxHueProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_MaxHuePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.maxsaturationproperty)
+    public class var maxSaturationProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_MaxSaturationPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.maxvalueproperty)
+    public class var maxValueProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_MaxValuePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.minhueproperty)
+    public class var minHueProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_MinHuePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.minsaturationproperty)
+    public class var minSaturationProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_MinSaturationPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.minvalueproperty)
+    public class var minValueProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_MinValuePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.previouscolorproperty)
+    public class var previousColorProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics.get_PreviousColorPropertyImpl() }
+    }
+
+    private static let _IColorPickerStatics2: __ABI_Microsoft_UI_Xaml_Controls.IColorPickerStatics2 = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.ColorPicker"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.orientationproperty)
+    public class var orientationProperty : WinUI.DependencyProperty! {
+        get { try! _IColorPickerStatics2.get_OrientationPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.color)
+    public var color : UWP.Color {
+        get { try! _default.get_ColorImpl() }
+        set { try! _default.put_ColorImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.colorspectrumcomponents)
+    public var colorSpectrumComponents : ColorSpectrumComponents {
+        get { try! _default.get_ColorSpectrumComponentsImpl() }
+        set { try! _default.put_ColorSpectrumComponentsImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.colorspectrumshape)
+    public var colorSpectrumShape : ColorSpectrumShape {
+        get { try! _default.get_ColorSpectrumShapeImpl() }
+        set { try! _default.put_ColorSpectrumShapeImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.isalphaenabled)
+    public var isAlphaEnabled : Bool {
+        get { try! _default.get_IsAlphaEnabledImpl() }
+        set { try! _default.put_IsAlphaEnabledImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.isalphaslidervisible)
+    public var isAlphaSliderVisible : Bool {
+        get { try! _default.get_IsAlphaSliderVisibleImpl() }
+        set { try! _default.put_IsAlphaSliderVisibleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.isalphatextinputvisible)
+    public var isAlphaTextInputVisible : Bool {
+        get { try! _default.get_IsAlphaTextInputVisibleImpl() }
+        set { try! _default.put_IsAlphaTextInputVisibleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.iscolorchanneltextinputvisible)
+    public var isColorChannelTextInputVisible : Bool {
+        get { try! _default.get_IsColorChannelTextInputVisibleImpl() }
+        set { try! _default.put_IsColorChannelTextInputVisibleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.iscolorpreviewvisible)
+    public var isColorPreviewVisible : Bool {
+        get { try! _default.get_IsColorPreviewVisibleImpl() }
+        set { try! _default.put_IsColorPreviewVisibleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.iscolorslidervisible)
+    public var isColorSliderVisible : Bool {
+        get { try! _default.get_IsColorSliderVisibleImpl() }
+        set { try! _default.put_IsColorSliderVisibleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.iscolorspectrumvisible)
+    public var isColorSpectrumVisible : Bool {
+        get { try! _default.get_IsColorSpectrumVisibleImpl() }
+        set { try! _default.put_IsColorSpectrumVisibleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.ishexinputvisible)
+    public var isHexInputVisible : Bool {
+        get { try! _default.get_IsHexInputVisibleImpl() }
+        set { try! _default.put_IsHexInputVisibleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.ismorebuttonvisible)
+    public var isMoreButtonVisible : Bool {
+        get { try! _default.get_IsMoreButtonVisibleImpl() }
+        set { try! _default.put_IsMoreButtonVisibleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.maxhue)
+    public var maxHue : Int32 {
+        get { try! _default.get_MaxHueImpl() }
+        set { try! _default.put_MaxHueImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.maxsaturation)
+    public var maxSaturation : Int32 {
+        get { try! _default.get_MaxSaturationImpl() }
+        set { try! _default.put_MaxSaturationImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.maxvalue)
+    public var maxValue : Int32 {
+        get { try! _default.get_MaxValueImpl() }
+        set { try! _default.put_MaxValueImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.minhue)
+    public var minHue : Int32 {
+        get { try! _default.get_MinHueImpl() }
+        set { try! _default.put_MinHueImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.minsaturation)
+    public var minSaturation : Int32 {
+        get { try! _default.get_MinSaturationImpl() }
+        set { try! _default.put_MinSaturationImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.minvalue)
+    public var minValue : Int32 {
+        get { try! _default.get_MinValueImpl() }
+        set { try! _default.put_MinValueImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.previouscolor)
+    public var previousColor : UWP.Color? {
+        get { try! _default.get_PreviousColorImpl() }
+        set { try! _default.put_PreviousColorImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.colorchanged)
+    public lazy var colorChanged : Event<TypedEventHandler<ColorPicker?, ColorChangedEventArgs?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_ColorChangedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_ColorChangedImpl($0)
+       }
+      )
+    }()
+
+    private lazy var _IColorPicker2: __ABI_Microsoft_UI_Xaml_Controls.IColorPicker2! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker.orientation)
+    public var orientation : Orientation {
+        get { try! _IColorPicker2.get_OrientationImpl() }
+        set { try! _IColorPicker2.put_OrientationImpl(newValue) }
+    }
+
+    internal enum IControlOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIControlOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IControlOverrides
+        internal typealias Class = ColorPicker
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIColorPicker
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IColorPicker
+        }
+    }
+    internal typealias Composable = IControlOverrides
+    deinit {
+        _default = nil
+        _IColorPicker2 = nil
     }
 }
 
@@ -16204,6 +16542,38 @@ extension WinUI.ClickMode {
     }
 }
 extension WinUI.ClickMode: @retroactive Hashable, @retroactive Codable {}
+
+extension WinUI.ColorSpectrumComponents {
+    public static var hueValue : WinUI.ColorSpectrumComponents {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CColorSpectrumComponents_HueValue
+    }
+    public static var valueHue : WinUI.ColorSpectrumComponents {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CColorSpectrumComponents_ValueHue
+    }
+    public static var hueSaturation : WinUI.ColorSpectrumComponents {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CColorSpectrumComponents_HueSaturation
+    }
+    public static var saturationHue : WinUI.ColorSpectrumComponents {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CColorSpectrumComponents_SaturationHue
+    }
+    public static var saturationValue : WinUI.ColorSpectrumComponents {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CColorSpectrumComponents_SaturationValue
+    }
+    public static var valueSaturation : WinUI.ColorSpectrumComponents {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CColorSpectrumComponents_ValueSaturation
+    }
+}
+extension WinUI.ColorSpectrumComponents: @retroactive Hashable, @retroactive Codable {}
+
+extension WinUI.ColorSpectrumShape {
+    public static var box : WinUI.ColorSpectrumShape {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CColorSpectrumShape_Box
+    }
+    public static var ring : WinUI.ColorSpectrumShape {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CColorSpectrumShape_Ring
+    }
+}
+extension WinUI.ColorSpectrumShape: @retroactive Hashable, @retroactive Codable {}
 
 extension WinUI.ComboBoxSelectionChangedTrigger {
     public static var committed : WinUI.ComboBoxSelectionChangedTrigger {

@@ -22,6 +22,7 @@
     "Microsoft.UI.Xaml.Controls.CalendarView",
     "Microsoft.UI.Xaml.Controls.CalendarDatePicker",
     "Microsoft.UI.Xaml.Controls.CheckBox",
+    "Microsoft.UI.Xaml.Controls.ColorPicker",
     "Microsoft.UI.Xaml.Controls.ComboBox",
     "Microsoft.UI.Xaml.Controls.ContentDialog",
     "Microsoft.UI.Xaml.Controls.ContentPresenter",

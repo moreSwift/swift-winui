@@ -67,7 +67,7 @@ function Copy-Project {
     if ($ProjectName) {
         $ProjectGeneratedDir = if ($ProjectName -eq "CWinRT") { "$ProjectName" } else { "$ProjectName\Generated" }
 
-        $ProjectDir = Join-Path $PSScriptRoot "Sources\$ProjectGeneratedDir"
+        $ProjectDir = Join-Path $PSScriptRoot "..\..\Sources\$ProjectGeneratedDir"
         if (Test-Path $ProjectDir) {
             Remove-Item -Path $ProjectDir -Recurse -Force
         }
