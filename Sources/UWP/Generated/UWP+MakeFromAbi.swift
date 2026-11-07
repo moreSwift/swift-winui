@@ -129,6 +129,11 @@ fileprivate func makeIDevicePairingSettingsFrom(abi: WindowsFoundation.IInspecta
     return __IMPL_Windows_Devices_Enumeration.IDevicePairingSettingsBridge.from(abi: RawPointer(swiftAbi))!
 }
 
+fileprivate func makeIGeoshapeFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    let swiftAbi: __ABI_Windows_Devices_Geolocation.IGeoshape = try! abi.QueryInterface()
+    return __IMPL_Windows_Devices_Geolocation.IGeoshapeBridge.from(abi: RawPointer(swiftAbi))!
+}
+
 fileprivate func makeIGeometrySource2DFrom(abi: WindowsFoundation.IInspectable) -> Any {
     let swiftAbi: __ABI_Windows_Graphics.IGeometrySource2D = try! abi.QueryInterface()
     return __IMPL_Windows_Graphics.IGeometrySource2DBridge.from(abi: RawPointer(swiftAbi))!
@@ -669,6 +674,42 @@ fileprivate func makeDeviceWatcherFrom(abi: WindowsFoundation.IInspectable) -> A
 
 fileprivate func makeEnclosureLocationFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return EnclosureLocation(fromAbi: abi)
+}
+
+fileprivate func makeCivicAddressFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return CivicAddress(fromAbi: abi)
+}
+
+fileprivate func makeGeocoordinateFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return Geocoordinate(fromAbi: abi)
+}
+
+fileprivate func makeGeocoordinateSatelliteDataFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return GeocoordinateSatelliteData(fromAbi: abi)
+}
+
+fileprivate func makeGeolocatorFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return Geolocator(fromAbi: abi)
+}
+
+fileprivate func makeGeopointFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return Geopoint(fromAbi: abi)
+}
+
+fileprivate func makeGeopositionFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return Geoposition(fromAbi: abi)
+}
+
+fileprivate func makePositionChangedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return PositionChangedEventArgs(fromAbi: abi)
+}
+
+fileprivate func makeStatusChangedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return StatusChangedEventArgs(fromAbi: abi)
+}
+
+fileprivate func makeVenueDataFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return VenueData(fromAbi: abi)
 }
 
 fileprivate func makePointerDeviceFrom(abi: WindowsFoundation.IInspectable) -> Any {
@@ -2428,6 +2469,7 @@ public class __MakeFromAbi: MakeFromAbi {
             case "IFrameworkViewSource": return makeIFrameworkViewSourceFrom(abi: abi)
             case "ICoreDropOperationTarget": return makeICoreDropOperationTargetFrom(abi: abi)
             case "IDevicePairingSettings": return makeIDevicePairingSettingsFrom(abi: abi)
+            case "IGeoshape": return makeIGeoshapeFrom(abi: abi)
             case "IGeometrySource2D": return makeIGeometrySource2DFrom(abi: abi)
             case "IDirect3DSurface": return makeIDirect3DSurfaceFrom(abi: abi)
             case "IGraphicsEffect": return makeIGraphicsEffectFrom(abi: abi)
@@ -2550,6 +2592,15 @@ public class __MakeFromAbi: MakeFromAbi {
             case "DeviceUnpairingResult": return makeDeviceUnpairingResultFrom(abi: abi)
             case "DeviceWatcher": return makeDeviceWatcherFrom(abi: abi)
             case "EnclosureLocation": return makeEnclosureLocationFrom(abi: abi)
+            case "CivicAddress": return makeCivicAddressFrom(abi: abi)
+            case "Geocoordinate": return makeGeocoordinateFrom(abi: abi)
+            case "GeocoordinateSatelliteData": return makeGeocoordinateSatelliteDataFrom(abi: abi)
+            case "Geolocator": return makeGeolocatorFrom(abi: abi)
+            case "Geopoint": return makeGeopointFrom(abi: abi)
+            case "Geoposition": return makeGeopositionFrom(abi: abi)
+            case "PositionChangedEventArgs": return makePositionChangedEventArgsFrom(abi: abi)
+            case "StatusChangedEventArgs": return makeStatusChangedEventArgsFrom(abi: abi)
+            case "VenueData": return makeVenueDataFrom(abi: abi)
             case "PointerDevice": return makePointerDeviceFrom(abi: abi)
             case "Language": return makeLanguageFrom(abi: abi)
             case "BitmapBuffer": return makeBitmapBufferFrom(abi: abi)

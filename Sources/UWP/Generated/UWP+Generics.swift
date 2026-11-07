@@ -770,6 +770,108 @@ internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__C
         return handler
     }
 }
+private var IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatus: WindowsFoundation.IID {
+    .init(Data1: 0xf3524c93, Data2: 0xe5c7, Data3: 0x5b88, Data4: ( 0xbe,0xdb,0xd3,0xe6,0x37,0xcf,0xf2,0x71 ))// f3524c93-e5c7-5b88-bedb-d3e637cff271
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatus {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusVTable: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper.release($0) },
+    Invoke: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<UWP.GeolocationAccessStatus>? = UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper.unwrapFrom(abi: ComPtr($1))
+        let asyncStatus: WindowsFoundation.AsyncStatus = $2
+        __unwrapped__instance(asyncInfo, asyncStatus)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusBridge>
+internal class AsyncOperationCompletedHandlerGeolocationAccessStatus: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatus }
+
+    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<UWP.GeolocationAccessStatus>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+        let asyncInfoWrapper = UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper(asyncInfo)
+        let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatus.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, _asyncInfo, asyncStatus))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.AsyncOperationCompletedHandler<UWP.GeolocationAccessStatus>
+    internal typealias CABI = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatus
+    internal typealias SwiftABI = UWP.AsyncOperationCompletedHandlerGeolocationAccessStatus
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (asyncInfo, asyncStatus) in
+            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition: WindowsFoundation.IID {
+    .init(Data1: 0x7668a704, Data2: 0x244e, Data3: 0x5e12, Data4: ( 0x8d,0xcb,0x92,0xa3,0x29,0x9e,0xba,0x26 ))// 7668a704-244e-5e12-8dcb-92a3299eba26
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVTable: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.release($0) },
+    Invoke: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<UWP.Geoposition?>? = UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.unwrapFrom(abi: ComPtr($1))
+        let asyncStatus: WindowsFoundation.AsyncStatus = $2
+        __unwrapped__instance(asyncInfo, asyncStatus)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge>
+internal class AsyncOperationCompletedHandlerGeoposition: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition }
+
+    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<UWP.Geoposition?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+        let asyncInfoWrapper = UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper(asyncInfo)
+        let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, _asyncInfo, asyncStatus))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.AsyncOperationCompletedHandler<UWP.Geoposition?>
+    internal typealias CABI = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition
+    internal typealias SwiftABI = UWP.AsyncOperationCompletedHandlerGeoposition
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (asyncInfo, asyncStatus) in
+            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+        }
+        return handler
+    }
+}
 private var IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CStreams__CRandomAccessStreamReference: WindowsFoundation.IID {
     .init(Data1: 0xd4cb6b80, Data2: 0x821a, Data3: 0x5a7b, Data4: ( 0x89,0x8d,0xd5,0x89,0x17,0xb3,0x1a,0x36 ))// d4cb6b80-821a-5a7b-898d-d58917b31a36
 }
@@ -1015,6 +1117,57 @@ internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVector
     internal typealias Handler = WindowsFoundation.AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<UWP.AppListEntry?>?>
     internal typealias CABI = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CApplicationModel__CCore__CAppListEntry
     internal typealias SwiftABI = UWP.AsyncOperationCompletedHandlerIVectorViewAppListEntry
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (asyncInfo, asyncStatus) in
+            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition: WindowsFoundation.IID {
+    .init(Data1: 0x6c67a1d1, Data2: 0x9441, Data3: 0x5aee, Data4: ( 0xb6,0x25,0xe3,0xc1,0xb5,0x67,0x6a,0x6d ))// 6c67a1d1-9441-5aee-b625-e3c1b5676a6d
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVTable: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.release($0) },
+    Invoke: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<UWP.Geoposition?>?>? = UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.unwrapFrom(abi: ComPtr($1))
+        let asyncStatus: WindowsFoundation.AsyncStatus = $2
+        __unwrapped__instance(asyncInfo, asyncStatus)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge>
+internal class AsyncOperationCompletedHandlerIVectorViewGeoposition: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition }
+
+    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<UWP.Geoposition?>?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+        let asyncInfoWrapper = UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper(asyncInfo)
+        let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, _asyncInfo, asyncStatus))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<UWP.Geoposition?>?>
+    internal typealias CABI = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition
+    internal typealias SwiftABI = UWP.AsyncOperationCompletedHandlerIVectorViewGeoposition
 
     internal static func from(abi: ComPtr<CABI>?) -> Handler? {
         guard let abi = abi else { return nil }
@@ -6427,6 +6580,93 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CEnumerati
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<UWP.DeviceWatcherEventKind>? {
+        try! _default.FirstImpl()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition: WindowsFoundation.IID {
+    .init(Data1: 0x135ed72d, Data2: 0x75b1, Data3: 0x5881, Data4: ( 0xbe,0x41,0x6f,0xfe,0xaa,0x20,0x20,0x44 ))// 135ed72d-75b1-5881-be41-6ffeaa202044
+}
+
+internal var __x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVTable: __x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = UWP.__x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterable`1<Windows.Devices.Geolocation.Geoposition>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    First: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.first()
+        let resultWrapper = UWP.__x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge>
+internal class IIterableGeoposition: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition }
+
+    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<UWP.Geoposition?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
+            }
+        }
+        return UWP.__x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.unwrapFrom(abi: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition
+    internal typealias SwiftABI = IIterableGeoposition
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterable<UWP.Geoposition?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionImpl : IIterable, AbiInterfaceImpl {
+    typealias T = UWP.Geoposition?
+    typealias Bridge = __x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<UWP.Geoposition?>? {
         try! _default.FirstImpl()
     }
 
@@ -15516,6 +15756,134 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CEnumerati
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : UWP.DeviceWatcherEventKind {
+        get { try! _default.get_CurrentImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
+    fileprivate var hasCurrent : Bool {
+        get { try! _default.get_HasCurrentImpl() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition: WindowsFoundation.IID {
+    .init(Data1: 0xa99b4206, Data2: 0x263e, Data3: 0x5308, Data4: ( 0x82,0xf2,0x31,0x31,0x5c,0x65,0x13,0x5c ))// a99b4206-263e-5308-82f2-31315c65135c
+}
+
+internal var __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVTable: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = UWP.__x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterator`1<Windows.Devices.Geolocation.Geoposition>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    get_Current: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.current
+        result?.copyTo($1)
+        return S_OK
+    },
+
+    get_HasCurrent: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.hasCurrent
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    MoveNext: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.moveNext()
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+)
+typealias __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge>
+internal class IIteratorGeoposition: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition }
+
+    internal func get_CurrentImpl() throws -> UWP.Geoposition? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
+            }
+        }
+        return .from(abi: result)
+    }
+
+    internal func get_HasCurrentImpl() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+    internal func MoveNextImpl() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition
+    internal typealias SwiftABI = IIteratorGeoposition
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterator<UWP.Geoposition?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionImpl : IIterator, AbiInterfaceImpl {
+    typealias T = UWP.Geoposition?
+    typealias Bridge = __x_ABI_C__FIIterator_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
+    fileprivate func moveNext() -> Bool {
+        try! _default.MoveNextImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
+    fileprivate var current : UWP.Geoposition? {
         get { try! _default.get_CurrentImpl() }
     }
 
@@ -34251,6 +34619,166 @@ fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CEnumera
     private lazy var _IIterable: IIterableDeviceInformation! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<UWP.DeviceInformation?>? {
+        try! _IIterable.FirstImpl()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition: WindowsFoundation.IID {
+    .init(Data1: 0xd572ccf3, Data2: 0x0c60, Data3: 0x553f, Data4: ( 0xa6,0x24,0xc7,0x16,0x48,0xaf,0x8e,0x7a ))// d572ccf3-0c60-553f-a624-c71648af8e7a
+}
+
+internal var __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVTable: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = UWP.__x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.IID
+        iids[3] = UWP.__x_ABI_C__FIIterable_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IVectorView`1<Windows.Devices.Geolocation.Geoposition>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    GetAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let result = __unwrapped__instance.getAt(index)
+        result?.copyTo($2)
+        return S_OK
+    },
+
+    get_Size: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.size
+        $1?.initialize(to: result)
+        return S_OK
+    },
+
+    IndexOf: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let value: UWP.Geoposition? = .from(abi: ComPtr($1))
+        var index: UInt32 = 0
+        let result = __unwrapped__instance.indexOf(value, &index)
+        $2?.initialize(to: index)
+        $3?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) }
+)
+typealias __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge>
+internal class IVectorViewGeoposition: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition }
+
+    internal func GetAtImpl(_ index: UInt32) throws -> UWP.Geoposition? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
+            }
+        }
+        return .from(abi: result)
+    }
+
+    internal func get_SizeImpl() throws -> UInt32 {
+        var result: UINT32 = 0
+        _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
+        }
+        return result
+    }
+
+    internal func IndexOfImpl(_ value: UWP.Geoposition?, _ index: inout UInt32) throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
+        }
+        return .init(from: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition
+    internal typealias SwiftABI = IVectorViewGeoposition
+    internal typealias SwiftProjection = WindowsFoundation.AnyIVectorView<UWP.Geoposition?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionImpl : IVectorView, AbiInterfaceImpl {
+    typealias T = UWP.Geoposition?
+    typealias Bridge = __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: Collection
+    typealias Element = T
+    var startIndex: Int { 0 }
+    var endIndex: Int { Int(size) }
+    func index(after i: Int) -> Int {
+        i+1
+    }
+
+    func index(of: Element) -> Int? {
+        var index: UInt32 = 0
+        let result = indexOf(of, &index)
+        guard result else { return nil }
+        return Int(index)
+    }
+    var count: Int { Int(size) }
+
+    subscript(position: Int) -> Element {
+        get {
+            getAt(UInt32(position))
+        }
+    }
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
+    fileprivate func getAt(_ index: UInt32) -> UWP.Geoposition? {
+        try! _default.GetAtImpl(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
+    fileprivate func indexOf(_ value: UWP.Geoposition?, _ index: inout UInt32) -> Bool {
+        try! _default.IndexOfImpl(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
+    fileprivate var size : UInt32 {
+        get { try! _default.get_SizeImpl() }
+    }
+
+    private lazy var _IIterable: IIterableGeoposition! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<UWP.Geoposition?>? {
         try! _IIterable.FirstImpl()
     }
 
@@ -59767,6 +60295,311 @@ fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CEnu
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
 }
 
+private var IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatus: WindowsFoundation.IID {
+    .init(Data1: 0xde2b24d0, Data2: 0xb726, Data3: 0x57b1, Data4: ( 0xa7,0xc5,0xe5,0xa1,0x39,0x32,0xb7,0xde ))// de2b24d0-b726-57b1-a7c5-e5a13932b7de
+}
+
+internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusVTable: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper.IID
+        iids[3] = __ABI_Windows_Foundation.IAsyncInfoWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.IAsyncOperation`1<Windows.Devices.Geolocation.GeolocationAccessStatus>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    put_Completed: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        guard let handler = UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper.unwrapFrom(abi: ComPtr($1)) else { return E_INVALIDARG }
+        __unwrapped__instance.completed = handler
+        return S_OK
+    },
+
+    get_Completed: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.completed
+        let resultWrapper = UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    },
+
+    GetResults: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let result = try __unwrapped__instance.getResults()
+            $1?.initialize(to: result)
+            return S_OK
+        } catch { return failWith(err: E_FAIL) } 
+    }
+)
+typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusBridge>
+internal class IAsyncOperationGeolocationAccessStatus: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatus }
+
+    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<UWP.GeolocationAccessStatus>?) throws {
+        let handlerWrapper = UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper(handler)
+        let _handler = try! handlerWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatus.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.put_Completed(pThis, _handler))
+        }
+    }
+
+    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<UWP.GeolocationAccessStatus>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatus.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
+            }
+        }
+        return UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusWrapper.unwrapFrom(abi: result)
+    }
+
+    internal func GetResultsImpl() throws -> UWP.GeolocationAccessStatus {
+        var result: __x_ABI_CWindows_CDevices_CGeolocation_CGeolocationAccessStatus = .init(0)
+        _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatus.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &result))
+        }
+        return result
+    }
+
+}
+
+internal enum __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatus
+    internal typealias SwiftABI = IAsyncOperationGeolocationAccessStatus
+    internal typealias SwiftProjection = WindowsFoundation.AnyIAsyncOperation<UWP.GeolocationAccessStatus>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusImpl : IAsyncOperation, AbiInterfaceImpl {
+    typealias TResult = UWP.GeolocationAccessStatus
+    typealias Bridge = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeolocationAccessStatusBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
+    fileprivate func getResults() throws -> UWP.GeolocationAccessStatus {
+        try _default.GetResultsImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
+    fileprivate var completed : AsyncOperationCompletedHandler<UWP.GeolocationAccessStatus>? {
+        get { try! _default.get_CompletedImpl() }
+        set { try! _default.put_CompletedImpl(newValue) }
+    }
+
+    private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
+    fileprivate func cancel() throws {
+        try _IAsyncInfo.CancelImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
+    fileprivate func close() throws {
+        try _IAsyncInfo.CloseImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
+    fileprivate var errorCode : HRESULT {
+        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
+    fileprivate var id : UInt32 {
+        get { try! _IAsyncInfo.get_IdImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
+    fileprivate var status : WindowsFoundation.AsyncStatus {
+        get { try! _IAsyncInfo.get_StatusImpl() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition: WindowsFoundation.IID {
+    .init(Data1: 0xee73ecf0, Data2: 0x099d, Data3: 0x57e5, Data4: ( 0x84,0x07,0x5b,0x32,0xe5,0xaf,0x1c,0xc4 ))// ee73ecf0-099d-57e5-8407-5b32e5af1cc4
+}
+
+internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVTable: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.IID
+        iids[3] = __ABI_Windows_Foundation.IAsyncInfoWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.IAsyncOperation`1<Windows.Devices.Geolocation.Geoposition>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    put_Completed: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        guard let handler = UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.unwrapFrom(abi: ComPtr($1)) else { return E_INVALIDARG }
+        __unwrapped__instance.completed = handler
+        return S_OK
+    },
+
+    get_Completed: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.completed
+        let resultWrapper = UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    },
+
+    GetResults: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let result = try __unwrapped__instance.getResults()
+            result?.copyTo($1)
+            return S_OK
+        } catch { return failWith(err: E_FAIL) } 
+    }
+)
+typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge>
+internal class IAsyncOperationGeoposition: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition }
+
+    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<UWP.Geoposition?>?) throws {
+        let handlerWrapper = UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper(handler)
+        let _handler = try! handlerWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.put_Completed(pThis, _handler))
+        }
+    }
+
+    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<UWP.Geoposition?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
+            }
+        }
+        return UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.unwrapFrom(abi: result)
+    }
+
+    internal func GetResultsImpl() throws -> UWP.Geoposition? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &resultAbi))
+            }
+        }
+        return .from(abi: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition
+    internal typealias SwiftABI = IAsyncOperationGeoposition
+    internal typealias SwiftProjection = WindowsFoundation.AnyIAsyncOperation<UWP.Geoposition?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionImpl : IAsyncOperation, AbiInterfaceImpl {
+    typealias TResult = UWP.Geoposition?
+    typealias Bridge = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
+    fileprivate func getResults() throws -> UWP.Geoposition? {
+        try _default.GetResultsImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
+    fileprivate var completed : AsyncOperationCompletedHandler<UWP.Geoposition?>? {
+        get { try! _default.get_CompletedImpl() }
+        set { try! _default.put_CompletedImpl(newValue) }
+    }
+
+    private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
+    fileprivate func cancel() throws {
+        try _IAsyncInfo.CancelImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
+    fileprivate func close() throws {
+        try _IAsyncInfo.CloseImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
+    fileprivate var errorCode : HRESULT {
+        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
+    fileprivate var id : UInt32 {
+        get { try! _IAsyncInfo.get_IdImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
+    fileprivate var status : WindowsFoundation.AsyncStatus {
+        get { try! _IAsyncInfo.get_StatusImpl() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
 private var IID___x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CStreams__CRandomAccessStreamReference: WindowsFoundation.IID {
     .init(Data1: 0xfc012d44, Data2: 0x2dcf, Data3: 0x5162, Data4: ( 0xbe,0x9a,0x76,0x68,0x67,0x5a,0xa5,0x90 ))// fc012d44-2dcf-5162-be9a-7668675aa590
 }
@@ -60504,6 +61337,160 @@ fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_AB
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
     fileprivate var completed : AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<UWP.AppListEntry?>?>? {
+        get { try! _default.get_CompletedImpl() }
+        set { try! _default.put_CompletedImpl(newValue) }
+    }
+
+    private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
+    fileprivate func cancel() throws {
+        try _IAsyncInfo.CancelImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
+    fileprivate func close() throws {
+        try _IAsyncInfo.CloseImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
+    fileprivate var errorCode : HRESULT {
+        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
+    fileprivate var id : UInt32 {
+        get { try! _IAsyncInfo.get_IdImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
+    fileprivate var status : WindowsFoundation.AsyncStatus {
+        get { try! _IAsyncInfo.get_StatusImpl() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition: WindowsFoundation.IID {
+    .init(Data1: 0x9454b533, Data2: 0xefb4, Data3: 0x5385, Data4: ( 0x8d,0x3a,0x43,0x7f,0xab,0xc3,0x2d,0x91 ))// 9454b533-efb4-5385-8d3a-437fabc32d91
+}
+
+internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVTable: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.IID
+        iids[3] = __ABI_Windows_Foundation.IAsyncInfoWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Windows.Devices.Geolocation.Geoposition>>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    put_Completed: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        guard let handler = UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.unwrapFrom(abi: ComPtr($1)) else { return E_INVALIDARG }
+        __unwrapped__instance.completed = handler
+        return S_OK
+    },
+
+    get_Completed: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.completed
+        let resultWrapper = UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    },
+
+    GetResults: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let result = try __unwrapped__instance.getResults()
+            let resultWrapper = UWP.__x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper(result)
+            resultWrapper?.copyTo($1)
+            return S_OK
+        } catch { return failWith(err: E_FAIL) } 
+    }
+)
+typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge>
+internal class IAsyncOperationIVectorViewGeoposition: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition }
+
+    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<UWP.Geoposition?>?>?) throws {
+        let handlerWrapper = UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper(handler)
+        let _handler = try! handlerWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.put_Completed(pThis, _handler))
+        }
+    }
+
+    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<UWP.Geoposition?>?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
+            }
+        }
+        return UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.unwrapFrom(abi: result)
+    }
+
+    internal func GetResultsImpl() throws -> WindowsFoundation.AnyIVectorView<UWP.Geoposition?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &resultAbi))
+            }
+        }
+        return UWP.__x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionWrapper.unwrapFrom(abi: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeoposition
+    internal typealias SwiftABI = IAsyncOperationIVectorViewGeoposition
+    internal typealias SwiftProjection = WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<UWP.Geoposition?>?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionImpl : IAsyncOperation, AbiInterfaceImpl {
+    typealias TResult = WindowsFoundation.AnyIVectorView<UWP.Geoposition?>?
+    typealias Bridge = __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CDevices__CGeolocation__CGeopositionBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
+    fileprivate func getResults() throws -> WindowsFoundation.AnyIVectorView<UWP.Geoposition?>? {
+        try _default.GetResultsImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
+    fileprivate var completed : AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<UWP.Geoposition?>?>? {
         get { try! _default.get_CompletedImpl() }
         set { try! _default.put_CompletedImpl(newValue) }
     }
@@ -68662,6 +69649,64 @@ internal var __x_ABI_C__FIReference_1_byteVTable: __x_ABI_C__FIReference_1_byteV
     }
 )
 typealias __x_ABI_C__FIReference_1_byteWrapper = ReferenceWrapperBase<UWP.__x_ABI_C__FIReference_1_byteBridge>
+private var IID___x_ABI_C__FIReference_1___x_ABI_CWindows__CDevices__CGeolocation__CBasicGeoposition: WindowsFoundation.IID {
+    .init(Data1: 0xe4d5dda6, Data2: 0xf57c, Data3: 0x57cc, Data4: ( 0xb6,0x7f,0x29,0x39,0xa9,0x01,0xda,0xbe ))// e4d5dda6-f57c-57cc-b67f-2939a901dabe
+}
+
+internal enum __x_ABI_C__FIReference_1___x_ABI_CWindows__CDevices__CGeolocation__CBasicGeopositionBridge: ReferenceBridge {
+    typealias CABI = __x_ABI_C__FIReference_1___x_ABI_CWindows__CDevices__CGeolocation__CBasicGeoposition
+    typealias SwiftProjection = UWP.BasicGeoposition
+    static var IID: WindowsFoundation.IID { IID___x_ABI_C__FIReference_1___x_ABI_CWindows__CDevices__CGeolocation__CBasicGeoposition }
+
+    static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let val = abi else { return nil }
+        var result: __x_ABI_CWindows_CDevices_CGeolocation_CBasicGeoposition = .init()
+        try! CHECKED(val.get().pointee.lpVtbl.pointee.get_Value(val.get(), &result))
+        return .from(abi: result)
+    }
+
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIReference_1___x_ABI_CWindows__CDevices__CGeolocation__CBasicGeopositionVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+internal var __x_ABI_C__FIReference_1___x_ABI_CWindows__CDevices__CGeolocation__CBasicGeopositionVTable: __x_ABI_C__FIReference_1___x_ABI_CWindows__CDevices__CGeolocation__CBasicGeopositionVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIReference_1___x_ABI_CWindows__CDevices__CGeolocation__CBasicGeopositionWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIReference_1___x_ABI_CWindows__CDevices__CGeolocation__CBasicGeopositionWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIReference_1___x_ABI_CWindows__CDevices__CGeolocation__CBasicGeopositionWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = UWP.__x_ABI_C__FIReference_1___x_ABI_CWindows__CDevices__CGeolocation__CBasicGeopositionWrapper.IID
+        iids[3] = __ABI_Windows_Foundation.IPropertyValueWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.IReference`1<Windows.Devices.Geolocation.BasicGeoposition>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    get_Value: {
+        guard let __unwrapped__instance = __x_ABI_C__FIReference_1___x_ABI_CWindows__CDevices__CGeolocation__CBasicGeopositionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance
+        $1?.initialize(to: .from(swift: result))
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIReference_1___x_ABI_CWindows__CDevices__CGeolocation__CBasicGeopositionWrapper = ReferenceWrapperBase<UWP.__x_ABI_C__FIReference_1___x_ABI_CWindows__CDevices__CGeolocation__CBasicGeopositionBridge>
 private var IID___x_ABI_C__FIReference_1___x_ABI_CWindows__CFoundation__CDateTime: WindowsFoundation.IID {
     .init(Data1: 0x5541d8a7, Data2: 0x497c, Data3: 0x5aa4, Data4: ( 0x86,0xfc,0x77,0x13,0xad,0xbf,0x2a,0x2c ))// 5541d8a7-497c-5aa4-86fc-7713adbf2a2c
 }
@@ -70135,6 +71180,104 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CEnu
     internal typealias Handler = WindowsFoundation.TypedEventHandler<UWP.DeviceWatcher?, UWP.DeviceInformationUpdate?>
     internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CEnumeration__CDeviceWatcher___x_ABI_CWindows__CDevices__CEnumeration__CDeviceInformationUpdate
     internal typealias SwiftABI = UWP.TypedEventHandlerDeviceWatcher_DeviceInformationUpdate
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try! _default.InvokeImpl(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0xdf3c6164, Data2: 0x4e7b, Data3: 0x5e8e, Data4: ( 0x9a,0x7e,0x13,0xda,0x05,0x9d,0xec,0x1e ))// df3c6164-4e7b-5e8e-9a7e-13da059dec1e
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgs {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &UWP.__x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgsVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgsVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgsVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgsWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgsWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgsWrapper.release($0) },
+    Invoke: {
+        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let sender: UWP.Geolocator? = .from(abi: ComPtr($1))
+        let args: UWP.PositionChangedEventArgs? = .from(abi: ComPtr($2))
+        __unwrapped__instance(sender, args)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgsWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgsBridge>
+internal class TypedEventHandlerGeolocator_PositionChangedEventArgs: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgs }
+
+    internal func InvokeImpl(_ sender: UWP.Geolocator?, _ args: UWP.PositionChangedEventArgs?) throws {
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgs.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgsBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<UWP.Geolocator?, UWP.PositionChangedEventArgs?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CPositionChangedEventArgs
+    internal typealias SwiftABI = UWP.TypedEventHandlerGeolocator_PositionChangedEventArgs
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try! _default.InvokeImpl(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0x97fcf582, Data2: 0xde6b, Data3: 0x5cd3, Data4: ( 0x96,0x90,0xe2,0xec,0xbb,0x66,0xda,0x4d ))// 97fcf582-de6b-5cd3-9690-e2ecbb66da4d
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgs {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &UWP.__x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgsVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgsVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgsVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgsWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgsWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgsWrapper.release($0) },
+    Invoke: {
+        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let sender: UWP.Geolocator? = .from(abi: ComPtr($1))
+        let args: UWP.StatusChangedEventArgs? = .from(abi: ComPtr($2))
+        __unwrapped__instance(sender, args)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgsWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgsBridge>
+internal class TypedEventHandlerGeolocator_StatusChangedEventArgs: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgs }
+
+    internal func InvokeImpl(_ sender: UWP.Geolocator?, _ args: UWP.StatusChangedEventArgs?) throws {
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgs.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgsBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<UWP.Geolocator?, UWP.StatusChangedEventArgs?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CDevices__CGeolocation__CGeolocator___x_ABI_CWindows__CDevices__CGeolocation__CStatusChangedEventArgs
+    internal typealias SwiftABI = UWP.TypedEventHandlerGeolocator_StatusChangedEventArgs
 
     internal static func from(abi: ComPtr<CABI>?) -> Handler? {
         guard let abi = abi else { return nil }
