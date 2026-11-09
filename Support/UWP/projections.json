@@ -35,7 +35,12 @@
     "Windows.UI.Text.FontWeights",
     "Windows.UI.Text.FontStyle",
     "Windows.UI.Text.FontStretch",
-    "Windows.UI.ViewManagement.UISettings"
+    "Windows.UI.ViewManagement.UISettings",
+    "Windows.Devices.Geolocation.Geolocator",
+    "Windows.Devices.Geolocation.GeolocationAccessStatus",
+    "Windows.Devices.Geolocation.Geoposition",
+    "Windows.Devices.Geolocation.Geocoordinate",
+    "Windows.Devices.Geolocation.PositionStatus"
   ],
   "exclude": [
     "Windows.Devices.Enumeration.Panel",
